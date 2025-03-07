@@ -51,23 +51,19 @@
         ],
         "description": "try catch"
     },
-
-    
-    
-        "Flutter Try-Catch Block": {
-          "prefix": "ftry",
-          "scope": "dart",
-          "body": [
+    "Flutter Try-Catch Block": {
+        "prefix": "try",
+        "scope": "dart",
+        "body": [
             "try {",
             "\t$1",
             "} catch (e) {",
             "\tprint('Error: \\${e.toString()}');",
             "\t$2",
-            "} finally {",
-            "\t$3",
-            "}"
-          ],
-          "description": "Flutter try-catch-finally block.\nExample usage:\ntry {\n  // Your code here\n} catch (e) {\n  print('Error: ${e.toString()}');\n  // Handle error\n} finally {\n  // Clean up resources\n}"
-        }
-      }
-    
+            "} ${3:finally {",
+            "\t$4",
+            "}}"
+        ],
+        "description": "Flutter try-catch-finally block.\nExample usage:\ntry {\n  // Your code here\n} catch (e) {\n  print('Error: \\${e.toString()}');\n  // Handle error\n} finally {\n  // Clean up resources\n}"
+    }
+}

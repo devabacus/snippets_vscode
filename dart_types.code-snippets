@@ -1,38 +1,35 @@
 {
 	"string type": {
-		"scope": "dart,java",
+		"scope": "dart",
 		"prefix": "ts",
 		"body": [
-		  "String"
-		 ],
+			"String"
+		],
 		"description": "string type"
 	},
-
-	"string type2": {
-		"scope": "csharp,cpp",
-		"prefix": "ts",
-		"body": [
-		  "string"
-		 ],
-		"description": "string type"
-	},
-
+	
 	"int type": {
-		"scope": "dart,python,java,csharp,cpp",
+		"scope": "dart",
 		"prefix": "ti",
 		"body": [
-		  "int"
-		 ],
+			"int"
+		],
 		"description": "int type"
 	},
-
 	"double type": {
 		"scope": "dart,python",
 		"prefix": "td",
 		"body": [
-		  "double"
-		 ],
+			"double"
+		],
 		"description": "double type"
 	},
-	
+	"Future type": {
+		"scope": "dart",
+		"prefix": "fut",
+		"body": [
+			"Future<${1:}>",
+		],
+		"description": "snippet name"
+	},
 }
