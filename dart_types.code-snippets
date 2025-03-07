@@ -17,7 +17,7 @@
 		"description": "int type"
 	},
 	"double type": {
-		"scope": "dart,python",
+		"scope": "dart",
 		"prefix": "td",
 		"body": [
 			"double"
