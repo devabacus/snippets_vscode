@@ -1,0 +1,11 @@
+{
+	"var init": {
+        "scope": "python",
+        "prefix": "vi",
+        "body": [
+            "${1:varName} = ${2:value}"
+        ],
+        "description": "var init"
+	},
+	
+}

@@ -1,0 +1,43 @@
+{
+	"log init": {
+		"scope": "python",
+		"prefix": "loginit",
+		"body": [
+			"from handle_files.logger import Logger",
+			"log = Logger(__name__).get_logger()",
+		],
+		"description": "log init"
+	},
+	"log info print": {
+		"scope": "python",
+		"prefix": "logi",
+		"body": [
+			"log.info(\"${1:data}\")"
+		],
+		"description": "log info print"
+	},
+	"log warning print": {
+		"scope": "python",
+		"prefix": "logw",
+		"body": [
+			"log.warning(\"${1:data}\")"
+		],
+		"description": "log warning print"
+	},
+	"log debug print": {
+		"scope": "python",
+		"prefix": "logd",
+		"body": [
+			"log.debug(\"${1:data}\")"
+		],
+		"description": "log debug print"
+	},
+	"log error print": {
+		"scope": "python",
+		"prefix": "loge",
+		"body": [
+			"log.error(\"${1:data}\")"
+		],
+		"description": "log error print"
+	},
+}

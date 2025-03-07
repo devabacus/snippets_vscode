@@ -1,0 +1,18 @@
+{
+	"function init": {
+		"scope": "powershell",
+		"prefix": "fi",
+		"body": [
+			"function ${1:Greetings} (${2:\\$name}) {${3:Write-Output \"hello \\$name\"}}"
+		],
+		"description": "function init"
+	},
+	"function call": {
+		"scope": "powershell",
+		"prefix": "fc",
+		"body": [
+			"${1:Greetings}(${2:\"Stas\"})"
+		],
+		"description": "function call"
+	},
+}

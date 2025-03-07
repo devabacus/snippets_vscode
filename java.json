@@ -1,0 +1,9 @@
+{
+	"print": {
+		"prefix": "p",
+		"body": [
+		  "System.out.println(${1})"
+		 ],
+		"description": "print"
+}
+}

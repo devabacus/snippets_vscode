@@ -1,0 +1,243 @@
+{
+	"list declare": {
+		"scope": "csharp",
+		"prefix": "ld",
+		"body": [
+		  "var ${1:mlist} = new List<${2:string}>();"
+		 ],
+		"description": "list declare"
+	},
+
+	"array declare": {
+		"scope": "csharp",
+		"prefix": "ld2",
+		"body": [
+		  "${1:string}[] ${2:myarr};"
+		 ],
+		"description": "array declare"
+	},
+	"list init": {
+		"scope": "csharp",
+		"prefix": "li",
+		"body": [
+		  "var ${1:mlist} = new List<${2:string}> {${3: \"one\", \"two\", \"three\"}};"
+		 ],
+		"description": "list init"
+	},
+	"array init": {
+		"scope": "csharp",
+		"prefix": "li2",
+		"body": [
+		  "string[] ${1:myarr} = {${2:\"one\",\"two\",\"three\"}};"
+		 ],
+		"description": "list init"
+	},
+	"list length": {
+		"scope": "csharp",
+		"prefix": "ll",
+		"body": [
+		  "$mlist.Count"
+		 ],
+		"description": "list length"
+	},
+	"array length": {
+		"scope": "csharp",
+		"prefix": "ll2",
+		"body": [
+		  "$myarr.Length"
+		 ],
+		"description": "list length"
+	},
+	"array get item": {
+		"scope": "csharp",
+		"prefix": "lgi",
+		"body": [
+		  "${1:mcollect}[${2:index}]"
+		 ],
+		"description": "array get item"
+	},
+	"list to string": {
+		"scope": "csharp",
+		"prefix": "lts",
+		"body": [
+		  "string.Join('${2:-}', ${1:mcollect})"
+		 ],
+		"description": "list to string"
+	},
+	"list slice": {
+		"scope": "csharp",
+		"prefix": "lsl",
+		"body": [
+		  "${1:mlist} = ${1:mlist}.GetRange(${2:startidx}, ${3:endIdx});"
+		 ],
+		"description": "list slice"
+	},
+
+	"array slice by length": {
+		"scope": "csharp",
+		"prefix": "lsl2",
+		"body": [
+		  "$myarr.Take($length).ToArray()"
+		 ],
+		"description": "array slice by length"
+	},
+	"array slice with start, length": {
+		"scope": "csharp",
+		"prefix": "lsl3",
+		"body": [
+		  "var ${1:segment} = new ArraySegment<${2:string}>(${3:myarr}, ${4:startidx}, ${5:length});"
+		 ],
+		"description": "array slice with start, length"
+	},
+
+	"last item of list": {
+		"scope": "csharp",
+		"prefix": "le",
+		"body": [
+		  "$mcollect.Last()"
+		 ],
+		"description": "last item of list"
+	},
+	"list map": {
+		"scope": "csharp",
+		"prefix": "lm",
+		"body": [
+		  "var ${1:mlist_modified} = ${2:mlist2}.Select(item=>${3:item*2}).ToList();"
+		 ],
+		"description": "list map"
+	},
+
+	"array map": {
+		"scope": "csharp",
+		"prefix": "lm2",
+		"body": [
+		  "var ${1:arr_modified} = ${2:myarr}.Select(${3:item} => (${3:item}${4: + \"ivan\"}));"
+		 ],
+		"description": "array map"
+	},
+	"list replace by regex": {
+		"scope": "csharp",
+		"prefix": "lrrg",
+		"body": [
+		  "for (int i = 0; i < ${1:myarr}.Length; i++)",
+		  "{",
+		  "    if (Regex.IsMatch(${1:myarr}[i], @\"${2:\\d}\"))",
+		  "    {",
+		  "        ${1:myarr}[i] = ${1:myarr}[i]${3: + \"_digit\"};",
+		  "    }",
+		  "}",
+		 ],
+		"description": "list replace by regex"
+	},
+	"list sort": {
+		"scope": "csharp",
+		"prefix": "lsrt",
+		"body": [
+		  "$mlist.Sort();"
+		 ],
+		"description": "list sort"
+	},
+
+	"array sort": {
+		"scope": "csharp",
+		"prefix": "lsrt2",
+		"body": [
+		  "Array.Sort($myarr);"
+		 ],
+		"description": "array sort"
+	},
+	"list max value": {
+		"scope": "csharp",
+		"prefix": "lmax",
+		"body": [
+		  "$mycollect.Max()"
+		 ],
+		"description": "list max value"
+	},
+	"list min value": {
+		"scope": "csharp",
+		"prefix": "lmin",
+		"body": [
+		  "$mycollect.Min()"
+		 ],
+		"description": "list min value"
+	},
+	"list append": {
+		"scope": "csharp",
+		"prefix": "la",
+		"body": [
+		  "${1:mlist}.Add(${2:\"item\"});"
+		 ],
+		"description": "list append"
+	},
+	"array appeend": {
+		"scope": "csharp",
+		"prefix": "la2",
+		"body": [
+		  "${1:myarr} = ${1:myarr}.Append(${2:\"item\"}).ToArray();"
+		 ],
+		"description": "array appeend"
+	},
+	"list insert": {
+		"scope": "csharp",
+		"prefix": "lins",
+		"body": [
+		  "${1:mlist}.Insert(${2:index}, ${3:\"item\"});"
+		 ],
+		"description": "list insert"
+	},
+	"list extend": {
+		"scope": "csharp",
+		"prefix": "lext",
+		"body": [
+		  "${1:mlist}.AddRange(${2:mlist2});"
+		 ],
+		"description": "list extend"
+	},
+	"list get index of item": {
+		"scope": "csharp",
+		"prefix": "lidx",
+		"body": [
+		  "${1:mlist}.IndexOf(${2:\"item\"});"
+		 ],
+		"description": "list get index of item"
+	},
+	"array get index of item": {
+		"scope": "csharp",
+		"prefix": "lidx2",
+		"body": [
+		  "Array.IndexOf(${1:myarr}, ${2:\"item\"});"
+		 ],
+		"description": "array get index of item"
+	},
+	"list get index of item by func": {
+		"scope": "csharp",
+		"prefix": "lidxf",
+		"body": [
+		  "int ${6:midx} = ${1:mlist}.FindIndex(${2:startIdx, count, }${3:matchFunc});",
+		  "bool ${3:matchFunc}(${4:String s})",
+		  "{",
+		  "    if (${5:s.Length > 3}) return true;",
+		  "    else return false;",
+		  "}",
+		 ],
+		"description": "list get index by func"
+	}, 
+	"list remove item": {
+		"scope": "csharp",
+		"prefix": "lrm",
+		"body": [
+		  "$mlist.$Remove;"
+		 ],
+		"description": "list remove item"
+	},
+	
+	"list reverse": {
+		"scope": "csharp",
+		"prefix": "lrv",
+		"body": [
+		  "$mlist.Reverse();"
+		 ],
+		"description": "list reverse"
+	},
+}

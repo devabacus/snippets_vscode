@@ -1,0 +1,139 @@
+{
+	"string init": {
+		"scope": "dart",
+		"prefix": "si",
+		"body": [
+			"var ${1:str} = '${3}';",
+		]
+	},
+	
+	"string length": {
+		"scope": "dart",
+		"prefix": "sl",
+		"body": [
+		  "${1:str}.length"
+		],
+		"description": "string length"
+	},
+	"string format second": {
+		"scope": "dart",
+		"prefix": "sfs",
+		"body": [
+			"'$${2:text} ${1:varname} '"
+		],
+		"description": "string format"
+	},
+	"string format first": {
+		"scope": "dart",
+		"prefix": "sff",
+		"body": [
+			"'$${1:varname} ${2:text}'"
+		],
+		"description": "string format"
+	},
+	"string cast": {
+		"scope": "dart",
+		"prefix": "sts",
+		"body": [
+			"${1:name}.toString()"
+		],
+		"description": "cast to String"
+	},
+	"string contains": {
+		"scope": "dart",
+		"prefix": "sc",
+		"body": [
+			"${1:strvar}.contains('${2:pattern}', ${3:0})"
+		],
+		"description": "string contains, can use startindex"
+	},
+	"string contains by regex": {
+		"scope": "dart",
+		"prefix": "scrg",
+		"body": [
+			"${1:strvar}.contains(RegExp(r'${2:[A-Z]}'))"
+		],
+		"description": "string contains by regex"
+	},
+	"string slice": {
+		"scope": "dart",
+		"prefix": "ssl",
+		"body": [
+			"${1:mstr}.substring(${2:1}${3:,3})"
+		],
+		"description": [
+			"slice string\n",
+			"'abcd'.substring(1) : 'bcd'",
+			"'abcd'.substring(1, 3) : 'bc'",
+			"for slice end use mstr.length-1"
+		]
+	},
+	"string split by regex": {
+		"scope": "dart",
+		"prefix": "ssprg",
+		"body": [
+			"${1:strvar}.split(RegExp(r'${2:[A-Z]}'))"
+		],
+		"description": "string split by regex"
+	},
+	"string split map join": {
+		"scope": "dart",
+		"prefix": "ssprg_mapjoin",
+		"body": [
+			"${1:strvar}.splitMapJoin(RegExp(r'${2:,}'), ",
+			"                    onMatch: (m)=>'${3:${m[0]}}', ",
+			"                    onNonMatch: (n)=>${4:'-'})"
+		],
+		"description": "string split map join"
+	},
+	"string pad left": {
+		"scope": "dart",
+		"prefix": "spadl",
+		"body": [
+			"${1:strvar}.padLeft(${2:10}${3:, '-'})"
+		],
+		"description": "pad the sting on the left"
+	},
+	"string pad right": {
+		"scope": "dart",
+		"prefix": "spadr",
+		"body": [
+			"${1:strvar}.padRight(${2:10}${3:, '-'})"
+		],
+		"description": "pad the sting on the right"
+	},
+	"string index of item by regex": {
+		"scope": "dart",
+		"prefix": "sgidxrg",
+		"body": [
+			"${1:strvar}.indexOf(RegExp(r'${2:mstr}'))"
+		],
+		"description": "string index of item. return -1 if not find"
+	},
+	"string trim": {
+		"scope": "dart",
+		"prefix": "strm",
+		"body": [
+			"${1:strvar}.${2|trim,trimLeft,trimRight|}()"
+		],
+		"description": "trim string"
+	},
+	"string replace all": {
+		"scope": "dart",
+		"prefix": "sr",
+		"body": [
+			"${1:strvar}.replaceAll(${2|RegExp(r'pattern'),'pattern'|}, '${3:newpart}')"
+		],
+		"description": "string replace all"
+	},
+
+	"string get item by regex": {
+		"scope": "dart",
+		"prefix": "sgirg",
+		"body": [
+		  "var ${3:res} = RegExp(r'${1:\\d+}').firstMatch(${2:str})?.group(0);"
+		 ],
+		"description": "string get item by regex"
+	},
+
+}

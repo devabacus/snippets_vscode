@@ -1,0 +1,53 @@
+{
+	"if else short": {
+		"scope": "javascript,typescript,javascriptreact,dart,java,csharp,cpp",
+		"prefix": "ifs",
+		"body": "${1:ifexp} ? ${2:iftrue} : ${3:eltrue};"
+	},
+	"if else if else": {
+        "scope": "javascript,typescript,javascriptreact,dart,java,csharp",
+        "prefix": "ififel",
+        "body": [
+          "if (${1:conditional}) {",
+          "  ${2}",
+          "} else if (${3:conditional}) {",
+          "  ${4}",
+          "} else {",
+          "  ${5}",
+          "}"
+         ],
+        "description": "if else if else"
+    },
+	
+	"is digit": {
+		"scope": "javascript, javascriptreact, typescript, tsx",
+		"prefix": "isd",
+		"body": [
+			"!isNan(${1:n umber})",
+		],
+		"description": "return true if not number, then use in inverse mode"
+	},
+
+	"if empty": {
+		"scope": "javascript, javascriptreact, typescript, tsx",
+		"prefix": "ife",
+		"body": [
+			"if(${1:myvar}.length == 0){",
+			"   ${2://exp}",
+			"}",
+			""
+		],
+		"description": "if is not empty"
+	},
+
+	"for in": {
+		"scope": "javascript, javascriptreact, typescript",
+		"prefix": "forin",
+		"body": [
+		  "for (var ${1:item} in ${2:mylist}) {",
+		  "  ${3://exp}",
+		  "}"
+		],
+		"description": "for in"
+	},
+}

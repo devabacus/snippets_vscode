@@ -1,0 +1,68 @@
+{
+    "Freezed Class": {
+      "scope": "dart",
+      "prefix": "freezed",
+      "body": [
+        "import 'package:freezed_annotation/freezed_annotation.dart';",
+        "",
+        "part '${TM_FILENAME_BASE}.freezed.dart';",
+        "part '${TM_FILENAME_BASE}.g.dart';",
+        "",
+        "@freezed",
+        "abstract class ${1:ClassName} with _\\$${1:ClassName} {",
+        "  const factory ${1:ClassName}({",
+        "    required ${2:String} ${3:field1},",
+        "    ${4:required ${5:String} ${6:field2},}",
+        "  }) = _${1:ClassName};",
+        "",
+        "  factory ${1:ClassName}.fromJson(Map<String, dynamic> json) => _\\$${1:ClassName}FromJson(json);",
+        "}"
+      ],
+      "description": "Create a Freezed class with fromJson factory"
+    },
+    "Freezed Union Class": {
+      "scope": "dart",
+      "prefix": "freezed-union",
+      "body": [
+        "import 'package:freezed_annotation/freezed_annotation.dart';",
+        "",
+        "part '${TM_FILENAME_BASE}.freezed.dart';",
+        "part '${TM_FILENAME_BASE}.g.dart';",
+        "",
+        "@freezed",
+        "abstract class ${1:ClassName} with _\\$${1:ClassName} {",
+        "  const factory ${1:ClassName}.${2:first}({",
+        "    required ${3:String} ${4:field1},",
+        "  }) = ${5:_First};",
+        "",
+        "  const factory ${1:ClassName}.${6:second}({",
+        "    required ${7:String} ${8:field2},",
+        "  }) = ${9:_Second};",
+        "",
+        "  factory ${1:ClassName}.fromJson(Map<String, dynamic> json) => _\\$${1:ClassName}FromJson(json);",
+        "}"
+      ],
+      "description": "Create a Freezed union class with fromJson factory"
+    },
+    "Freezed Sealed Class": {
+      "scope": "dart",
+      "prefix": "freezed-sealed",
+      "body": [
+        "import 'package:freezed_annotation/freezed_annotation.dart';",
+        "",
+        "part '${TM_FILENAME_BASE}.freezed.dart';",
+        "part '${TM_FILENAME_BASE}.g.dart';",
+        "",
+        "@freezed",
+        "sealed class ${1:ClassName} with _\\$${1:ClassName} {",
+        "  const factory ${1:ClassName}({",
+        "    required ${2:String} ${3:field1},",
+        "    ${4:required ${5:String} ${6:field2},}",
+        "  }) = _${1:ClassName};",
+        "",
+        "  factory ${1:ClassName}.fromJson(Map<String, dynamic> json) => _\\$${1:ClassName}FromJson(json);",
+        "}"
+      ],
+      "description": "Create a Freezed sealed class with fromJson factory"
+    }
+  }

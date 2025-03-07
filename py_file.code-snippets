@@ -1,0 +1,96 @@
+{
+    "file read": {
+        "scope": "python",
+        "prefix": "flr",
+        "body": [
+            "path = Path(${1:\"filepath\"})",
+            "content = path.read_text(encoding=\"utf-8\")",
+        ],
+        "description": "file read"
+    },
+    "file read2": {
+        "scope": "python",
+        "prefix": "flr2",
+        "body": [
+            "with open(${1:'D:/path/to/file'}, encoding = 'utf8') as f:",
+            "    ${2:r} = f.read()"
+        ]
+    },
+    "file write": {
+        "scope": "python",
+        "prefix": "flwr",
+        "body": [
+            "path = Path(${1:\"filepath\"})",
+            "path.write_text(${2:\"newtext\"}, encoding=\"utf-8\")",
+        ],
+        "description": "file write"
+    },
+    "file write2": {
+        "scope": "python",
+        "prefix": "flwr2",
+        "body": [
+            "with open(${1:'D:/path/to/file'}, 'a', encoding = 'utf8') as f:",
+            "    f.write(${2:str})"
+        ],
+        "description": "'a' = append, 'a+' - append,create\n, 'w' - write,clear, 'w+' - write,reading,clear,create"
+    },
+    "file rename": {
+        "scope": "python",
+        "prefix": "flrn",
+        "body": [
+            "os.rename(${1:oldname}, ${2:newname})",
+        ],
+        "description": "file rename"
+    },
+    "file remove": {
+        "scope": "python",
+        "prefix": "flrm",
+        "body": [
+            "os.remove(${1:'filepath'})",
+        ],
+        "description": "file remove"
+    },
+    "make dir": {
+    "scope": "python",
+    "prefix": "flmkdir",
+    "body": [
+"path.mkdir(${1:\"folderpath\"})",
+    ],
+    "description": "make dir"
+},
+    "make dir2": {
+        "scope": "python",
+        "prefix": "flmkdir",
+        "body": [
+            "os.makedirs(${1:\"folderpath\"})",
+        ],
+        "description": "make dir"
+    },
+   
+    "dir remove": {
+        "scope": "python",
+        "prefix": "flrmdir",
+        "body": [
+            "path.rmdir(${1:'dir_path'})",
+        ],
+        "description": "dir remove"
+    },
+    
+
+    "file copy": {
+        "scope": "python",
+        "prefix": "flcp",
+        "body": [
+            "shutil.copy(${1:\"source_path\"}, ${2:\"dest_path\"})",
+        ],
+        "description": "file copy"
+    },
+    "file move": {
+        "scope": "python",
+        "prefix": "flmv",
+        "body": [
+            "shutil.move(${1:'source_path'}, ${2:'dest_path'})",
+        ],
+        "description": "file move"
+    },
+}

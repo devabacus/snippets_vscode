@@ -1,0 +1,35 @@
+{
+	"ilst init": {
+		"scope": "cpp",
+		"prefix": "li",
+		"body": [
+		  "${1:uint8_t} ${2:myarr}[] = ${3:{1, 2, 3}};"
+		],
+		"description": "list init"
+	  },
+
+	  "list declare": {
+		"scope": "cpp",
+		"prefix": "ld",
+		"body": [
+		  "${1:uint8_t} ${2:myarr}[${3:6}];"
+		],
+		"description": "declare list"
+	  },
+	  "list get item": {
+        "scope": "cpp",
+        "prefix": "lgi",
+        "body": [
+          "$myarr[$index]"
+         ],
+        "description": "list get item"
+    },
+	"list length": {
+        "scope": "cpp",
+        "prefix": "ll",
+        "body": [
+          "size($myarr)"
+         ],
+        "description": "list length"
+    },
+}

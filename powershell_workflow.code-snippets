@@ -1,0 +1,47 @@
+{
+	"for each item": {
+		"scope": "powershell",
+		"prefix": "forin",
+		"body": [
+			"foreach ($${1:item} in $${2:listName}) {",
+			"\t$${1:item}",
+			"}",
+		],
+		"description": "for each item"
+	},
+	"for iterate": {
+		"scope": "powershell",
+		"prefix": "for",
+		"body": [
+			"for ($${1:i} = 0; $${1:i} -lt $${2:listName}.Count; $${1:i}++) {",
+			"\t${3:Write-Output $${2:listName}[$${1:i}]}",
+			"}",
+		],
+		"description": "for iterate"
+	},
+
+	"if short": {
+        "scope": "powershell",
+        "prefix": "ifs",
+        "body": [
+            "$${4:result} = if (${1:$b -lt 0}) {${2: 0 }} else {${3: $b }}",
+        ],
+        "description": "if short"
+},
+"true": {
+	"scope": "powershell",
+	"prefix": "tr",
+	"body": [
+		"\\$true"
+	],
+	"description": "true"
+},
+"false": {
+	"scope": "powershell",
+	"prefix": "fa",
+	"body": [
+		"\\$false"
+	],
+	"description": "false"
+},
+}

@@ -1,0 +1,28 @@
+{
+	"func init": {
+		"scope": "php",
+		"prefix": "fi",
+		"body": [
+		  "function ${1:fName}(${2:$$arg}){",
+		  "    ${3}",
+		  "}"
+		 ],
+		"description": "func init"
+	},
+	"param positional": {
+		"scope": "php",
+		"prefix": "pp",
+		"body": [
+		  "$${1:arg}"
+		 ],
+		"description": "param positional"
+	},
+	"param default": {
+		"scope": "php",
+		"prefix": "pd",
+		"body": [
+		  "$${1:arg} = ${2:val}"
+		 ],
+		"description": "param default"
+	},
+}

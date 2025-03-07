@@ -1,0 +1,328 @@
+{
+    // Инициализация и настройка
+    "Git init": {
+      "prefix": "gitinit",
+      "body": [
+        "git init"
+      ],
+      "description": "Инициализация нового Git репозитория"
+    },
+    "Git config username": {
+      "prefix": "gituser",
+      "body": [
+        "git config --global user.name \"${1:Ваше Имя}\""
+      ],
+      "description": "Настройка имени пользователя Git"
+    },
+    "Git config email": {
+      "prefix": "gitemail",
+      "body": [
+        "git config --global user.email \"${1:ваш.email@example.com}\""
+      ],
+      "description": "Настройка email пользователя Git"
+    },
+    
+    // Основные операции
+    "Git status": {
+      "prefix": "gitst",
+      "body": [
+        "git status"
+      ],
+      "description": "Проверка статуса Git репозитория"
+    },
+    "Git add all": {
+      "prefix": "gitaa",
+      "body": [
+        "git add ."
+      ],
+      "description": "Добавить все файлы в индекс"
+    },
+    "Git add file": {
+      "prefix": "gitadd",
+      "body": [
+        "git add ${1:имя_файла}"
+      ],
+      "description": "Добавить конкретный файл в индекс"
+    },
+    "Git commit": {
+      "prefix": "gitcmt",
+      "body": [
+        "git commit -m \"${1:описание коммита}\""
+      ],
+      "description": "Создать коммит с сообщением"
+    },
+    "Git commit all": {
+      "prefix": "gitcmta",
+      "body": [
+        "git commit -am \"${1:описание коммита}\""
+      ],
+      "description": "Добавить все изменения и создать коммит"
+    },
+    
+    // Работа с удаленными репозиториями
+    "Git clone": {
+      "prefix": "gitcl",
+      "body": [
+        "git clone ${1:https://github.com/пользователь/репозиторий.git}"
+      ],
+      "description": "Клонировать репозиторий"
+    },
+    "Git remote add": {
+      "prefix": "gitrema",
+      "body": [
+        "git remote add ${1:origin} ${2:https://github.com/пользователь/репозиторий.git}"
+      ],
+      "description": "Добавить удаленный репозиторий"
+    },
+    "Git remote view": {
+      "prefix": "gitremv",
+      "body": [
+        "git remote -v"
+      ],
+      "description": "Посмотреть список удаленных репозиториев"
+    },
+    "Git push first": {
+      "prefix": "gitpushf",
+      "body": [
+        "git push -u ${1:origin} ${2:main}"
+      ],
+      "description": "Отправить изменения в удаленный репозиторий (первый раз)"
+    },
+    "Git push": {
+      "prefix": "gitpush",
+      "body": [
+        "git push"
+      ],
+      "description": "Отправить изменения в удаленный репозиторий"
+    },
+    "Git pull": {
+      "prefix": "gitpull",
+      "body": [
+        "git pull"
+      ],
+      "description": "Получить и слить изменения из удаленного репозитория"
+    },
+    "Git fetch": {
+      "prefix": "gitf",
+      "body": [
+        "git fetch"
+      ],
+      "description": "Получить изменения без слияния"
+    },
+    
+    // Работа с ветками
+    "Git branch list": {
+      "prefix": "gitbls",
+      "body": [
+        "git branch"
+      ],
+      "description": "Показать список веток"
+    },
+    "Git branch create": {
+      "prefix": "gitbc",
+      "body": [
+        "git branch ${1:имя_ветки}"
+      ],
+      "description": "Создать новую ветку"
+    },
+    "Git checkout": {
+      "prefix": "gitbco",
+      "body": [
+        "git checkout ${1:имя_ветки}"
+      ],
+      "description": "Переключиться на ветку"
+    },
+    "Git checkout new branch": {
+      "prefix": "gitbch",
+      "body": [
+        "git checkout -b ${1:имя_ветки}"
+      ],
+      "description": "Создать и переключиться на новую ветку"
+    },
+    "Git merge": {
+      "prefix": "gitbm",
+      "body": [
+        "git merge ${1:имя_ветки}"
+      ],
+      "description": "Слить указанную ветку с текущей"
+    },
+    "Git branch delete": {
+      "prefix": "gitbd",
+      "body": [
+        "git branch -d ${1:имя_ветки}"
+      ],
+      "description": "Удалить ветку (если она слита)"
+    },
+    "Git branch force delete": {
+      "prefix": "gitbrD",
+      "body": [
+        "git branch -D ${1:имя_ветки}"
+      ],
+      "description": "Принудительно удалить ветку"
+    },
+    
+    // История и разница
+    "Git log": {
+      "prefix": "gitlog",
+      "body": [
+        "git log"
+      ],
+      "description": "Просмотр истории коммитов"
+    },
+    "Git log oneline": {
+      "prefix": "gitlogo",
+      "body": [
+        "git log --oneline"
+      ],
+      "description": "Краткий просмотр истории (одна строка на коммит)"
+    },
+    "Git log graph": {
+      "prefix": "gitlogg",
+      "body": [
+        "git log --graph --oneline --all"
+      ],
+      "description": "Графическое отображение истории всех веток"
+    },
+    "Git diff": {
+      "prefix": "gitd",
+      "body": [
+        "git diff"
+      ],
+      "description": "Показать изменения в рабочей директории"
+    },
+    "Git diff staged": {
+      "prefix": "gitds",
+      "body": [
+        "git diff --staged"
+      ],
+      "description": "Показать изменения в индексе"
+    },
+    "Git diff commits": {
+      "prefix": "gitdc",
+      "body": [
+        "git diff ${1:коммит1} ${2:коммит2}"
+      ],
+      "description": "Показать разницу между двумя коммитами"
+    },
+    
+    // Отмена изменений
+    "Git restore": {
+      "prefix": "gitr",
+      "body": [
+        "git restore ${1:имя_файла}"
+      ],
+      "description": "Отменить изменения в файле"
+    },
+    "Git restore staged": {
+      "prefix": "gitrs",
+      "body": [
+        "git restore --staged ${1:имя_файла}"
+      ],
+      "description": "Убрать файл из индекса"
+    },
+    "Git reset file": {
+      "prefix": "gitreset",
+      "body": [
+        "git reset HEAD ${1:имя_файла}"
+      ],
+      "description": "Убрать файл из индекса (старый синтаксис)"
+    },
+    "Git reset hard": {
+      "prefix": "gitresethard",
+      "body": [
+        "git reset --hard HEAD"
+      ],
+      "description": "Отменить все изменения и вернуться к последнему коммиту"
+    },
+    "Git revert": {
+      "prefix": "gitrevert",
+      "body": [
+        "git revert ${1:коммит_id}"
+      ],
+      "description": "Создать новый коммит, отменяющий указанный"
+    },
+    
+    // Работа со стеком изменений
+    "Git stash": {
+      "prefix": "gitstash",
+      "body": [
+        "git stash"
+      ],
+      "description": "Сохранить текущие изменения во временном хранилище"
+    },
+    "Git stash list": {
+      "prefix": "gitstashl",
+      "body": [
+        "git stash list"
+      ],
+      "description": "Показать список сохраненных изменений"
+    },
+    "Git stash apply": {
+      "prefix": "gitsasha",
+      "body": [
+        "git stash apply"
+      ],
+      "description": "Применить последние сохраненные изменения (не удаляя их из стека)"
+    },
+    "Git stash pop": {
+      "prefix": "gitsashp",
+      "body": [
+        "git stash pop"
+      ],
+      "description": "Применить и удалить последние сохраненные изменения"
+    },
+    "Git stash drop": {
+      "prefix": "gitsashd",
+      "body": [
+        "git stash drop"
+      ],
+      "description": "Удалить последние сохраненные изменения"
+    },
+    
+    // Продвинутые команды
+    "Git tag": {
+      "prefix": "gittag",
+      "body": [
+        "git tag ${1:имя_тега}"
+      ],
+      "description": "Создать тег для текущего коммита"
+    },
+  
+    "Git tag annotated": {
+      "prefix": "gittga",
+      "body": [
+        "git tag -a ${1:имя_тега} -m \"${2:Описание тега}\""
+      ],
+      "description": "Создать аннотированный тег"
+    },
+    "Git push tag": {
+        "prefix": "gittgpush",
+        "body": [
+          "git push origin ${1:имя_тега}"
+        ],
+        "description": "Отправить тег в удаленный репозиторий"
+      },
+      "Git push all tags": {
+        "prefix": "gittgspush",
+        "body": [
+          "git push --tags"
+        ],
+        "description": "Отправить все теги в удаленный репозиторий"
+      },
+
+
+    "Git rebase": {
+      "prefix": "gitrebase",
+      "body": [
+        "git rebase ${1:ветка}"
+      ],
+      "description": "Перебазировать текущую ветку на указанную"
+    },
+    "Git cherry-pick": {
+      "prefix": "gitcp",
+      "body": [
+        "git cherry-pick ${1:коммит_id}"
+      ],
+      "description": "Применить изменения из указанного коммита"
+    }
+  }

@@ -1,0 +1,59 @@
+{
+	"datetime now": {
+		"scope": "go",
+		"prefix": "dtn",
+		"body": [
+		  "time.Now()"
+		 ],
+		"description": "datetime now"
+	},
+
+	"datetime unix": {
+		"scope": "go",
+		"prefix": "dtu",
+		"body": [
+		  "time.Now().Unix()"
+		 ],
+		"description": "datetime unix"
+	},
+	"datetime format": {
+		"scope": "go",
+		"prefix": "dtf",
+		"body": [
+		  "${1:curDateTime} := time.Now().Format(\"02/01/2006 15:04:05\")"
+		 ],
+		"description": "datetime format. You need to use exactly these values"
+	},
+	"datetime create": {
+		"scope": "go",
+		"prefix": "dtc",
+		"body": [
+		  "${1:datetime} := time.Date(${2:2022, 04, 20, 0,0,0,0,time.Local})"
+		 ],
+		"description": "datetime create"
+	},
+	"datetime value": {
+		"scope": "go",
+		"prefix": "dtgv",
+		"body": [
+		  "time.Now().${1:Day()}"
+		 ],
+		"description": "datetime value"
+	},
+	"datetime change": {
+		"scope": "go",
+		"prefix": "dtch",
+		"body": [
+		  "${1:mdate}.AddDate(0, 0, ${2:-10})"
+		 ],
+		"description": "datetime change"
+	},
+	"time sleep": {
+		"scope": "go",
+		"prefix": "dts",
+		"body": [
+		  "time.Sleep(${1:2} * time.Second)"
+		 ],
+		"description": "time sleep"
+	},
+}

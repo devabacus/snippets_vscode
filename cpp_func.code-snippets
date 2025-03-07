@@ -1,0 +1,29 @@
+{
+	"func declaration": {
+		"scope": "cpp",
+		"prefix": "fd",
+		"body": [
+		  "${1:void} ${2:fName}(${3});"
+		 ],
+		"description": "func declaration"
+	},
+	"func init": {
+		"scope": "cpp",  
+		"prefix": "fi",
+		"body": [
+		  "${1:void} ${2:fName}(${3}){",
+		  "    ${4}",
+		  "}"
+		 ],
+		"description": "func init"
+	},
+	"param by reference": {
+		"scope": "cpp",
+		"prefix": "prf",
+		"body": [
+		  "$int &$x"
+		 ],
+		"description": "param by reference"
+	},
+
+}

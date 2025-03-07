@@ -1,0 +1,48 @@
+{
+	"freertos delay in ms": {
+		"scope": "c,cpp",
+		"prefix": "xdl",
+		"body": [
+		  "vTaskDelay(${1:100}/ portTICK_RATE_MS);  "
+		],
+		"description": "freertos delay in ms"
+	  },
+
+	  "create a new task": {
+		"prefix": "xfn",
+		"body": [
+		  "void ${1:task_name}(void *pv)",
+		  "{  ",
+		  "    while (1)",
+		  "    {",
+		  "          vTaskDelay(10 / portTICK_RATE_MS);",
+		  "    }",
+		  "}"
+		],
+		"description": "create a new task"
+	  },
+
+	  "xTaskCreate": {
+		"prefix": "xtc",
+		"body": [
+		  "xTaskCreate(${1:task_func}, \"${1:task_fn_name}\", 1024, NULL, 1, NULL);"
+		],
+		"description": "init a new task (xTaskCreate)"
+	  },
+
+	  "xQueueReceive": {
+		"prefix": "xqr",
+		"body": [
+		  "xQueueReceive(${1:queue_var}, &${2:var_ref}, portMAX_DELAY == pdPASS)"
+		],
+		"description": "get value from queue (xQueueReceive)"
+	  },
+
+	  "xQueueSend": {
+		"prefix": "xqs",
+		"body": [
+		  "xQueueSend(${1:queue_var}, &${2:var_ref}, portMAX_DELAY == pdPASS)"
+		],
+		"description": "send value to queue (xQueueSend)"
+	  },
+}

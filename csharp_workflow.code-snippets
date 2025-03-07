@@ -1,0 +1,23 @@
+{
+	"if empty": {
+		"scope": "csharp",
+		"prefix": "ife",
+		"body": [
+		  "if (${1:mvar}.Length == 0) {",
+		  "  ${2}",
+		  "}"
+		 ],
+		"description": "if empty"
+	},
+	"for in": {
+		"scope": "csharp",
+		"prefix": "forin",
+		"body": [
+		  "foreach (var ${1:item} in ${2:collection})",
+		  "{",
+		  "  ${3}",
+		  "}",
+		 ],
+		"description": "for in"
+	},
+}

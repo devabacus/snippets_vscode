@@ -1,0 +1,215 @@
+{
+	"string init": {
+		"scope": "python",
+		"prefix": "si",
+		"body": [
+			"${1:strName}:str = ${TM_SELECTED_TEXT:\"${2}\"}",
+		]
+	},
+
+	"var string init": {
+        "scope": "python",
+        "prefix": "vis",
+        "body": [
+            "${1:varname}:str = \"${2:text}\"",
+        ],
+        "description": "var string init"
+},
+
+	"string length": {
+        "scope": "python",
+        "prefix": "sl",
+        "body": [
+            "len(${1:str})"
+        ],
+        "description": "string length"
+},
+
+"string empty check": {
+	"scope": "python",
+	"prefix": "se",
+	"body": [
+		"if len(${1:str}) ${2|==,!=|} 0:",
+		"    ${3:pass}"
+	],
+	"description": "string empty check"
+},
+
+	"string format": {
+		"scope": "python",
+		"prefix": "sf",
+		"body": [
+			"f'${2:text} {${1:${TM_SELECTED_TEXT:varname}}}'"
+		],
+		"description": "string format"
+	},
+	"string cast": {
+		"scope": "python",
+		"prefix": "sts",
+		"body": [
+			"str(${1:name})"
+		],
+		"description": "cast to String"
+	},
+	"string contains": {
+		"scope": "python",
+		"prefix": "sc",
+		"body": [
+			"\"${1:pattern}\" in ${2:strvar}"
+		],
+		"description": "string contains"
+	},
+	"string contains by regex": {
+		"scope": "python",
+		"prefix": "scrg",
+		"body": [
+			"re.search(r'${2:[A-Z]}', ${1:strvar})"
+		],
+		"description": "string contains by regex"
+	},
+	"string slice": {
+		"scope": "python",
+		"prefix": "ssl",
+		"body": [
+			"${1:mstr}[${2:beginIndex}:${3:endIndex}]"
+		],
+		"description": [
+			"slice string start and end optional",
+			"without semicolumn get one char",
+			"'abcd'[1] : 'b'",
+			"'abcd'[-1] : 'd'",
+			"'abcd'[1:] : 'bcd'",
+			"'abcd'[:-1] : 'abc'",
+			"'abcd'[1:-2] : 'b'",
+			"'abcd'[-1:-2] : 'c'\n",
+		]
+	},
+	"string split": {
+		"scope": "python",
+		"prefix": "ssp",
+		"body": [
+			"${1:strvar}.split('${2:-}'${3:, numDelimUse})"
+		],
+		"description": "string split. Return list. numDelimUse points how many delimeter use"
+	},
+	"string split by regex": {
+		"scope": "python",
+		"prefix": "ssprg",
+		"body": [
+			"re.split(${2:'\\s'}, ${1:strvar})"
+		],
+		"description": "string split by regex"
+	},
+	"string to upper case": {
+		"scope": "python",
+		"prefix": "sup",
+		"body": [
+			"${1:strvar}.upper()"
+		],
+		"description": "string to upper case"
+	},
+	"string to low case": {
+		"scope": "python",
+		"prefix": "slo",
+		"body": [
+			"${1:strvar}.casefold()"
+		],
+		"description": "string to low case"
+	},
+	"string starts with": {
+		"scope": "python",
+		"prefix": "sst",
+		"body": [
+			"${1:strvar}.startswith('${2:mstr}')"
+		],
+		"description": "check start of string"
+	},
+	"string ends with": {
+		"scope": "python",
+		"prefix": "snd",
+		"body": [
+			"${1:strvar}.endswith('${2:mstr}')"
+		],
+		"description": "check end of string"
+	},
+	"string pad": {
+		"scope": "python",
+		"prefix": "spd",
+		"body": [
+			"${1:strvar}.${2|ljust,rjust|}(${3:10}, '${4: }')"
+			
+		],
+		"description": ["pad the sting\n", "ljust fill additional characters to right"]
+	},
+	"string index of item": {
+		"scope": "python",
+		"prefix": "sgidx",
+		"body": [
+			"${1:strvar}.find('${2:item}'${3:, $startIndex, $endIndex})"
+			
+		],
+		"description": "string index of item. Return -1 if not found"
+	},
+	"string index of item by regex": {
+		"scope": "python",
+		"prefix": "sgidxrg",
+		"body": [
+			"re.search(r'${2:[A-Z]}', ${1:strvar}).start()"
+		],
+		"description": "string index of item by regex. Return -1 if not found"
+	},
+
+	"string item by regex": {
+		"scope": "python",
+		"prefix": "sgirg",
+		"body": [
+			"re.search(r'${2:[A-Z]}', ${1:strvar}).group(${3:0})"
+		],
+		"description": "string index of item by regex. Return -1 if not found"
+	},
+
+	"string trim": {
+		"scope": "python",
+		"prefix": "srm",
+		"body": [
+			"${1:strvar}.${2|strip,lstrip,rstrip|}(${3:'chars'})"
+		],
+		"description": "trim string. chars can be ' \\n.,'"
+	},
+	"string replace": {
+		"scope": "python",
+		"prefix": "sr",
+		"body": [
+			"${1:strvar}.replace('${3:pattern}', ${4:'newpart'}${2:, count})"
+		],
+		"description": "string replace"
+	},
+	"string replace by regex": {
+		"scope": "python",
+		"prefix": "srrg",
+		"body": [
+			"re.sub(r'${2:regex}', '${3:newpart}', ${1:strvar})"
+		],
+		"description": "string replace by regex"
+	},
+
+	"test snip generate": {
+        "scope": "python",
+        "prefix": "tsg",
+        "body": [
+            "def ${1:fname}()->int:",
+            "\t${2:strName} = \"${3:test}\"",
+            "\t${4:varName} = \"${5:hello wolrd}\"",
+        ],
+        "description": "test snip generate"
+},
+"string count occurency": {
+	"scope": "python",
+	"prefix": "scnto",
+	"body": [
+		"${1:strvar}.count(\"${2:occurency}\")",
+	],
+	"description": "string count occurency"
+},
+
+}

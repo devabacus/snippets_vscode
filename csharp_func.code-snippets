@@ -1,0 +1,66 @@
+{
+	"func short init": {
+		"scope": "csharp",
+		"prefix": "fs",
+		"body": [
+			"${1:string} ${2:greetings}(${3}) => ${4:\"value\"};"
+		],
+		"description": "func short init"
+	},
+	"func lambda short": {
+		"scope": "csharp",
+		"prefix": "fls",
+		"body": [
+			"(${1}) => ${2:expr}"
+		],
+		"description": "func lambda short"
+	},
+	"func lambda": {
+		"scope": "csharp",
+		"prefix": "fl",
+		"body": [
+			"(${1}) => {${2:expr}}"
+		],
+		"description": "func lambda"
+	},
+	"param named call": {
+		"scope": "csharp",
+		"prefix": "pcn",
+		"body": [
+			"$param:$val"
+		],
+		"description": "param named call"
+	},
+	"param named": {
+		"scope": "csharp",
+		"prefix": "pn",
+		"body": [
+			"$int $x"
+		],
+		"description": "param named (the same as positional)\nthen call (x:value)",
+	},
+	"param default": {
+		"scope": "csharp,cpp",
+		"prefix": "pd",
+		"body": [
+			"$int $x = $value"
+		],
+		"description": "param default"
+	},
+	"param optional": {
+		"scope": "csharp",
+		"prefix": "po",
+		"body": [
+			"$int $x = $value"
+		],
+		"description": "param optional"
+	},
+	"param list": {
+		"scope": "csharp",
+		"prefix": "pl",
+		"body": [
+		  "List<$string> $params"
+		 ],
+		"description": "param list"
+	},
+}

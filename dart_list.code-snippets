@@ -1,0 +1,161 @@
+{
+	"list init": {
+		"scope": "dart",
+		"prefix": "li",
+		"body": [
+			"var ${1:mlist} = [${2}];"
+		],
+		"description": "list init"
+	},
+	"list unic init (set)": {
+		"scope": "dart",
+		"prefix": "lui",
+		"body": [
+			"var ${1:setName} = {${2}};",
+		]
+	},
+	"list length": {
+		"scope": "dart",
+		"prefix": "ll",
+		"body": [
+			"${1:mlist}.length"
+		],
+		"description": "list length"
+	},
+	"list init with constructor": {
+		"scope": "dart",
+		"prefix": "li2",
+		"body": [
+			"List."
+		],
+		"description": "list init constructors"
+	},
+	"list get item": {
+		"scope": "dart",
+		"prefix": "lgi",
+		"body": [
+		  "${1:mlist}${2|[index],.elementAt(index)|}"
+		 ],
+		"description": ["list get item\n", "for iterable use elementAt"]
+	},
+	"list slice": {
+		"scope": "dart",
+		"prefix": "lsl",
+		"body": [
+			"${1:mylist}.sublist(${2:1},${3:3})"
+		],
+		"description": "list slice"
+	},
+	"last item of list": {
+		"scope": "dart",
+		"prefix": "le",
+		"body": [
+			"${1:mylist}.last"
+		],
+		"description": "last item of list"
+	},
+	"map list": {
+		"scope": "dart",
+		"prefix": "lm",
+		"body": [
+			"${1:mylist}.map((${2:item}) => ${3:newList.add(item * 2)}).toList();"
+		],
+		"description": "map list"
+	},
+	"list append": {
+		"scope": "dart",
+		"prefix": "la",
+		"body": [
+			"${1:mylist}.add(${2:item})"
+		],
+		"description": "list append"
+	},
+	"list sort": {
+		"scope": "dart",
+		"prefix": "lsrt",
+		"body": [
+			"${1:mylist}.sort()",
+		],
+		"description": "list sort"
+	},
+	"list max": {
+		"scope": "dart",
+		"prefix": "lmax",
+		"body": [
+			"${1:mylist}.sort();",
+			"${1:mylist}.last"
+		],
+		"description": "list max"
+	},
+	"list min": {
+		"scope": "dart",
+		"prefix": "lmin",
+		"body": [
+			"${1:mylist}.sort();",
+			"${1:mylist}[0]"
+		],
+		"description": "list min"
+	},
+	"list extend": {
+		"scope": "dart",
+		"prefix": "lext",
+		"body": [
+			"${1:mylist}.addAll(${2:otherList})"
+		],
+		"description": "list extend"
+	},
+	"list index": {
+		"scope": "dart",
+		"prefix": "lidx",
+		"body": [
+			"${1:mlist}.indexOf(${2:item})"
+		],
+		"description": "list index"
+	},
+	"list iterate": {
+		"scope": "dart",
+		"prefix": "lit",
+		"body": [
+			"${1:listName}.forEach((item) {${2}});"
+		],
+		"description": "list iterate"
+	},
+	"list remove": {
+		"scope": "dart",
+		"prefix": "lrm",
+		"body": [
+			"${1:listName}.${2:remove};"
+		],
+		"description": "list remove"
+	},
+	"list insert": {
+		"scope": "dart",
+		"prefix": "lins",
+		"body": [
+			"${1:listName}.insert(${2:idx}, ${3:item})"
+		],
+		"description": "list insert"
+	},
+	"list pop": {
+		"scope": "dart",
+		"prefix": "lpop",
+		"body": [
+			"${1:listName}.removeAt(${2:idx})"
+		],
+		"description": "list pop"
+	},
+	"list reverse": {
+		"scope": "dart",
+		"prefix": "lrev",
+		"body": [
+			"List.from(${1:listName}.reversed)"
+		],
+		"description": "list reverse"
+	},
+	"list remove duplicate": {
+		"scope": "dart",
+		"prefix": "lrmd",
+		"body": "${1:newList} = ${2:oldList}.toSet().toList();",
+		"description": "remove duplicates from the list, save ordering"
+	},	
+}

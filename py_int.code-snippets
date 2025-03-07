@@ -1,0 +1,36 @@
+{
+	"int init": {
+		"scope": "python",
+		"prefix": "ii",
+		"body": [
+			"${1:varname}:int = ${TM_SELECTED_TEXT:${2:value}}",
+			
+		],
+		"description": "int init"
+	},
+	"var int init": {
+        "scope": "python",
+        "prefix": "vii",
+        "body": [
+            "${1:varname}:int = ${2:5}"
+        ],
+        "description": "var init int"
+},
+	"int increment": {
+		"scope": "python",
+		"prefix": "inc",
+		"body": [
+			"${1:var} += ${2:1}",
+		],
+		"description": "int increment"
+	},
+	"var bool init": {
+        "scope": "python",
+        "prefix": "vb",
+        "body": [
+            "${1:is_empty}:bool = ${2:True}",
+        ],
+        "description": "var bool init"
+
+},
+}

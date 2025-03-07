@@ -1,0 +1,161 @@
+{
+    "Stream creation": {
+      "prefix": "srCr",
+      "body": [
+        "${1|final,var|} ${2:stream} = Stream<${3:String}>(($4) {",
+        "  ${5:// Логика создания stream}",
+        "  ${6}",
+        "});$0"
+      ],
+      "description": "Создает Stream с помощью конструктора.\n\nПримеры:\n```dart\n// Базовый Stream\nfinal stream = Stream<String>((sink) {\n  sink.add('data');\n  sink.close();\n});\n\n// С обработкой ошибок\nfinal stream = Stream<int>((sink) {\n  try {\n    sink.add(42);\n    sink.close();\n  } catch (e) {\n    sink.addError(e);\n  }\n});\n```"
+    },
+    "Stream.fromIterable": {
+      "prefix": "srCrList",
+      "body": [
+        "${1|final,var|} ${2:stream} = Stream<${3:String}>.fromIterable([",
+        "  ${4:'item1'},",
+        "  ${5:'item2'},",
+        "  ${6:'item3'}",
+        "]);$0"
+      ],
+      "description": "Создает Stream из списка элементов.\n\nПримеры:\n```dart\n// Stream из строк\nfinal stream = Stream<String>.fromIterable([\n  'one',\n  'two',\n  'three'\n]);\n\n// Stream из чисел\nfinal stream = Stream<int>.fromIterable([1, 2, 3, 4, 5]);\n```"
+    },
+    "Stream.periodic": {
+      "prefix": "streamPeriodic",
+      "body": [
+        "${1|final,var|} ${2:stream} = Stream<${3:int}>.periodic(",
+        "  Duration(${4|seconds,milliseconds,minutes|}:${5:1}),",
+        "  (${6:count}) => ${7:count},",
+        ");$0"
+      ],
+      "description": "Создает периодический Stream.\n\nПримеры:\n```dart\n// Счетчик с интервалом в 1 секунду\nfinal stream = Stream<int>.periodic(\n  Duration(seconds: 1),\n  (count) => count,\n);\n\n// Чередование true/false каждые 500мс\nfinal stream = Stream<bool>.periodic(\n  Duration(milliseconds: 500),\n  (count) => count % 2 == 0,\n);\n```"
+    },
+    "Stream.value": {
+      "prefix": "srCrVal",
+      "body": [
+        "${1|final,var|} ${2:stream} = Stream<${3:String}>.value(${4:'singleValue'});$0"
+      ],
+      "description": "Создает Stream с одним значением.\n\nПримеры:\n```dart\n// Stream с одной строкой\nfinal stream = Stream<String>.value('hello');\n\n// Stream с одним числом\nfinal stream = Stream<int>.value(42);\n```"
+    },
+    "Stream.error": {
+      "prefix": "srCrErr",
+      "body": [
+        "${1|final,var|} ${2:stream} = Stream<${3:String}>.error(${4:Exception('Error message')});$0"
+      ],
+      "description": "Создает Stream с ошибкой.\n\nПримеры:\n```dart\n// Stream с исключением\nfinal stream = Stream<String>.error(Exception('Failed'));\n\n// Stream с пользовательской ошибкой\nfinal stream = Stream<int>.error(CustomError());\n```"
+    },
+    "Stream.empty": {
+      "prefix": "srCrEmpty",
+      "body": [
+        "${1|final,var|} ${2:stream} = Stream<${3:String}>.empty();$0"
+      ],
+      "description": "Создает пустой Stream, который сразу завершается.\n\nПримеры:\n```dart\n// Пустой Stream строк\nfinal stream = Stream<String>.empty();\n\n// Использование в условии\nfinal stream = hasData ? actualStream : Stream<int>.empty();\n```"
+    },
+    "StreamController": {
+      "prefix": "srContr",
+      "body": [
+        "${1|final,var|} ${2:controller} = StreamController<${3:String}>();",
+        "",
+        "// Получение stream",
+        "${1|final,var|} ${4:stream} = ${2:controller}.stream;",
+        "",
+        "// Добавление данных",
+        "${2:controller}.add(${5:'data'});",
+        "",
+        "// Закрытие при завершении",
+        "${2:controller}.close();$0"
+      ],
+      "description": "Создает StreamController для управления Stream.\n\nПримеры:\n```dart\n// Базовое использование\nfinal controller = StreamController<String>();\nfinal stream = controller.stream;\n\ncontroller.add('message');\ncontroller.close();\n\n// Широковещательный StreamController\nfinal controller = StreamController<int>.broadcast();\nfinal stream = controller.stream;\n\ncontroller.add(1);\n```"
+    },
+    "StreamController.add": {
+      "prefix": "srContrA",
+      "body": [
+        "${1:controller}.add(${2:'value'});$0"
+      ],
+      "description": "Добавляет значение в StreamController.\n\nПримеры:\n```dart\n// Добавление строки\ncontroller.add('new message');\n\n// Добавление объекта\ncontroller.add(User(id: 1, name: 'User'));\n```"
+    },
+    "StreamController.broadcast": {
+      "prefix": "srContrBr",
+      "body": [
+        "${1|final,var|} ${2:controller} = StreamController<${3:String}>.broadcast();",
+        "${1|final,var|} ${4:stream} = ${2:controller}.stream;$0"
+      ],
+      "description": "Создает широковещательный StreamController.\n\nПримеры:\n```dart\n// Базовый broadcast контроллер\nfinal controller = StreamController<int>.broadcast();\nfinal stream = controller.stream;\n\n// Множественные подписчики\nfinal controller = StreamController<Event>.broadcast();\nfinal stream = controller.stream;\n\nstream.listen((event) => print('Listener 1: $event'));\nstream.listen((event) => print('Listener 2: $event'));\n```"
+    },
+    "Stream.listen": {
+      "prefix": "srListen",
+      "body": [
+        "${1:stream}.listen(",
+        "  (${2:data}) {",
+        "    ${3:// Обработка данных}",
+        "  },",
+        "  onError: (${4:error}) {",
+        "    ${5:// Обработка ошибок}",
+        "  },",
+        "  onDone: () {",
+        "    ${6:// Действия при завершении}",
+        "  },",
+        ");$0"
+      ],
+      "description": "Подписка на Stream.\n\nПримеры:\n```dart\n// Базовая подписка\nstream.listen(\n  (data) => print('Получено: $data'),\n  onError: (e) => print('Ошибка: $e'),\n  onDone: () => print('Завершено'),\n);\n\n// Сохранение подписки\nfinal subscription = stream.listen(\n  (data) => processData(data),\n);\n// Позже отмена подписки\nsubscription.cancel();\n```"
+    },
+    "Stream.transform": {
+      "prefix": "srTransform",
+      "body": [
+        "${1|final,var|} ${2:transformedStream} = ${3:stream}.transform<${4:String}>(",
+        "  StreamTransformer.fromHandlers(",
+        "    handleData: (${5:data}, ${6:sink}) {",
+        "      ${7:// Трансформация данных}",
+        "      ${6:sink}.add(${8:transformedData});",
+        "    },",
+        "    handleError: (${9:error}, ${10:stackTrace}, ${11:sink}) {",
+        "      ${12:// Обработка ошибок}",
+        "    },",
+        "    handleDone: (${13:sink}) {",
+        "      ${14:// Действия при завершении}",
+        "      ${13:sink}.close();",
+        "    },",
+        "  ),",
+        ");$0"
+      ],
+      "description": "Трансформирует Stream с помощью StreamTransformer.\n\nПримеры:\n```dart\n// Преобразование чисел в строки\nfinal transformedStream = numberStream.transform<String>(\n  StreamTransformer.fromHandlers(\n    handleData: (number, sink) {\n      sink.add('Number: $number');\n    },\n  ),\n);\n\n// Фильтрация значений\nfinal filteredStream = stream.transform<int>(\n  StreamTransformer.fromHandlers(\n    handleData: (value, sink) {\n      if (value > 0) {\n        sink.add(value);\n      }\n    },\n  ),\n);\n```"
+    },
+    "Stream.map": {
+      "prefix": "srMap",
+      "body": [
+        "${1|final,var|} ${2:mappedStream} = ${3:stream}.map((${4:data}) => ${5:transformFunction});$0"
+      ],
+      "description": "Маппинг значений Stream.\n\nПримеры:\n```dart\n// Преобразование строк в их длины\nfinal lengthStream = stream.map((str) => str.length);\n\n// Преобразование JSON-строк в объекты\nfinal userStream = jsonStream.map(\n  (json) => User.fromJson(jsonDecode(json)),\n);\n```"
+    },
+    "Stream.where": {
+      "prefix": "srWhere",
+      "body": [
+        "${1|final,var|} ${2:filteredStream} = ${3:stream}.where((${4:data}) => ${5:condition});$0"
+      ],
+      "description": "Фильтрует значения Stream.\n\nПримеры:\n```dart\n// Фильтрация положительных чисел\nfinal positiveStream = stream.where((num) => num > 0);\n\n// Фильтрация непустых строк\nfinal nonEmptyStream = stream.where((str) => str.isNotEmpty);\n```"
+    },
+    "Stream.asyncMap": {
+      "prefix": "srAMap",
+      "body": [
+        "${1|final,var|} ${2:mappedStream} = ${3:stream}.asyncMap((${4:data}) async {",
+        "  ${5:// Асинхронная обработка}",
+        "  return ${6:await transformFunction};",
+        "});$0"
+      ],
+      "description": "Асинхронное преобразование значений Stream.\n\nПримеры:\n```dart\n// Загрузка данных по ID\nfinal dataStream = idStream.asyncMap((id) async {\n  return await api.fetchData(id);\n});\n\n// Асинхронная валидация\nfinal validStream = inputStream.asyncMap((input) async {\n  final isValid = await validator.check(input);\n  return ValidInput(input, isValid);\n});\n```"
+    },
+    "Stream Future to Stream": {
+      "prefix": "srFromFuture",
+      "body": [
+        "${1|final,var|} ${2:stream} = Stream.fromFuture(${3:future});$0"
+      ],
+      "description": "Создает Stream из Future.\n\nПримеры:\n```dart\n// Stream из одного Future\nfinal stream = Stream.fromFuture(api.getData());\n\n// Из Future с обработкой ошибок\ntry {\n  final stream = Stream.fromFuture(riskyOperation());\n} catch (e) {\n  // Future ошибки преобразуются в Stream ошибки\n}\n```"
+    },
+    "Stream.asBroadcastStream": {
+      "prefix": "srBroad",
+      "body": [
+        "${1|final,var|} ${2:broadcastStream} = ${3:stream}.asBroadcastStream();$0"
+      ],
+      "description": "Преобразует обычный Stream в широковещательный.\n\nПримеры:\n```dart\n// Преобразование в broadcast\nfinal broadcastStream = stream.asBroadcastStream();\n\n// Несколько слушателей\nfinal shared = stream.asBroadcastStream();\nshared.listen((data) => print('Listener 1: $data'));\nshared.listen((data) => print('Listener 2: $data'));\n```"
+    }
+  }

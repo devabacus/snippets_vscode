@@ -1,0 +1,16 @@
+{
+	"anki add menu item": {
+        "scope": "python",
+        "prefix": "ankadditem",
+        "body": [
+            "from aqt import gui_hooks, browser",
+            "\t",
+            "def on_setup_menus(browser: browser.Browser) -> None:",
+            "\t\t${1:action_name} = QAction(\"${2:name of the menu item}\", browser)",
+            "\t\tqconnect(${1:action_name}.triggered, ${3:func_name})",
+            "\t\tbrowser.form.menuEdit.addAction(${1:action_name})",
+            "gui_hooks.browser_menus_did_init.append(on_setup_menus)",
+        ],
+        "description": "anki add menu item"
+},
+}

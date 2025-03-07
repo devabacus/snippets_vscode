@@ -1,0 +1,148 @@
+{
+	"string init": {
+		"scope": "php",
+		"prefix": "si",
+		"body": [
+			"$${1:strName} = '${2}';",
+		]
+	},
+	"string length": {
+		"scope": "php",
+		"prefix": "sl",
+		"body": [
+			"strlen(${1:$$strvar})"
+		],
+		"description": "string length"
+	},
+	"string empty check": {
+		"scope": "php",
+		"prefix": "se",
+		"body": [
+			"empty(${1:$$strvar})"
+		],
+		"description": "string empty check"
+	},
+	"string format": {
+		"scope": "php",
+		"prefix": "sf",
+		"body": [
+			"sprintf(\"${1:hello %s}\", $$name)"
+			],
+			"description": "string format"
+		},
+		"string contains": {
+		"scope": "php",
+		"prefix": "sc",
+		"body": [
+			"strpos(${1:$$strname, '$hello'})"
+		],
+		"description": "string contains"
+	},
+	"string trim": {
+		"scope": "php",
+		"prefix": "st",
+		"body": [
+			"trim(${1:$$strName})"
+		],
+		"description": "string trim"
+	},
+	"string contains by regex": {
+		"scope": "php",
+		"prefix": "scrg",
+		"body": [
+			"preg_match('/${2:\\d}/',$${3:strName})"
+		],
+		"description": "string contains by regex"
+	},
+	"string slice": {
+		"scope": "php",
+		"prefix": "ssl",
+		"body": [
+			"substr($${1:strName},${2:beginIndex},${3:length})"
+		],
+		"description": "string slice"
+	},
+	"string split": {
+		"scope": "php",
+		"prefix": "ssp",
+		"body": [
+			"$${1:listtName} = explode('${2}', $${3:strName}${4:, numDelimUse});"
+		],
+		"description": "string split"
+	},
+	"string split by regex": {
+		"scope": "php",
+		"prefix": "ssprg",
+		"body": [
+			"$${1:newlist} = preg_split('/${2:\\d}/',$${3:strName});"
+		],
+		"description": "string split by regex"
+	},
+	"string to upper case": {
+		"scope": "php",
+		"prefix": "sup",
+		"body": [
+			"strtoupper($${1:strvar})"
+		],
+		"description": "string to upper case"
+	},
+	"string to lower case": {
+		"scope": "php",
+		"prefix": "slo",
+		"body": [
+			"strtolower($${1:strvar})"
+		],
+		"description": "string to lower case"
+	},
+	"string pad": {
+		"scope": "php",
+		"prefix": "spd",
+		"body": [
+			"str_pad($${1:strName}, ${2:needStrLength}, \" \", ${3|STR_PAD_LEFT,STR_PAD_RIGHT,STR_PAD_BOTH|})"
+		],
+		"description": "string pad"
+	},
+	"string index of item": {
+		"scope": "php",
+		"prefix": "sidx",
+		"body": [
+			"strpos($$strName, '$abc')"
+		],
+		"description": "string index of item"
+	},
+	"string replace": {
+		"scope": "php",
+		"prefix": "sr",
+		"body": [
+			"$${1:$strName} = str_replace('${2: }', '${3:-}', $${1:strName});"
+		],
+		"description": "string replace"
+	},
+	"string replace by regex": {
+		"scope": "php",
+		"prefix": "srrg",
+		"body": [
+			"$${1:strName} = preg_replace('/${2:\\d}/', '${3:-}', $${1:strName});"
+		],
+		"description": "string replace by regex"
+	},
+	"string get item by regex": {
+		"scope": "php",
+		"prefix": "sgirg",
+		"body": [
+		  "preg_match_all('/${1:\\d}/', $${2:strName}, $${3:resArray});",
+		  "echo ($${3:resArray}[0][0]);"
+		 ],
+		"description": "string get item by regex"
+	},
+
+	"string get index of item by regex": {
+		"scope": "php",
+		"prefix": "sgidxrg",
+		"body": [
+		  "preg_match_all('/${1:\\d}/', $${2:strName}, $${3:resArray});",
+		  "$${4:idx} = strpos($${2:strName}, $${3:resArray}[0][0]);"
+		 ],
+		"description": "string get index of item by regex"
+	},
+}

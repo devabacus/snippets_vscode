@@ -1,0 +1,115 @@
+{
+	"func": {
+		"scope": "python",
+		"prefix": "fi",
+		"body": [
+			"def ${2:fname}(${3})${1:->None}:",
+			"    ${4:pass}"
+		]
+	},
+	"func lambda": {
+		"scope": "python",
+		"prefix": "fl",
+		"body": [
+			"${1:fname} = lambda ${2:x}: ${3:x*2}"
+		],
+		"description": "func lambda"
+	},
+	"positional param": {
+		"scope": "python",
+		"prefix": "pp",
+		"body": [
+			"${TM_SELECTED_TEXT:${2:param}}:${1|str,int,list,dict|}"
+		],
+		"description": "positional param"
+	},
+	"param named": {
+		"scope": "python",
+		"prefix": "pn",
+		"body": [
+			"${TM_SELECTED_TEXT:${2:param}}:${1|str,int,list,dict|}"
+		],
+		"description": "named param"
+	},
+	"param default": {
+		"scope": "python",
+		"prefix": "pd",
+		"body": [
+			"${1:param} = ${2:value}"
+		],
+		"description": "param default"
+	},
+	"param list": {
+		"scope": "python",
+		"prefix": "pl",
+		"body": [
+			"*$args:$str"
+		],
+		"description": "param list"
+	},
+	"method in class": {
+		"scope": "python",
+		"prefix": "fs",
+		"body": [
+			"def ${1:fname}(self${2:, val}):",
+			"    ${3:pass}"
+		]
+	},
+	"param named call": {
+		"scope": "python",
+		"prefix": "pcn",
+		"body": [
+		  "$param = $value"
+		 ],
+		"description": "param named call"
+	},
+	"param optional": {
+		"scope": "python",
+		"prefix": "po",
+		"body": [
+		  "${1|param=0,*args,**kwargs|}"
+		 ],
+		"description": "param optional"
+	},
+	"func with arbitrary args": {
+		"scope": "python",
+		"prefix": "fpl",
+		"body": [
+			"def ${1:fname}(*${2:args}):",
+			"    for ${3:item} in ${2:args}:",
+			"        ${4:pass}"
+		]
+	},
+	"func with arbitrary keys": {
+		"scope": "python",
+		"prefix": "fpk",
+		"body": [
+			"def ${1:fname}(**${2:data}):",
+			"    for ${3:k},${4:v} in ${2:data}.items():",
+			"        ${5:print(str(${3:k}) + ':' + str(${4:v}))}",
+			"",
+			"${1:fname}(one=1, two=2)"
+		]
+	},
+	"lambda if": {
+		"prefix": "flif",
+		"body": [
+			"lambda ${1:x}: ${3:f'x less 0'} if ${2:x>0} else ${4:f'x more 0'}",
+			""
+		],
+		"description": "lambda if"
+	},
+	"snippet name": {
+        "scope": "python",
+        "prefix": "privet",
+        "body": [
+            "def fname() -> None:",
+            "\tstrName = \"ivan\"",
+            "\tstrnname2 = \"priven\"",
+            "",
+            
+        ],
+        "description": "snippet name"
+},
+	
+}

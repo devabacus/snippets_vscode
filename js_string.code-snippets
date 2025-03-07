@@ -1,0 +1,190 @@
+{
+	"string init": {
+		"scope": "javascript, javascriptreact, typescript",
+		"prefix": "si",
+		"body": [
+			"let ${1:str} = '${3}';",
+		]
+	},
+	"string empty check": {
+        "scope": "javascript, javascriptreact, typescript",
+        "prefix": "semp",
+        "body": [
+          "${1:strName}.length == 0"
+        ],
+        "description": "string empty check"
+      },
+	
+	"string format": {
+		"scope": "javascript, javascriptreact, typescript",
+		"prefix": "sf",
+		"body": [
+			"${1:varname} + 'blabla'"
+		],
+		"description": "string format"
+	},
+	
+	"string format with properties": {
+		"scope": "javascript, javascriptreact, typescript",
+		"prefix": "sfp",
+		"body": [
+			"`${${1:some.other}}`"
+		],
+		"description": "string format"
+	},
+	"string contains": {
+		"scope": "javascript, javascriptreact, typescript",
+		"prefix": "sc",
+		"body": [
+			"${1:strvar}.includes('${2:pattern}')"
+		],
+		"description": "string contains, can use startindex"
+	},
+	"string contains by regex": {
+		"scope": "javascript, javascriptreact, typescript",
+		"prefix": "scrg",
+		"body": [
+			"/${2:[A-Z]}/.test(${1:strvar})"
+		],
+		"description": "string contains by regex"
+	},
+	"string slice": {
+		"scope": "javascript, javascriptreact, typescript",
+		"prefix": "ssl",
+		"body": [
+			"${1:mstr}.slice(${2:1},${3:3})"
+		],
+		"description": "slice string, can be negative both"
+	},
+	"string cast": {
+		"scope": "javascript, javascriptreact, typescript",
+		"prefix": "sts",
+		"body": [
+			"${1:name}.toString()"
+		],
+		"description": "var to String"
+	},
+	"string split": {
+		"scope": "javascript, javascriptreact, typescript, dart",
+		"prefix": "ssp",
+		"body": [
+			"${1:strvar}.split('${2:,}'${3:, counter})"
+		],
+		"description": "string split. Return list. Counter points how many elements will be in the list"
+	},
+	"string split by regex": {
+		"scope": "javascript, javascriptreact, typescript",
+		"prefix": "ssprg",
+		"body": [
+			"${1:strvar}.split(/${2:,}/)"
+		],
+		"description": "string split by regex"
+	},
+	"string to upper case": {
+		"scope": "javascript, javascriptreact, typescript, dart",
+		"prefix": "sup",
+		"body": [
+			"${1:strvar}.toUpperCase()"
+		],
+		"description": "string to upper case"
+	},
+	"string to low case": {
+		"scope": "javascript, javascriptreact, typescript, dart",
+		"prefix": "slo",
+		"body": [
+			"${1:strvar}.toLowerCase()"
+		],
+		"description": "string to low case"
+	},
+	"string starts with": {
+		"scope": "javascript, javascriptreact, typescript, dart",
+		"prefix": "sst",
+		"body": [
+			"${1:strvar}.startsWith('${2:char}')"
+		],
+		"description": "check start of string"
+	},
+	"string ends with": {
+		"scope": "javascript, javascriptreact, typescript, dart",
+		"prefix": "snd",
+		"body": [
+			"${1:strvar}.endsWith('${2:char}')"
+		],
+		"description": "check end of string"
+	},
+	"string pad left": {
+		"scope": "javascript, javascriptreact, typescript",
+		"prefix": "spadl",
+		"body": [
+			"${1:strvar}.padStart(${2:10}${3:, '-'})"
+		],
+		"description": "pad the sting on the left"
+	},
+	"string pad right": {
+		"scope": "javascript, javascriptreact, typescript",
+		"prefix": "spadr",
+		"body": [
+			"${1:strvar}.padEnd(${2:10}${3:, '-'})"
+		],
+		"description": "pad the sting on the right"
+	},
+	"string index of item": {
+		"scope": "javascript, javascriptreact, typescript, dart",
+		"prefix": "sgidx",
+		"body": [
+			"${1:strvar}.indexOf('${2:,}')"
+		],
+		"description": "string index of item. return -1 if not find"
+	},
+	"string get item by regex": {
+		"scope": "javascript,javascriptreact,typescript",
+		"prefix": "sgirg",
+		"body": [
+		  "${1:str}.match(${2:/\\d/})[0]"
+		 ],
+		"description": "string get item by regex"
+	},
+
+	"string index of item by regex": {
+		"scope": "javascript, javascriptreact, typescript",
+		"prefix": "sgidxrg",
+		"body": [
+			"${1:strvar}.search(/${2:,}/)"
+		],
+		"description": "string index of item. return -1 if not find"
+	},
+	"string trim": {
+		"scope": "javascript, javascriptreact, typescript",
+		"prefix": "strm",
+		"body": [
+			"${1:strvar}.${2|trim,trimStart,trimEnd|}()"
+		],
+		"description": "trim string"
+	},
+	"string replace": {
+		"scope": "typescript",
+		"prefix": "sr",
+		"body": [
+		//   "\"$TM_SELECTED_TEXT\"",	
+		  "${1:strvar}.replace(${3|/pattern/g,''|}, ${4|'newpart', fnHandle|})"
+		],
+		"description": "string replace first fnHandle call with 'match' argument"
+	},
+	"string replace ": {
+		"scope": "javascript, javascriptreact",
+		"prefix": "sr",
+		"body": [
+		//   "\"$TM_SELECTED_TEXT\"",	
+		  "${1:strvar}.${2|replace,replaceAll|}(${3|/pattern/g,''|}, ${4|'newpart', fnHandle|})"
+		],
+		"description": "string replace all"
+	},
+	"map contains": {
+		"scope": "javascript,javascriptreact,typescript",
+		"prefix": "mc",
+		"body": [
+		  "$mapName.has($key)"
+		 ],
+		"description": "map contains"
+	},
+}

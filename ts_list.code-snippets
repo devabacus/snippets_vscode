@@ -1,0 +1,10 @@
+{
+    // "list init": {
+    //     "scope": "typescript",
+    //     "prefix": "li",
+    //     "body": [
+    //         "${1|const,let|} ${2:mylist} = [${3:}];",
+    //     ],
+    //     "description": "list init"
+    // },
+}

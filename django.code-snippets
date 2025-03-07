@@ -1,0 +1,12 @@
+{
+	"django rest api viewset": {
+        "scope": "python",
+        "prefix": "djrv",
+        "body": [
+            "class ${1:Flag}ViewSet(viewsets.ModelViewSet):",
+            "\tqueryset = ${1:Flag}.objects.all()",
+            "\tserializer_class = ${1:Flag}Serializer",
+        ],
+        "description": "django rest api viewset"
+},
+}

@@ -1,0 +1,28 @@
+{
+	
+	"run external program": {
+		"scope": "python",
+		"prefix": "osprog",
+		"body": [
+			"subprocess.run([${1:\"C:\\Program Files\\WireGuard\\wireguard.exe\"}])"
+		],
+		"description": "run external program"
+	},
+	"run powershel command": {
+		"scope": "python",
+		"prefix": "ospscmd",
+		"body": [
+			"subprocess.run([\"powershell\", \"${1:whoami}\"]${2:, capture_output=True})",
+		],
+		"description": "run powershel command. To get output [result].stdout"
+	},
+	"run power shell script": {
+		"scope": "python",
+		"prefix": "ospsscript",
+		"body": [
+			"p = subprocess.Popen([\"powershell.exe\", ${1:\"C:\\projects\\powershell\\general.ps1\"}], stdout=sys.stdout)",
+			"p.communicate()",
+		],
+		"description": "run power shell script"
+	},
+}

@@ -1,0 +1,22 @@
+{
+	"bot print state init": {
+		"scope": "python",
+		"prefix": "bpsi",
+		"body": [
+			"import inspect",
+			"async def print_state(state: FSMContext):",
+			"\tfname = inspect.getframeinfo(inspect.currentframe()).function",
+			"\tcurrent_state = await state.get_state()",
+			"\tlog.warning(f\"func: {fname} - state: {current_state}\")",
+		],
+		"description": "bot print state init"
+	},
+	"bot print state": {
+		"scope": "python",
+		"prefix": "bps",
+		"body": [
+			"await print_state(state)",
+		],
+		"description": "bot print state"
+	},
+}

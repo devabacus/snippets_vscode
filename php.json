@@ -1,0 +1,28 @@
+{
+	
+
+	"print to console": {
+		"prefix": "p",
+		"body": [
+			"echo (${1:${TM_SELECTED_TEXT:\"hello \\$name\"}});"
+		],
+		"description": "print to console"
+	},
+
+	"print format": {
+		"prefix": "pf",
+		"body": [
+			"echo ${1:\"$hello $$name\"};"
+		],
+		"description": "print to console"
+	},
+	"var init ": {
+		"prefix": "v",
+		"body": [
+			"$${1:varname} = ${2:${TM_SELECTED_TEXT:}};"
+		],
+		"description": "var init "
+	},
+
+
+}

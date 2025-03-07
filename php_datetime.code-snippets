@@ -1,0 +1,50 @@
+{
+	"datetime now": {
+		"scope": "php",
+		"prefix": "dtn",
+		"body": [
+		  "date(${1:\"d/m/Y H:i:s\"})"
+		 ],
+		"description": "datetime now"
+	},
+	"datetime create": {
+		"scope": "php",
+		"prefix": "dti",
+		"body": [
+		  "$${1:dt} = new DateTime(${2:\"2022/04/10\"});"
+		 ],
+		"description": "datetime create"
+	},
+	"datetime format": {
+		"scope": "php",
+		"prefix": "dtf",
+		"body": [
+		  "$${1:mdate}->format(${2:\"d/m/Y H:i:s\"})"
+		 ],
+		"description": "datetime format"
+	},
+	"datetime unix": {
+		"scope": "php",
+		"prefix": "dtu",
+		"body": [
+		  "$${1:dt}->getTimestamp()"
+		 ],
+		"description": "datetime unix"
+	},
+	"datetime change": {
+		"scope": "php",
+		"prefix": "dtch",
+		"body": [
+		  "$${1:dt}->add(new DateInterval(${2:'P10D'}));"
+		 ],
+		"description": "datetime change"
+	},
+	"datetime value": {
+		"scope": "php",
+		"prefix": "dtgv",
+		"body": [
+		  "$${1:dt}->format('${2:d}')"
+		 ],
+		"description": "datetime value"
+	},
+}

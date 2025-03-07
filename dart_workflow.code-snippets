@@ -1,0 +1,73 @@
+{
+    "if not empty": {
+        "scope": "dart",
+        "prefix": "ifne",
+        "body": [
+            "if (${1:mvar}.isNotEmpty) {",
+            "  ${2}",
+            "}"
+        ],
+        "description": "if not empty"
+    },
+    "if empty": {
+        "scope": "dart",
+        "prefix": "ife",
+        "body": [
+            "if (${1:mvar}.isEmpty) {",
+            "  ${2}",
+            "}"
+        ],
+        "description": "if empty"
+    },
+    "for with index": {
+        "scope": "dart",
+        "prefix": "for",
+        "body": [
+            "for (var ${1:i} = 0; ${1:i} < ${2:count}; ${1:i}++) {",
+            "   ${3}",
+            "}"
+        ],
+        "description": "for with index"
+    },
+    "for in": {
+        "scope": "dart",
+        "prefix": "forin",
+        "body": [
+            "for (var ${1:item} in ${2:item}) {",
+            "  $3",
+            "}"
+        ],
+        "description": "for in"
+    },
+    "try catch": {
+        "scope": "dart",
+        "prefix": "try",
+        "body": [
+            "try {",
+            "\t\t${2:${TM_SELECTED_TEXT:$}}",
+            "} catch (e) {",
+            "\t\t\t\tprint(${1:'got error: $e'});",
+            "}",
+        ],
+        "description": "try catch"
+    },
+
+    
+    
+        "Flutter Try-Catch Block": {
+          "prefix": "ftry",
+          "scope": "dart",
+          "body": [
+            "try {",
+            "\t$1",
+            "} catch (e) {",
+            "\tprint('Error: \\${e.toString()}');",
+            "\t$2",
+            "} finally {",
+            "\t$3",
+            "}"
+          ],
+          "description": "Flutter try-catch-finally block.\nExample usage:\ntry {\n  // Your code here\n} catch (e) {\n  print('Error: ${e.toString()}');\n  // Handle error\n} finally {\n  // Clean up resources\n}"
+        }
+      }
+    

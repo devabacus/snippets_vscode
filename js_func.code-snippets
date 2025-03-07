@@ -1,0 +1,69 @@
+{
+	"function": {
+		"scope": "javascript,javascriptreact",
+		"prefix": "fi",
+		"body": [
+			"function ${1:funName}(${2}){",
+			"        ${3://}",
+			"    }"
+		],
+		"description": "function"
+	},
+
+	"func short": {
+		"scope": "javascript,javascriptreact",
+		"prefix": "fs",
+		"body": [
+		  "var ${1:fName} = (${2}) => ${3};"
+		 ],
+		"description": "func short"
+	},
+	"func lambda": {
+		"scope": "javascript,javascriptreact,typescript",
+		"prefix": "fl",
+		"body": [
+		  "(${1}) => {${2}}"
+		 ],
+		"description": "func lambda"
+	},
+	"func lambda short": {
+		"scope": "javascript,javascriptreact,typescript",
+		"prefix": "fls",
+		"body": [
+		  "(${1}) => ${2}"
+		 ],
+		"description": "func lambda short"
+	},
+	"param positional": {
+		"scope": "javascript,javascriptreact",
+		"prefix": "pp",
+		"body": [
+		  "$param"
+		 ],
+		"description": "param positional"
+	},
+	"param default": {
+		"scope": "javascript,javascriptreact",
+		"prefix": "pd",
+		"body": [
+		  "$param = $value"
+		 ],
+		"description": "param default"
+	},
+	"param optional": {
+		"scope": "javascript,javascriptreact",
+		"prefix": "po",
+		"body": [
+		  "$param = $value"
+		 ],
+		"description": "param optional"
+	},
+	"param list": {
+		"scope": "javascript,javascriptreact",
+		"prefix": "pl",
+		"body": [
+		  "...$args"
+		 ],
+		"description": "param list"
+	},
+}

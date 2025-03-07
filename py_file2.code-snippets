@@ -1,0 +1,161 @@
+{
+    "read json file": {
+      "scope": "python",
+      "prefix": "flrjson",
+      "body": [
+        "import json",
+        "",
+        "with open(${1:\"filepath\"}, 'r', encoding='utf-8') as f:",
+        "    data = json.load(f)"
+      ],
+      "description": "read and parse JSON file (requires: import json)"
+    },
+    "write json file": {
+      "scope": "python",
+      "prefix": "flwjson",
+      "body": [
+        "import json",
+        "",
+        "with open(${1:\"filepath\"}, 'w', encoding='utf-8') as f:",
+        "    json.dump(${2:data}, f, indent=4)"
+      ],
+      "description": "write object to JSON file (requires: import json)"
+    },
+    "read csv file": {
+      "scope": "python",
+      "prefix": "flrcsv",
+      "body": [
+        "import pandas as pd",
+        "",
+        "df = pd.read_csv(${1:\"filepath\"})"
+      ],
+      "description": "read CSV file with pandas (requires: import pandas as pd)"
+    },
+    "write csv file": {
+      "scope": "python",
+      "prefix": "flwcsv",
+      "body": [
+        "import pandas as pd",
+        "",
+        "${1:dataframe}.to_csv(${2:\"filepath\"}, index=${3|False,True|})"
+      ],
+      "description": "write DataFrame to CSV (requires: import pandas as pd)"
+    },
+    "get file stats": {
+      "scope": "python",
+      "prefix": "flstats",
+      "body": [
+        "import os",
+        "",
+        "stats = os.stat(${1:\"filepath\"})",
+        "print(f\"Size: {stats.st_size} bytes\")",
+        "print(f\"Created: {stats.st_ctime}\")",
+        "print(f\"Modified: {stats.st_mtime}\")",
+        "print(f\"Last accessed: {stats.st_atime}\")"
+      ],
+      "description": "get file stats (requires: import os)"
+    },
+    "read dir recursive": {
+      "scope": "python",
+      "prefix": "flreaddirrecursive",
+      "body": [
+        "import os",
+        "",
+        "def read_dir_recursive(directory):",
+        "    file_paths = []",
+        "    for root, dirs, files in os.walk(directory):",
+        "        for file in files:",
+        "            file_path = os.path.join(root, file)",
+        "            file_paths.append(file_path)",
+        "    return file_paths",
+        "",
+        "files = read_dir_recursive(${1:\"dirpath\"})"
+      ],
+      "description": "recursive directory reading (requires: import os)"
+    },
+    "create temp file": {
+      "scope": "python",
+      "prefix": "fltempfile",
+      "body": [
+        "import tempfile",
+        "",
+        "with tempfile.NamedTemporaryFile(delete=${1|False,True|}) as tmp_file:",
+        "    tmp_file.write(${2:b\"content\"})",
+        "    tmp_file.flush()",
+        "    print(f\"Temporary file created at: {tmp_file.name}\")",
+        "    # Do something with tmp_file.name"
+      ],
+      "description": "create temporary file (requires: import tempfile)"
+    },
+    "create temp dir": {
+      "scope": "python",
+      "prefix": "fltempdir",
+      "body": [
+        "import tempfile",
+        "",
+        "with tempfile.TemporaryDirectory() as tmp_dir:",
+        "    print(f\"Temporary directory created at: {tmp_dir}\")",
+        "    # Do something with tmp_dir"
+      ],
+      "description": "create temporary directory (requires: import tempfile)"
+    },
+    "file glob pattern": {
+      "scope": "python",
+      "prefix": "flglob",
+      "body": [
+        "import glob",
+        "",
+        "files = glob.glob(${1:\"*.txt\"})",
+        "for file in files:",
+        "    print(file)"
+      ],
+      "description": "find files by pattern (requires: import glob)"
+    },
+    "create zip archive": {
+      "scope": "python",
+      "prefix": "flzip",
+      "body": [
+        "import zipfile",
+        "import os",
+        "",
+        "def zip_directory(directory_path, zip_path):",
+        "    with zipfile.ZipFile(zip_path, 'w', zipfile.ZIP_DEFLATED) as zipf:",
+        "        for root, dirs, files in os.walk(directory_path):",
+        "            for file in files:",
+        "                file_path = os.path.join(root, file)",
+        "                zipf.write(file_path, os.path.relpath(file_path, directory_path))",
+        "",
+        "zip_directory(${1:\"directory_to_zip\"}, ${2:\"output.zip\"})"
+      ],
+      "description": "create ZIP archive (requires: import zipfile, import os)"
+    },
+    "extract zip archive": {
+      "scope": "python",
+      "prefix": "flunzip",
+      "body": [
+        "import zipfile",
+        "",
+        "with zipfile.ZipFile(${1:\"archive.zip\"}, 'r') as zip_ref:",
+        "    zip_ref.extractall(${2:\"extract_to_directory\"})"
+      ],
+      "description": "extract ZIP archive (requires: import zipfile)"
+    },
+    "file hash": {
+      "scope": "python",
+      "prefix": "flhash",
+      "body": [
+        "import hashlib",
+        "",
+        "def get_file_hash(filename):",
+        "    hash_obj = hashlib.${1|md5,sha1,sha256,sha512|}()",
+        "    with open(filename, 'rb') as f:",
+        "        for chunk in iter(lambda: f.read(4096), b\"\"):",
+        "            hash_obj.update(chunk)",
+        "    return hash_obj.hexdigest()",
+        "",
+        "file_hash = get_file_hash(${2:\"filepath\"})",
+        "print(f\"File hash: {file_hash}\")"
+      ],
+      "description": "calculate file hash (requires: import hashlib)"
+    }
+  }

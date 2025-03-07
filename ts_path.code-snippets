@@ -1,0 +1,99 @@
+{
+    "path file name": {
+      "scope": "typescript",
+      "prefix": "flphname",
+      "body": [
+        "path.basename(${1:\"path/to/dir_file\"})"
+      ],
+      "description": "path file name (requires: import * as path from 'path')"
+    },
+    "path file stem": {
+      "scope": "typescript",
+      "prefix": "flphstem",
+      "body": [
+        "path.parse(${1:\"path/to/dir_file\"}).name"
+      ],
+      "description": "path file stem (requires: import * as path from 'path')"
+    },
+    "path file suffix": {
+      "scope": "typescript",
+      "prefix": "flphsuffix",
+      "body": [
+        "path.extname(${1:\"path/to/dir_file\"})"
+      ],
+      "description": "path file suffix (requires: import * as path from 'path')"
+    },
+    "path file parent": {
+      "scope": "typescript",
+      "prefix": "flphparent",
+      "body": [
+        "path.dirname(${1:\"path/to/dir_file\"})"
+      ],
+      "description": "path file parent (requires: import * as path from 'path')"
+    },
+    "path parents by idx": {
+      "scope": "typescript",
+      "prefix": "flPhParentsIdx",
+      "body": [
+        "path.dirname(${1:\"path/to/dir_file\"}).split(path.sep).slice(0, -${2:idx})"
+      ],
+      "description": "path parents by idx (requires: import * as path from 'path')"
+    },
+    "path exists": {
+      "scope": "typescript",
+      "prefix": "flphex",
+      "body": [
+        "fs.existsSync(${1:\"path\"})"
+      ],
+      "description": "path exists (requires: import * as fs from 'fs')"
+    },
+    "path exist2": {
+      "scope": "typescript",
+      "prefix": "flphex2",
+      "body": [
+        "fs.existsSync(${1:\"path_to_file_or_dir\"})"
+      ],
+      "description": "path exist (requires: import * as fs from 'fs')"
+    },
+    "path is file": {
+      "scope": "typescript",
+      "prefix": "flphisfile",
+      "body": [
+        "fs.statSync(${1:\"path/to/dir_file\"}).isFile()"
+      ],
+      "description": "path is file (requires: import * as fs from 'fs')"
+    },
+    "path is dir": {
+      "scope": "typescript",
+      "prefix": "flphisdir",
+      "body": [
+        "fs.statSync(${1:\"path/to/dir_file\"}).isDirectory()"
+      ],
+      "description": "path is dir (requires: import * as fs from 'fs')"
+    },
+
+    "path join": {
+      "scope": "typescript",
+      "prefix": "flphj",
+      "body": [
+        "path.join(${1:\"path1\"}, ${2:\"path2\"})"
+      ],
+      "description": "path join2 (requires: import * as path from 'path')"
+    },
+    "dir list": {
+      "scope": "typescript",
+      "prefix": "flls",
+      "body": [
+        "fs.readdirSync(${1:\"dir_path\"})"
+      ],
+      "description": "dir list (requires: import * as fs from 'fs')"
+    },
+    "file get path": {
+      "scope": "typescript",
+      "prefix": "flphget",
+      "body": [
+        "path.resolve(${1:\"path\"})"
+      ],
+      "description": "file get path (requires: import * as path from 'path')"
+    }
+  }

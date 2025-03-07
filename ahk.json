@@ -1,0 +1,10 @@
+{
+	"import": {
+        "scope": "ahk",
+        "prefix": "im",
+        "body": [
+            "#include ${1:\"C:\\file.ahk\"}",
+        ],
+        "description": "import"
+},
+}

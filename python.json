@@ -1,0 +1,216 @@
+{
+	"var": {
+		"prefix": "v",
+		"body": [
+			"${1:varName} = ${TM_SELECTED_TEXT:${2:value}}",
+		]
+	},
+	"imoprt general": {
+		// "scope": "python",
+		"prefix": "im",
+		"body": [
+			"import ${1:datetime}"
+		],
+		"description": "imoprt general"
+	},
+	"import short": {
+		// "scope": "python",
+		"prefix": "ims",
+		"body": [
+			"from ${1:datetime} import ${2:time}${3: as ${4:shortname}}"
+		],
+		"description": "import short"
+	},
+
+	"import from": {
+        "scope": "python",
+        "prefix": "imf",
+        "body": [
+            "from ${1:module_name} import ${2:*}"
+        ],
+        "description": "import from"
+	},
+
+	"while": {
+		"prefix": "wh",
+		"body": [
+			"while ${1:1}:",
+			"    ${2:pass}",
+			"",
+			""
+		],
+		"description": "while"
+	},
+	"return": {
+		"prefix": "r",
+		"body": [
+			"return ${1}",
+		]
+	},
+	"false": {
+		"prefix": "fl",
+		"body": [
+			"False",
+		]
+	},
+	"true": {
+		"prefix": "tr",
+		"body": [
+			"True",
+		]
+	},
+	"length": {
+		"prefix": "ln",
+		"body": [
+			"len(${1:var})",
+		],
+		"description": "length of var"
+	},
+	"empty check": {
+		"prefix": "emp",
+		"body": [
+			"not ${1:mvar}"
+		],
+		"description": "empty check"
+	},
+	"is num": {
+		"prefix": "isd",
+		"body": [
+			"${1:number}.isdigit()",
+		]
+	},
+
+	"number increment": {
+		// "scope": "python",
+		"prefix": "ni",
+		"body": [
+			"${1:number} += 1"
+		],
+		"description": "number increment"
+},
+
+	"print": {
+		"prefix": "p",
+		"body": "print(${1:${TM_SELECTED_TEXT:\"hello\" + name}})"
+	},
+	"print var": {
+		"prefix": "pv",
+		"body": [
+			"print(${TM_SELECTED_TEXT:\"${1:varName}: \" + ${2:varName}})"
+		],
+		"description": "print var"
+	},
+	"printf": {
+		"prefix": "pf",
+		"body": "print(f'${2:text} {${1:varname}}')"
+	},
+	"print 1 var": {
+		"prefix": "prv1",
+		"body": "print(f'${1:name} = {${2:name}}')"
+	},
+	"print 2 vars": {
+		"prefix": "prv2",
+		"body": "print(f'${1:name1} = {${2:name1}}, ${3:name2} = {${4:name2}}')"
+	},
+	"regex_check": {
+		"prefix": "regsearch",
+		"body": "re.compile(r'${1:pattern}').search(${2:str})",
+		"description": "return boolean"
+	},
+	// -----OS SNIPPETS-----------------------------------
+	
+	"get type of object": {
+		"prefix": "got",
+		"body": "type(${1:var})"
+	},
+	"check instance of var": {
+		"prefix": "isinst",
+		"body": "isinstance(${1:myvar}, ${2:int})"
+	},
+	"check type of var_s": {
+		"prefix": "isinst_s",
+		"body": "isinstance(${1:myvar}, ${2:(str,set,dict,int,float)})"
+	},
+	"random_delay": {
+		"prefix": "rdmd",
+		"body": [
+			"time.sleep(randint(${1:5},${2:10}))"
+		],
+		"description": "from random import randint\nfrom time import sleep",
+	},
+	//---------------------------CLASS----------------------------
+	//---------------------------/CLASS----------------------------
+	// "loguru init": {
+	// 	"prefix": "loginit",
+	// 	"body": [
+	// 		"logger.remove(0)",
+	// 		"logger.add(sys.stderr, format='<green>{message}</green>', colorize=True)",
+	// 		""
+	// 	],
+	// 	"description": "loguru init"
+	// },
+	// "log debug": {
+	// 	"prefix": "ld",
+	// 	"body": [
+	// 		"logger.debug('${1:msg}')",
+	// 		""
+	// 	],
+	// 	"description": "log debug"
+	// },
+	// "log debug 1 var": {
+	// 	"prefix": "lv",
+	// 	"body": [
+	// 		"logger.debug(f'{${1:name}} - ${1:name1}')",
+	// 		// "body": "print(f'${1:name1} = {${2:name1}}, ${3:name2} = {${4:name2}}')"
+	// 	],
+	// 	"description": "log debug 1 var"
+	// },
+	// "log debug 2 var": {
+	// 	"prefix": "lv2",
+	// 	"body": [
+	// 		"logger.debug(f'{${1:name1}} - ${1:name1}, {${2:name2}} - ${2:name2}')"
+	// 	],
+	// 	"description": "log debug 2 var"
+	// },
+	// "log info": {
+	// 	"prefix": "lgi",
+	// 	"body": [
+	// 		"logger.info('${1:msg}')",
+	// 	],
+	// 	"description": "log info"
+	// },
+	// "log error": {
+	// 	"prefix": "lge",
+	// 	"body": [
+	// 		"logger.error('${1:msg}')",
+	// 	],
+	// 	"description": "log error"
+	// },
+	"snippet test generator": {
+		"scope": "python",
+		"prefix": "stg",
+		"body": [
+			"def fname()->int:",
+			"\tstrName = \"hello world\"",
+			"\tnumber = 5",
+			"\tmlist = [1,2,4,5]",
+			"\tstrName.split(' ')",
+		],
+		"description": "snippet test generator"
+	},
+	"python main.py": {
+		"scope": "python",
+		"prefix": "pmf",
+		"body": [
+			"def ${1:fname}()->None:",
+			"\t${2:pass}",
+			"",
+			"def main():",
+			"\t${1:fname}()",
+			"",
+			"if __name__ == \"__main__\":",
+			"\tmain()",
+		],
+		"description": "python main.py"
+	},
+}

@@ -1,0 +1,71 @@
+{
+	
+	"true": {
+		"scope": "javascript, jsx, dart, c, cpp, typescript",
+		"prefix": "tr",
+		"body": [ 
+			"true",
+		]
+	},
+
+	"false": {
+		"scope": "javascript, jsx, dart, c, cpp, typescript",
+		"prefix": "fa",
+		"body": [ 
+			"false",
+		]
+	},
+
+	"while": {
+		"scope": "javascript, typescript, javascriptreact",
+		"prefix": "wh",
+		"body": [
+		  "while(${1:1}) {",
+		  "  ${2}",
+		  "}"
+		],
+		"description": "while"
+	  },
+
+
+	
+	  "if else statement": {
+		"scope": "javascript, jsx, dart, c, cpp",
+		"prefix": "ifel",
+		"body": [
+		  "if(${1}){",
+		  "    ${2}",
+		  "} else {",
+		  "    ${3}",
+		  "}"
+		],
+		"description": "if else statement"
+	  }, 
+
+	  
+
+	  "try catch": {
+		"scope": "javascript, jsx, cpp",
+		"prefix": "trct",
+		"body": [
+		  "try{",
+		  "    ${1://tryexp}",
+		  "} catch(e){          ",
+		  "    ${2://catchexp}",
+		  "}"
+		],
+		"description": "try catch"
+	  },
+
+	//   -------------------------------LIST------------------
+	  "for": {
+		"scope": "javascript, jsx, c, cpp",
+		"prefix": "fr",
+		"body": [
+		  "for (int ${1:i} = 0; ${1:i} < ${2:5}; ${1:i}++) {",
+		  "  ${3://exp}",
+		  "}"
+		],
+		"description": "for"
+	  },
+}

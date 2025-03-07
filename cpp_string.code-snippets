@@ -1,0 +1,29 @@
+{
+	"string init (string)": {
+		"scope": "cpp",
+		"prefix": "si",
+		"body": [
+			// "#include <string>",
+			"string ${1:mystr}(\"${2:string text}\");"
+		],
+		"description": "probably need to add #include <string>"
+	},
+
+	"string init (char)": {
+		"scope": "cpp",
+		"prefix": "si",
+		"body": [
+			"${1:char} ${2:message}[] = ${3:\"hello\"};",
+		],
+		"description": "init str"
+	},
+	
+	"string length": {
+		"scope": "cpp",
+		"prefix": "sl",
+		"body": [
+			"${1:mystr}.length()"
+		],
+		"description": "string length"
+	},
+}

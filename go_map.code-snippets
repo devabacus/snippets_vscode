@@ -1,0 +1,44 @@
+{
+	"map init": {
+		"scope": "go",
+		"prefix": "mi",
+		"body": [
+		  "$mapName := make(map[$string]$int)"
+		 ],
+		"description": "map init"
+	},
+	"map add": {
+		"scope": "go",
+		"prefix": "ma",
+		"body": [
+		  "$mapName[$key] = $value"
+		 ],
+		"description": "map add"
+	},
+	"map get item": {
+		"scope": "go",
+		"prefix": "mgi",
+		"body": [
+		  "$mapName[$key]"
+		 ],
+		"description": "map get item"
+	},
+	"map length": {
+		"scope": "go",
+		"prefix": "ml",
+		"body": [
+		  "len($mapName)"
+		 ],
+		"description": "map length"
+	},
+	"map contains": {
+		"scope": "go",
+		"prefix": "mc",
+		"body": [
+		  "if ${1:val}, exists := ${2:mapName}[${3:key}]; exists {",
+	  	  "    fmt.Println(${1:val})",
+	  	"}" 
+		 ],
+		"description": "map contains"
+	},
+}

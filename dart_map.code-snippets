@@ -1,0 +1,76 @@
+{
+	"map init": {
+		"scope": "dart",
+		"prefix": "mi",
+		"body": [
+		  "var ${1:mapName} = {${2:1:\"one\", 2:\"two\"}};"
+		 ],
+		"description": "map init"
+	},
+	"map length": {
+		"scope": "dart",
+		"prefix": "ml",
+		"body": [
+		  "$mapName.length"
+		 ],
+		"description": "map length"
+	},
+	"map get item": {
+		"scope": "dart",
+		"prefix": "mgi",
+		"body": [
+			"${1:mapName}[${2:key}]"
+		],
+		"description": "map get item"
+	},
+	"map add": {
+		"scope": "dart",
+		"prefix": "ma",
+		"body": [
+			"${1:mapName}[${2:key}] = ${3:value};"
+		],
+		"description": "map add"
+	},
+	"map remove": {
+		"scope": "dart",
+		"prefix": "mrm",
+		"body": [
+			"${1:mapName}.remove(${2:key});"
+		],
+		"description": "map remove"
+	},
+	"map remove by func": {
+		"scope": "dart",
+		"prefix": "mrmf",
+		"body": [
+			"${1:mapName}.removeWhere((${2:k,v})=>${3: });"
+		],
+		"description": "map remove"
+	},
+	"map clear": {
+		"scope": "dart",
+		"prefix": "mclr",
+		"body": [
+			"${1:mapName}.clear();"
+		],
+		"description": "map clear"
+	},
+	"map iterate": {
+		"scope": "dart",
+		"prefix": "mit",
+		"body": [
+			"${1:mapName}.forEach((k, v) {${2}});"
+		],
+		"description": "map iterate"
+	},
+
+	"map contains": {
+		"scope": "dart",
+		"prefix": "mc",
+		"body": [
+		  "$mapName.contains"
+		 ],
+		"description": "map contains"
+	},
+
+}

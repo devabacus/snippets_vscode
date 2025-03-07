@@ -1,0 +1,143 @@
+{
+	"File Read Content": {
+	  "prefix": "flRead",
+	  "scope": "powershell",
+	  "body": [
+		"Get-Content -Path \"${1:путь/к/файлу.txt}\" ${2|-Raw,-Encoding utf8|}"
+	  ],
+	  "description": "Чтение содержимого файла.\n\nПримеры:\n```powershell\n// Простое чтение\nGet-Content -Path \"C:\\logs\\app.log\";\n\n// Чтение как одна строка\nGet-Content -Path \"C:\\logs\\app.log\" -Raw;\n```"
+	},
+	"File Write Content": {
+	  "prefix": "flWrite",
+	  "scope": "powershell",
+	  "body": [
+		"Set-Content -Path \"${1:путь/к/файлу.txt}\" -Value \"${2:содержимое}\" ${3|-Encoding utf8,-Force,-NoNewline|}"
+	  ],
+	  "description": "Запись содержимого в файл.\n\nПримеры:\n```powershell\n// Простая запись\nSet-Content -Path \"C:\\logs\\output.txt\" -Value \"Лог выполнения\";\n\n// Запись с перезаписью существующего файла\nSet-Content -Path \"C:\\logs\\output.txt\" -Value \"Новые данные\" -Force;\n```"
+	},
+	"File Append Content": {
+	  "prefix": "flAppend",
+	  "scope": "powershell",
+	  "body": [
+		"Add-Content -Path \"${1:путь/к/файлу.txt}\" -Value \"${2:добавляемое содержимое}\" ${3|-Encoding utf8,-NoNewline|}"
+	  ],
+	  "description": "Добавление содержимого в конец файла.\n\nПримеры:\n```powershell\n// Добавление строки\nAdd-Content -Path \"C:\\logs\\app.log\" -Value \"[$(Get-Date)] Операция выполнена\";\n\n// Добавление без перевода строки\nAdd-Content -Path \"C:\\logs\\app.log\" -Value \", продолжение\" -NoNewline;\n```"
+	},
+	"File Test Exists": {
+	  "prefix": "flExists",
+	  "scope": "powershell",
+	  "body": [
+		"Test-Path -Path \"${1:путь/к/файлу.txt}\" ${2|-PathType Leaf,-PathType Container|}"
+	  ],
+	  "description": "Проверка существования файла или директории.\n\nПримеры:\n```powershell\n// Проверка существования файла\nif (Test-Path -Path \"C:\\config.json\" -PathType Leaf) {\n    # Файл существует\n};\n\n// Проверка существования директории\nif (Test-Path -Path \"C:\\logs\" -PathType Container) {\n    # Директория существует\n};\n```"
+	},
+	"File Copy": {
+	  "prefix": "flCopy",
+	  "scope": "powershell",
+	  "body": [
+		"Copy-Item -Path \"${1:исходный/путь}\" -Destination \"${2:целевой/путь}\" ${3|-Force,-Recurse|}"
+	  ],
+	  "description": "Копирование файла или директории.\n\nПримеры:\n```powershell\n// Копирование файла\nCopy-Item -Path \"C:\\source\\file.txt\" -Destination \"C:\\target\\file.txt\";\n\n// Копирование с перезаписью\nCopy-Item -Path \"C:\\source\\file.txt\" -Destination \"C:\\target\\file.txt\" -Force;\n\n// Рекурсивное копирование директории\nCopy-Item -Path \"C:\\source\\dir\" -Destination \"C:\\target\" -Recurse;\n```"
+	},
+	"File Move": {
+	  "prefix": "flMove",
+	  "scope": "powershell",
+	  "body": [
+		"Move-Item -Path \"${1:исходный/путь}\" -Destination \"${2:целевой/путь}\" ${3|-Force|}"
+	  ],
+	  "description": "Перемещение файла или директории.\n\nПримеры:\n```powershell\n// Перемещение файла\nMove-Item -Path \"C:\\source\\file.txt\" -Destination \"C:\\target\\file.txt\";\n\n// Перемещение с перезаписью\nMove-Item -Path \"C:\\source\\file.txt\" -Destination \"C:\\target\\file.txt\" -Force;\n```"
+	},
+	"File Remove": {
+	  "prefix": "flRemove",
+	  "scope": "powershell",
+	  "body": [
+		"Remove-Item -Path \"${1:путь/к/файлу}\" ${2|-Force,-Recurse,-Confirm:\\$false|}"
+	  ],
+	  "description": "Удаление файла или директории.\n\nПримеры:\n```powershell\n// Удаление файла\nRemove-Item -Path \"C:\\logs\\old.log\";\n\n// Принудительное удаление\nRemove-Item -Path \"C:\\logs\\important.log\" -Force;\n\n// Рекурсивное удаление директории\nRemove-Item -Path \"C:\\old_logs\" -Recurse;\n\n// Удаление без запроса подтверждения\nRemove-Item -Path \"C:\\temp\" -Recurse -Confirm:$false;\n```"
+	},
+	"File Create Directory": {
+	  "prefix": "flMkDir",
+	  "scope": "powershell",
+	  "body": [
+		"New-Item -Path \"${1:путь/к/директории}\" -ItemType Directory ${2|-Force|}"
+	  ],
+	  "description": "Создание новой директории.\n\nПримеры:\n```powershell\n// Создание директории\nNew-Item -Path \"C:\\logs\\archive\" -ItemType Directory;\n\n// Создание с перезаписью существующей\nNew-Item -Path \"C:\\logs\\temp\" -ItemType Directory -Force;\n```"
+	},
+	"File Create Empty File": {
+	  "prefix": "flTouch",
+	  "scope": "powershell",
+	  "body": [
+		"New-Item -Path \"${1:путь/к/файлу.txt}\" -ItemType File ${2|-Force|}"
+	  ],
+	  "description": "Создание пустого файла.\n\nПримеры:\n```powershell\n// Создание пустого файла\nNew-Item -Path \"C:\\logs\\app.log\" -ItemType File;\n\n// Создание с перезаписью существующего\nNew-Item -Path \"C:\\config.json\" -ItemType File -Force;\n```"
+	},
+	"File Get Properties": {
+	  "prefix": "flProps",
+	  "scope": "powershell",
+	  "body": [
+		"Get-ItemProperty -Path \"${1:путь/к/файлу}\" ${2|-Name,-LastWriteTime,-Length|}"
+	  ],
+	  "description": "Получение свойств файла.\n\nПримеры:\n```powershell\n// Получение всех свойств\n$props = Get-ItemProperty -Path \"C:\\app.log\";\n\n// Получение размера файла\n$size = (Get-ItemProperty -Path \"C:\\app.log\").Length;\n\n// Получение времени последнего изменения\n$modified = (Get-ItemProperty -Path \"C:\\app.log\").LastWriteTime;\n```"
+	},
+	"File List Directory": {
+	  "prefix": "flList",
+	  "scope": "powershell",
+	  "body": [
+		"Get-ChildItem -Path \"${1:путь/к/директории}\" ${2|-Filter \"*.txt\",-Recurse,-File,-Directory|}"
+	  ],
+	  "description": "Получение списка файлов в директории.\n\nПримеры:\n```powershell\n// Список всех элементов\nGet-ChildItem -Path \"C:\\logs\";\n\n// Только файлы с определенным расширением\nGet-ChildItem -Path \"C:\\docs\" -Filter \"*.pdf\";\n\n// Рекурсивный поиск\nGet-ChildItem -Path \"C:\\project\" -Recurse -Filter \"*.cs\";\n\n// Только файлы (без директорий)\nGet-ChildItem -Path \"C:\\data\" -File;\n\n// Только директории\nGet-ChildItem -Path \"C:\\data\" -Directory;\n```"
+	},
+	"File Get Content Binary": {
+	  "prefix": "flReadBin",
+	  "scope": "powershell",
+	  "body": [
+		"[System.IO.File]::ReadAllBytes(\"${1:путь/к/файлу.bin}\")"
+	  ],
+	  "description": "Чтение бинарного файла в массив байтов.\n\nПримеры:\n```powershell\n// Чтение бинарного файла\n$bytes = [System.IO.File]::ReadAllBytes(\"C:\\data.bin\");\n\n// Чтение и сохранение в другой файл\n$bytes = [System.IO.File]::ReadAllBytes(\"C:\\source.bin\");\n[System.IO.File]::WriteAllBytes(\"C:\\target.bin\", $bytes);\n```"
+	},
+	"File Write Content Binary": {
+	  "prefix": "flWriteBin",
+	  "scope": "powershell",
+	  "body": [
+		"[System.IO.File]::WriteAllBytes(\"${1:путь/к/файлу.bin}\", ${2:массив_байтов})"
+	  ],
+	  "description": "Запись массива байтов в бинарный файл.\n\nПримеры:\n```powershell\n// Запись массива байтов\n$bytes = [byte[]]@(0x48, 0x65, 0x6C, 0x6C, 0x6F);\n[System.IO.File]::WriteAllBytes(\"C:\\output.bin\", $bytes);\n```"
+	},
+	"File Read Lines": {
+	  "prefix": "flReadLines",
+	  "scope": "powershell",
+	  "body": [
+		"${1:$$lines} = Get-Content -Path \"${2:путь/к/файлу.txt}\" -ReadCount 0"
+	  ],
+	  "description": "Чтение файла построчно в массив.\n\nПримеры:\n```powershell\n// Чтение всех строк в массив\n$lines = Get-Content -Path \"C:\\logs\\app.log\" -ReadCount 0;\n\n// Обработка каждой строки\nforeach ($line in $lines) {\n    if ($line -match \"ERROR\") {\n        Write-Host \"Found error: $line\";\n    }\n};\n```"
+	},
+	"File Read Stream": {
+	  "prefix": "flReadStream",
+	  "scope": "powershell",
+	  "body": [
+		"${1:$$streamReader} = [System.IO.StreamReader]::new(\"${2:путь/к/файлу.txt}\")",
+		"try {",
+		"    while ((${1:$$line} = ${3:$$streamReader}.ReadLine()) -ne $null) {",
+		"        ${4:# Обработка строки}",
+		"    }",
+		"} finally {",
+		"    ${3:$$streamReader}.Close()",
+		"}"
+	  ],
+	  "description": "Потоковое чтение файла для больших файлов.\n\nПримеры:\n```powershell\n// Эффективное чтение большого файла\n$streamReader = [System.IO.StreamReader]::new(\"C:\\logs\\huge.log\");\ntry {\n    while (($line = $streamReader.ReadLine()) -ne $null) {\n        # Обработка строки без загрузки всего файла в память\n        if ($line -match \"Critical\") {\n            Write-Host $line;\n        }\n    }\n} finally {\n    $streamReader.Close();\n};\n```"
+	},
+	"File Write Stream": {
+	  "prefix": "flWriteStream",
+	  "scope": "powershell",
+	  "body": [
+		"${1:$$streamWriter} = [System.IO.StreamWriter]::new(\"${2:путь/к/файлу.txt}\"${3:, $$true})",
+		"try {",
+		"    ${1:$$streamWriter}.WriteLine(\"${4:текст для записи}\")",
+		"    ${5:# Дополнительные записи}",
+		"} finally {",
+		"    ${1:$$streamWriter}.Close()",
+		"}"
+	  ],
+	  "description": "Потоковая запись в файл. Второй параметр true для добавления.\n\nПримеры:\n```powershell\n// Запись в новый файл\n$streamWriter = [System.IO.StreamWriter]::new(\"C:\\logs\\output.log\");\ntry {\n    $streamWriter.WriteLine(\"Начало лога\");\n    $streamWriter.WriteLine(\"Строка 2\");\n} finally {\n    $streamWriter.Close();\n};\n\n// Добавление в существующий файл\n$streamWriter = [System.IO.StreamWriter]::new(\"C:\\logs\\app.log\", $true);\ntry {\n    $streamWriter.WriteLine(\"[$(Get-Date)] Новая запись\");\n} finally {\n    $streamWriter.Close();\n};\n```"
+	}
+  }

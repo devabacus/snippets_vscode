@@ -1,0 +1,64 @@
+{
+	"map declare": {
+		"scope": "php",
+		"prefix": "md",
+		"body": [
+		  "$${1:$arrName} = array();"
+		 ],
+		"description": "map declare"
+	},
+	
+	"map init": {
+		"scope": "php",
+		"prefix": "mi",
+		"body": [
+		  "$${1:$arrName} = array(${2:1=>\"one\", 2=>\"two\"});"
+		 ],
+		"description": "map init"
+	},
+	"map length": {
+		"scope": "php",
+		"prefix": "ml",
+		"body": [
+			"count($${1:arrName})"
+		],
+		"description": "map length"
+	},
+	"map iterate": {
+		"scope": "php",
+		"prefix": "mit",
+		"body": [
+		  "foreach ($${1:arrName} as $$key => $$value) {",
+		  "   echo \"key=$$key, Value=$$value\\n\";",
+		  "}"
+		 ],
+		"description": "map iterate"
+	},
+
+	"map add": {
+		"scope": "php",
+		"prefix": "ma",
+		"body": [
+		  "$$arrName[$key] = $value;"
+		 ],
+		"description": "map add"
+	},
+	"map remove": {
+		"scope": "php",
+		"prefix": "mrm",
+		"body": [
+		  "unset($$arrName[$key]);"
+		 ],
+		"description": "map remove"
+	},
+	"map clear": {
+		"scope": "php",
+		"prefix": "mclr",
+		"body": [
+		  "foreach ($${1:arrName} as $$key => $$value) {",
+		  "    unset($${1:arrName}[$$key]);",
+		  "}"
+		 ],
+		"description": "map clear"
+	},
+}

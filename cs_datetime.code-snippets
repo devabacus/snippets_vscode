@@ -1,0 +1,50 @@
+{
+	"datetime create": {
+		"scope": "csharp",
+		"prefix": "dti",
+		"body": [
+		  "var $mdate = new DateTime($year, $month, $day);"
+		 ],
+		"description": "datetime create"
+	},
+	"datetime now": {
+		"scope": "csharp",
+		"prefix": "dtn",
+		"body": [
+		  "DateTime.Now"
+		 ],
+		"description": "datetime now"
+	},
+	"datetime format": {
+		"scope": "csharp",
+		"prefix": "dtf",
+		"body": [
+		  "var ${1:curDateTime} = ${2:DateTime.Now}.ToString(${3:\"dd/mm/yyyy hh:mm\"});"
+		 ],
+		"description": "datetime format"
+	},
+	"datetime unix": {
+		"scope": "csharp",
+		"prefix": "dtu",
+		"body": [
+		  "var ${1:unixTime} = ${2:DateTime.Now}.Subtract(DateTime.UnixEpoch).TotalSeconds;"
+		 ],
+		"description": "datetime unix"
+	},
+	"datetime change": {
+		"scope": "csharp",
+		"prefix": "dtch",
+		"body": [
+		  "DateTime.Now.${1:AddDays}(${2:-5})"
+		 ],
+		"description": "datetime change"
+	},
+	"datetime value": {
+		"scope": "csharp",
+		"prefix": "dtgv",
+		"body": [
+		  "$mdate.$Day"
+		 ],
+		"description": "datetime value"
+	},
+}

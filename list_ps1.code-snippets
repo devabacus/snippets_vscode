@@ -1,0 +1,42 @@
+{
+	"list init": {
+		"scope": "powershell",
+		"prefix": "li",
+		"body": [
+			"$${1:listName} = ${2:1,2,3,4,5,6}"
+		],
+		"description": "list init. For one item list: listName = ,7"
+	},
+	"list init range": {
+		"scope": "powershell",
+		"prefix": "lir",
+		"body": [
+			"$${1:C} = ${2:5}..${3:8}"
+		],
+		"description": "list init range"
+	},
+	"get list item": {
+		"scope": "powershell",
+		"prefix": "lgi",
+		"body": [
+			"$${1:ArrayName}[${2:index}]"
+		],
+		"description": "get list item"
+	},
+	"list get items": {
+		"scope": "powershell",
+		"prefix": "lgis",
+		"body": [
+			"$${1:listName}[${2:0..3}]"
+		],
+		"description": "$a[-3..-1], $a[0,2+4..6]"
+	},
+	"list length": {
+		"scope": "powershell",
+		"prefix": "ll",
+		"body": [
+			"$${1:listName}.Length"
+		],
+		"description": "list length"
+	},
+}

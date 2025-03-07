@@ -1,0 +1,20 @@
+{
+	"string type": {
+		"scope": "typescript",
+		"prefix": "ts",
+		"body": [
+		  "string"
+		 ],
+		"description": "string type"
+	},
+
+	"int type": {
+		"scope": "typescript",
+		"prefix": "ti",
+		"body": [
+		  "number"
+		 ],
+		"description": "int type"
+	},
+	
+}

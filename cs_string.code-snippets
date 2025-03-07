@@ -1,0 +1,196 @@
+{
+	"string init": {
+		"scope": "csharp",
+		"prefix": "si",
+		"body": [
+			"string ${1:strName} = ${TM_SELECTED_TEXT:\"${2}\"};"
+		],
+		"description": "string init"
+	},
+	"string length": {
+		"scope": "csharp",
+		"prefix": "sl",
+		"body": [
+			"${1:myStr}.Length"
+		],
+		"description": "string length"
+	},
+	"string empty check": {
+		"scope": "csharp",
+		"prefix": "se",
+		"body": [
+		  "${1:myStr}.Length == 0"
+		 ],
+		"description": "string empty check"
+	},
+
+	"string format": {
+		"scope": "csharp, java",
+		"prefix": "sf",
+		"body": [
+		  "${1:varName} + \" text\""
+		 ],
+		"description": "string format"
+	},
+
+	"int to string": {
+		"scope": "csharp, java",
+		"prefix": "sts",
+		"body": [
+		  "${1:mynum}.ToString()"
+		 ],
+		"description": "int to string"
+	},
+
+	"string contains": {
+		"scope": "csharp",
+		"prefix": "sc",
+		"body": [
+		  "${1:myStr}.Contains('${2:x}')"
+		 ],
+		"description": "string contains"
+	},
+
+	"string slice": {
+		"scope": "csharp",
+		"prefix": "ss",
+		"body": [
+		  "${1:strName}.Substring(${2:startIndex},${3:length})"
+		 ],
+		"description": "string slice"
+	},
+	"string split": {
+		"scope": "csharp",
+		"prefix": "ssp",
+		"body": [
+		  "${1:strName}.Split('${2: }')"
+		 ],
+		"description": "string split"
+	},
+
+	"string to upper case": {
+		"scope": "csharp",
+		"prefix": "sup",
+		"body": [
+		  "${1:strName}.ToUpper()"
+		 ],
+		"description": "string to upper case"
+	},
+	"string to lower case": {
+		"scope": "csharp",
+		"prefix": "slo",
+		"body": [
+		  "${1:strName}.ToLower()"
+		 ],
+		"description": "string to lower case"
+	},
+	"string starts with": {
+		"scope": "csharp",
+		"prefix": "sst",
+		"body": [
+		  "${1:strName}.StartsWith(\"${2:char}\")"
+		 ],
+		"description": "string starts with"
+	},
+
+	"string ends with": {
+		"scope": "csharp",
+		"prefix": "snd",
+		"body": [
+		  "${1:strName}.EndsWith(\"${2:char}\")"
+		 ],
+		"description": "string ends with"
+	},
+
+	"string pad left": {
+		"scope": "csharp",
+		"prefix": "spl",
+		"body": [
+		  "${1:strName}.PadLeft(${2:totalWidth})"
+		 ],
+		"description": "string pad left"
+	},
+
+	"string pad right": {
+		"scope": "csharp",
+		"prefix": "spr",
+		"body": [
+		  "${1:strName}.PadRight(${2:totalWidth})"
+		 ],
+		"description": "string pad right"
+	},
+
+	"string trim": {
+		"scope": "csharp",
+		"prefix": "st",
+		"body": [
+		  "${1:strName}.Trim()"
+		 ],
+		"description": "string trim"
+	}, 
+
+	"string index of item": {
+		"scope": "csharp",
+		"prefix": "sgidx",
+		"body": [
+		  "${1:strName}.IndexOf(\"${2:char(s)}\")"
+		 ],
+		"description": "string index of item"
+	},
+
+	"string replace": {
+		"scope": "csharp",
+		"prefix": "sr",
+		"body": [
+		  "${1:strName}.Replace(\"${2:oldChar}\", \"${3:newChar}\")"
+		 ],
+		"description": "string replace"
+	},
+
+	"string contains by regex": {
+		"scope": "csharp",
+		"prefix": "scrg",
+		"body": [
+		  "Regex.IsMatch(${1:myStr}, @\"${2:\\d}\")"
+		 ],
+		"description": "string contains by regex"
+	},
+
+	"string get item by regex": {
+		"scope": "csharp",
+		"prefix": "sgirg",
+		"body": [
+		  "Regex.Match(${1:myStr}, @\"${2:\\d}\").Value"
+		 ],
+		"description": "string get item by regex"
+	},
+
+	"string get index of item by regex": {
+		"scope": "csharp",
+		"prefix": "sgidxrg",
+		"body": [
+		  "Regex.Match(${1:myStr}, @\"${2:\\d}\").Index"
+		 ],
+		"description": "string index of item by regex"
+	},
+
+	"string split by regex": {
+		"scope": "csharp",
+		"prefix": "ssprg",
+		"body": [
+		  "string[] ${3:resList} = Regex.Split(${1:strName}, @\"${2:\\d}\");"
+		 ],
+		"description": "string split by regex"
+	},
+
+	"string replace by regex": {
+		"scope": "csharp",
+		"prefix": "srrg",
+		"body": [
+		  "${1:strName} = Regex.Replace(${1:strName}, @\"${2:\\d}\", \"${3:-}\");"
+		 ],
+		"description": "string replace by regex"
+	},
+	
+	
+}

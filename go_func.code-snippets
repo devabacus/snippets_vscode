@@ -1,0 +1,28 @@
+{
+	"func init": {
+		"scope": "go",
+		"prefix": "fi",
+		"body": [
+		  "func ${1:fName}(${2:x int})${3: int} {",
+		  "   ${4}",
+		  "}"
+		 ],
+		"description": "func init"
+	},
+	"param positional": {
+		"scope": "go",
+		"prefix": "pp",
+		"body": [
+		  "$x $int"
+		 ],
+		"description": "param positional"
+	},
+	"param list": {
+		"scope": "go",
+		"prefix": "pl",
+		"body": [
+		  "$args ...$int"
+		 ],
+		"description": "param list"
+	},
+}

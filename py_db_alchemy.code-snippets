@@ -1,0 +1,20 @@
+{
+	"db get all item": {
+        "scope": "python",
+        "prefix": "dbgall",
+        "body": [
+            "${1:session}.query(${2:Model}).all()",
+        ],
+        "description": "db get all item"
+},
+
+// self.session.query(Message).filter(Model.id == value)
+"db get filter item": {
+	"scope": "python",
+	"prefix": "dbgf",
+	"body": [
+		"${1:session}.query(${2:Model}).filter(${3:Model.id == value}).${4|first(),last()|}",
+	],
+	"description": "db get filter item"
+},
+}

@@ -1,0 +1,108 @@
+{
+    "path file name": {
+        "scope": "python",
+        "prefix": "flphname",
+        "body": [
+            "Path(${1:\"path/to/dir_file\"}).name",
+        ],
+        "description": "path file name"
+    },
+    "path file stem": {
+        "scope": "python",
+        "prefix": "flphstem",
+        "body": [
+            "Path(${1:\"path/to/dir_file\"}).stem",
+        ],
+        "description": "path file stem"
+    },
+    "path file suffix": {
+        "scope": "python",
+        "prefix": "flphsuffix",
+        "body": [
+            "Path(${1:\"path/to/dir_file\"}).suffix",
+        ],
+        "description": "path file suffix"
+    },
+    "path file parent": {
+        "scope": "python",
+        "prefix": "flphparent",
+        "body": [
+            "Path(${1:\"path/to/dir_file\"}).parent",
+        ],
+        "description": "path file parent"
+    },
+    "path parents by idx": {
+        "scope": "python",
+        "prefix": "flPhParentsIdx",
+        "body": [
+            "Path(${1:\"path/to/dir_file\"}).parents[${2:idx}]",
+        ],
+        "description": "path parents by idx"
+    },
+    "path exists": {
+        "scope": "python",
+        "prefix": "flphex",
+        "body": [
+            "Path(${1:\"path\"}).exists()",
+        ],
+        "description": "path exists"
+    },
+    "path exist2": {
+        "scope": "python",
+        "prefix": "flphex2",
+        "body": [
+            "os.path.exists(${1:\"path_to_file_or_dir\"})",
+        ],
+        "description": "path exist"
+    },
+    "path is file": {
+        "scope": "python",
+        "prefix": "flphisfile",
+        "body": [
+            "Path(${1:\"path/to/dir_file\"}).is_file()",
+        ],
+        "description": "path is file"
+    },
+    "path is dir": {
+        "scope": "python",
+        "prefix": "flphisdir",
+        "body": [
+            "Path(${1:\"path/to/dir_file\"}).is_dir()",
+        ],
+        "description": "path is dir"
+    },
+    "path join": {
+        "scope": "python",
+        "prefix": "flphj",
+        "body": [
+            "path = Path(${1:\"path1\"})",
+            "full_path = ${2:'path2'} / path",
+            "",
+        ],
+        "description": "path join"
+    },
+    "path join2": {
+        "scope": "python",
+        "prefix": "flphj2",
+        "body": [
+            "os.path.join(${1:\"path1\"}, ${2:\"path2\"})",
+        ],
+        "description": "path join2"
+    },
+    "dir list": {
+        "scope": "python",
+        "prefix": "flls",
+        "body": [
+            "os.listdir(${1:'dir_path'})",
+        ],
+        "description": "dir list"
+    },
+    "file get path": {
+        "scope": "python",
+        "prefix": "flphget",
+        "body": [
+            "Path(${1:\"path\"}).resolve()",
+        ],
+        "description": "file get path"
+    },
+}

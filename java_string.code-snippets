@@ -1,0 +1,162 @@
+{
+	"string init": {
+		"scope": "java",
+		"prefix": "si",
+		"body": [
+			"String ${1:strName} = ${TM_SELECTED_TEXT:\"${2}\"};"
+		],
+		"description": "string init"
+	},
+
+	"string length": {
+		"scope": "java",
+		"prefix": "sl",
+		"body": [
+		  "$strName.length()"
+		 ],
+		"description": "string length"
+	}, 
+	"string empty check": {
+		"scope": "java",
+		"prefix": "se",
+		"body": [
+		  "$strName.isEmpty()"
+		 ],
+		"description": "string empty check"
+	}, 
+	"string contains": {
+		"scope": "java",
+		"prefix": "sc",
+		"body": [
+		  "${1:myStr}.contains(\"${2:x}\")"
+		 ],
+		"description": "string contains"
+	},
+
+	"string slice": {
+		"scope": "java",
+		"prefix": "ssl",
+		"body": [
+		  "${1:strName}.substring(${2:startIndex},${3:endIndex})"
+		 ],
+		"description": "string slice"
+	},
+
+	"string split": {
+		"scope": "java",
+		"prefix": "ssp",
+		"body": [
+		  "${1:strName}.split(\"${2: }\")"
+		 ],
+		"description": "string split"
+	},
+
+	"string to upper case": {
+		"scope": "java",
+		"prefix": "sup",
+		"body": [
+		  "${1:strName}.toUpperCase()"
+		 ],
+		"description": "string to upper case"
+	},
+	"string to lower case": {
+		"scope": "java",
+		"prefix": "slo",
+		"body": [
+		  "${1:strName}.toLowerCase()"
+		 ],
+		"description": "string to lower case"
+	},
+
+	"string starts with": {
+		"scope": "java",
+		"prefix": "sst",
+		"body": [
+		  "${1:strName}.startsWith(\"${2:char}\")"
+		 ],
+		"description": "string starts with"
+	},
+
+	"string ends with": {
+		"scope": "java",
+		"prefix": "snd",
+		"body": [
+		  "${1:strName}.endsWith(\"${2:char}\")"
+		 ],
+		"description": "string ends with"
+	},
+	"string trim": {
+		"scope": "java",
+		"prefix": "st",
+		"body": [
+		  "${1:strName}.strip()"
+		 ],
+		"description": "string trim"
+	},
+
+	"string get item by index": {
+		"scope": "java",
+		"prefix": "sgi",
+		"body": [
+		  "$strName.charAt($index)"
+		 ],
+		"description": "string char by index"
+	},
+
+	"string get item by regex": {
+		"scope": "java",
+		"prefix": "sgirg",
+		"body": [
+		  "Matcher matcher = Pattern.compile(\"${1:\\\\\\d}\").matcher(${2:strName});",
+		  "while (matcher.find()) {",
+		  "    System.out.println(${2:strName}.substring(matcher.start(), matcher.end()));",
+		  "}"
+		 ],
+		"description": "string get item by regex"
+	},
+
+	"string get index of item by regex": {
+		"scope": "java",
+		"prefix": "sgidxrg",
+		"body": [
+		  "Matcher matcher = Pattern.compile(\"${1:\\\\\\d}\").matcher(${2:strName});",
+		  "while (matcher.find()) {",
+		  "    System.out.println(matcher.start());",
+		  "}"
+		 ],
+		"description": "string get index of item by regex"
+	},
+
+	"string contains by regex": {
+		"scope": "java",
+		"prefix": "scrg",
+		"body": [
+		  "Pattern.matches(\"${1:.*\\\\\\d.*}\", ${2:\"hello 3world\"})"
+		 ],
+		"description": "string contains by regex"
+	},
+
+	"string split by regex": {
+		"scope": "java",
+		"prefix": "ssprg",
+		"body": [
+		  "${1:strName}.split(\"${2:\\\\\\d}\")"
+		 ],
+		"description": "string split by regex"
+	},
+
+	"string replace by regex": {
+		"scope": "java",
+		"prefix": "srrg",
+		"body": [
+		  "Matcher matcher = Pattern.compile(\"${1:\\\\\\d}\").matcher(${2:strName});",
+		  "while (matcher.find()) {",
+		  "    System.out.println(matcher.replaceAll(${3:\"_\"}));",
+		  "}"
+		 ],
+		"description": "string replace by regex"
+	},
+	
+
+
+}

@@ -1,0 +1,44 @@
+{
+	"func init": {
+        "scope": "java, csharp",
+        "prefix": "fi",
+        "body": [
+          "static ${1:void} ${2:fName}(${3}) {",
+          "    ${4}",
+          "}"
+         ],
+        "description": "func init"
+    },
+	"func lambda": {
+        "scope": "java",
+        "prefix": "fl",
+        "body": [
+          "(${1}) -> {${2}}"
+         ],
+        "description": "func lambda"
+    },
+	"func lambda short": {
+        "scope": "java",
+        "prefix": "fls",
+        "body": [
+          "(${1}) -> ${2}"
+         ],
+        "description": "func lambda short"
+    },
+	"param positional": {
+        "scope": "java, csharp,cpp",
+        "prefix": "pp",
+        "body": [
+          "$int $x"
+         ],
+        "description": "param positional"
+    },
+	"param list": {
+		"scope": "java",
+		"prefix": "pl",
+		"body": [
+		  "$int...$args"
+		 ],
+		"description": "param list"
+	},
+}

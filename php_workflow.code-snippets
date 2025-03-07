@@ -1,0 +1,31 @@
+{
+	"if short": {
+        "scope": "php",
+        "prefix": "ifs",
+        "body": [
+          "$${1:retVal} = (${2:condition}) ? ${3:a} : ${4:b}"
+         ],
+        "description": "if short"
+    },
+	"if empty": {
+        "scope": "php",
+        "prefix": "ife",
+        "body": [
+          "if (empty($${1:strvar})) {",
+          "  ${2:# code...}",
+          "}"
+         ],
+        "description": "if empty"
+    },
+
+	"if digit": {
+        "scope": "php",
+        "prefix": "ifd",
+        "body": [
+          "if (is_numeric($${1:mvar})) {",
+          "  ${2:# code...}",
+          "}"
+         ],
+        "description": "if digit"
+    },
+}

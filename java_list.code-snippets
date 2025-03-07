@@ -1,0 +1,178 @@
+{
+	"list declare": {
+		"scope": "java",
+		"prefix": "ld",
+		"body": [
+		  "var ${1:mlist} = new ArrayList<${2:String}>();"
+		 ],
+		"description": "list declare"
+	},
+
+	"array declare": {
+		"scope": "java",
+		"prefix": "ld2",
+		"body": [
+		  "$String[] $marr;"
+		 ],
+		"description": "array declare"
+	},
+
+	"list init": {
+		"scope": "java",
+		"prefix": "li",
+		"body": [
+		  "var ${1:mlist} = new ArrayList<${2:String}>();"
+		 ],
+		"description": "list init"
+	},
+
+	"array init": {
+		"scope": "java",
+		"prefix": "li2",
+		"body": [
+		  "${1:String}[] ${2:marr} = {${3: \"one\", \"two\", \"three\"}};"
+		 ],
+		"description": "array init"
+	},
+
+	"list to string": {
+		"scope": "java",
+		"prefix": "lts",
+		"body": [
+		  "String.join(\"${2:,}\", ${1:mcollect})"
+		 ],
+		"description": "list to string"
+	},
+
+	"list length": {
+		"scope": "java",
+		"prefix": "ll",
+		"body": [
+		  "$mlist.size()"
+		 ],
+		"description": "list length"
+	},
+
+	"array length": {
+		"scope": "java",
+		"prefix": "ll2",
+		"body": [
+		  "$marr.length"
+		 ],
+		"description": "array length"
+	},
+
+	"list get item": {
+		"scope": "java",
+		"prefix": "lgi",
+		"body": [
+		  "$mlist.get($index)"
+		 ],
+		"description": "list get item"
+	},
+	"array get item": {
+		"scope": "java",
+		"prefix": "lgi2",
+		"body": [
+		  "$marr[$index]"
+		 ],
+		"description": "array get item "
+	},
+
+	"list append": {
+		"scope": "java",
+		"prefix": "la",
+		"body": [
+		  "$mlist.add($item);"
+		 ],
+		"description": "list append"
+	},
+	"list slice": {
+		"scope": "java",
+		"prefix": "lsl",
+		"body": [
+		  "$mlist.subList($fromIndex, $toIndex)"
+		 ],
+		"description": "list slice"
+	},
+	"list last item": {
+		"scope": "java",
+		"prefix": "le",
+		"body": [
+		  "${1:mlist}.get(${1:mlist}.size() - 1)"
+		 ],
+		"description": "list last item"
+	},
+	"list map": {
+		"scope": "java",
+		"prefix": "lm",
+		"body": [
+		  "var ${1:mlist2} = ${2:mlist}.stream().map(${3:item->(item + \"_x\")}).toList();"
+		 ],
+		"description": "list map"
+	},
+	"list sort": {
+		"scope": "java",
+		"prefix": "lsrt",
+		"body": [
+		  "$mlist.sort($null);"
+		 ],
+		"description": "list sort"
+	},
+	"list max value": {
+		"scope": "java",
+		"prefix": "lmax",
+		"body": [
+		  "Collections.max($mlist)"
+		 ],
+		"description": "list max value"
+	},
+	"list min value": {
+		"scope": "java",
+		"prefix": "lmin",
+		"body": [
+		  "Collections.min($mlist)"
+		 ],
+		"description": "list min value"
+	},
+	"list insert item": {
+		"scope": "java",
+		"prefix": "lins",
+		"body": [
+		  "$mlist.add($index, $element)"
+		 ],
+		"description": "list insert item"
+	},
+	"list extend": {
+		"scope": "java",
+		"prefix": "lext",
+		"body": [
+		  "$mlist.$addAll"
+		 ],
+		"description": "list extend"
+	},
+	"list index of item": {
+		"scope": "java",
+		"prefix": "lidx",
+		"body": [
+		  "$mlist.indexOf($item)"
+		 ],
+		"description": "list index of item"
+	},
+	"list remove": {
+		"scope": "java",
+		"prefix": "lrm",
+		"body": [
+		  "$mlist.$remove"
+		 ],
+		"description": "list remove"
+	},
+	"list reverse": {
+		"scope": "java",
+		"prefix": "lrv",
+		"body": [
+		  "Collections.$reverse"
+		 ],
+		"description": "list reverse"
+	},
+}

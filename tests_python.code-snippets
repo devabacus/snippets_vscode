@@ -1,0 +1,38 @@
+{
+	"test function": {
+		"scope": "python",
+		"prefix": "fnt",
+		"body": [
+			"def test_${1:name}():",
+			"    ${2:pass}"
+		],
+		"description": "test function"
+	},
+	"test simple function": {
+		"scope": "python",
+		"prefix": "tfn",
+		"body": [
+			"assert ${1:fn_for_test}(${2}) == ${3:valAnyType}"
+		],
+		"description": "test simple function"
+	},
+
+	"test statement": {
+		"scope": "python",
+		"prefix": "tst",
+		"body": [
+			"assert ${1:statement} == ${2:expectValue}"
+		],
+		"description": "test statement"
+	},
+
+	"test Exception": {
+		"scope": "python",
+		"prefix": "tex",
+		"body": [
+			"with pytest.raises(${1:Exception}):",
+			"    ${2:fn_name}(${3})"
+		],
+		"description": "test Exception"
+	}
+}

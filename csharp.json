@@ -1,0 +1,23 @@
+{
+	"var init": {
+		"prefix": "v",
+		"body": [
+		  "var $varname = $value"
+		 ],
+		"description": "var init"
+	},
+
+	"print to console": {
+		"prefix": "p",
+		"body": [
+			"Console.WriteLine(${1:${TM_SELECTED_TEXT:\"hello\" + name}});"
+		],
+		"description": "print to console"
+	},
+
+
+
+
+
+	
+}

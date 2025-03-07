@@ -1,0 +1,38 @@
+{
+
+
+	"ifelif": {
+		"prefix": "ifelif",
+		"body": [
+		  "if ${1:condition1} {",
+	  	  "    $3",
+	  	  "} else if ${2:condition2} {",
+	  	  "    $4",
+	  	  "} else {",
+	  	  "    $5",
+	  	"}",
+		 ],
+		"description": "ifelifel"
+	},
+
+	"if empty": {
+		"scope": "go",
+		"prefix": "ife",
+		"body": [
+		  "if len(${1:strName}) != 0 {",
+	  	  "  ${2}",
+	  	  "}"
+		 ],
+		"description": "if empty"
+	},	
+	"for in": {
+		"scope": "go",
+		"prefix": "forin",
+		"body": [
+		  "for ${1:_, }${2:v} := range ${3:listName}{",
+	  	  "  ${4:fmt.Println(v)}",
+	  	  "}"
+		 ],
+		"description": "for in. _ : index"
+	},
+}

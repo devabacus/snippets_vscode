@@ -1,0 +1,51 @@
+{
+    "screen": {
+        "scope": "dart",
+        "prefix": "wScreen",
+        "body": [
+            "class ${1:SecondScreen} extends StatelessWidget {",
+            "\t  const ${1:SecondScreen}({super.key});",
+            "",
+            "\t  @override",
+            "\t  Widget build(BuildContext context) {",
+            "\t\t    return Scaffold(",
+            "\t\t\t      body: Center(child: Text(\"${1:SecondScreen}\", style: TextStyle(fontSize: 20))),",
+            "\t\t    );",
+            "\t  }",
+            "}",
+        ],
+        "description": "screen"
+    },
+    "screen with appbar": {
+        "scope": "dart",
+        "prefix": "wScreenAppbar",
+        "body": [
+            "class ${1:SecondScreen} extends StatelessWidget {",
+            "\t  const ${1:SecondScreen}({super.key});",
+            "",
+            "\t  @override",
+            "\t  Widget build(BuildContext context) {",
+            "\t\t    return Scaffold(",
+            "\t\t\t      appBar: AppBar(title: Text(\"${1:SecondScreen}\"),),",
+            "\t\t\t      body: Center(child: Text(\"${1:SecondScreen}\", style: TextStyle(fontSize: 20))),",
+            "\t\t    );",
+            "\t  }",
+            "}",
+            "",
+        ],
+        "description": "screen with appbar"
+    },
+
+"floating action button": {
+    "scope": "dart",
+    "prefix": "wflbtn",
+    "body": [
+      "floatingActionButton: FloatingActionButton(",
+      "\tonPressed: ${2:},",
+      "\tchild: Icon(Icons.${1:add}),",
+      "\t),",
+    ],
+    "description": "floating action button"
+},
+
+}

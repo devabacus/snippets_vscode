@@ -1,0 +1,10 @@
+{
+	"pause": {
+		"scope": "debug_start.bat",
+		"prefix": "dtp",
+		"body": [
+			"pause"
+		],
+		"description": "will need to press any key for continiue"
+	},
+}

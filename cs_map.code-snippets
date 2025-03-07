@@ -1,0 +1,62 @@
+{
+	"map init": {
+		"scope": "csharp",
+		"prefix": "mi",
+		"body": [
+		  "var $mapName = new Dictionary<$int, $string>();"
+		 ],
+		"description": "map init"
+	}, 
+	"map length": {
+		"scope": "csharp",
+		"prefix": "ml",
+		"body": [
+		  "$mapName.Count"
+		 ],
+		"description": "map length"
+	},
+	"map add": {
+		"scope": "csharp",
+		"prefix": "ma",
+		"body": [
+		  "$mapName.Add($key, $value);"
+		 ],
+		"description": "map add"
+	},
+	"map get item": {
+		"scope": "csharp",
+		"prefix": "mgi",
+		"body": [
+		  "$mapName[$key]"
+		 ],
+		"description": "map get item"
+	},
+	"map remove": {
+		"scope": "csharp",
+		"prefix": "mrm",
+		"body": [
+		  "$mapName.Remove($key)"
+		 ],
+		"description": "map remove"
+	},
+	"map clear": {
+		"scope": "csharp",
+		"prefix": "mclr",
+		"body": [
+		  "$mapName.Clear();"
+		 ],
+		"description": "map clear"
+	},
+	"map iterate": {
+		"scope": "csharp",
+		"prefix": "mit",
+		"body": [
+		  "foreach (var ${1:item} in ${2:mapName})",
+		  "{",
+		  "    ${3:Console.WriteLine(${1:item}.Key + \" \" + ${1:item}.Value);}",
+		  "}",
+		 ],
+		"description": "map iterate"
+	},
+	
+}

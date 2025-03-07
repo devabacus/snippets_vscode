@@ -1,0 +1,54 @@
+{
+	"datetime now": {
+		"scope": "dart",
+		"prefix": "dtn",
+		"body": [
+			"DateTime.now()"
+		],
+		"description": "datetime now"
+	},
+	"datetime create": {
+		"scope": "dart",
+		"prefix": "dti",
+		"body": [
+			"DateTime.utc(${2:2022, 3, 18})"
+		],
+		"description": "datetime create"
+	},
+	"datetime get val": {
+		"scope": "dart",
+		"prefix": "dtgv",
+		"body": [
+			"${1:mdate}.${2:day}"
+		],
+		"description": "datetime get val"
+	},
+	"datetime change": {
+		"scope": "dart",
+		"prefix": "dtch",
+		"body": [
+		  "var ${1:res_date} = ${2:mdate}.${3|add,subtract|}(${4:const Duration(days: 2)});"
+		],
+		"description": "datetime change"
+	  },
+	  "datetime format": {
+		"scope": "dart",
+		"prefix": "dtf",
+		"body": [
+		  "final df = DateFormat(\"${1:dd-MM-yyyy hh:mm}\");",
+		  "final ${2:mdate} = df.format(${3:DateTime.now()});"
+		],
+		"description": ["нужно установить пакет\n",
+						"flutter pub add intl",
+						"import 'package:intl/intl.dart';"
+		]
+	  },
+	  "datetime unix time": {
+		"scope": "dart",
+		"prefix": "dtu",
+		"body": [
+		  "final ${1:timestamp} = ${2:DateTime.now()}.millisecondsSinceEpoch;"
+		],
+		"description": "datetime unix time"
+	  },
+}

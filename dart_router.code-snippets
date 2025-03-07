@@ -1,0 +1,11 @@
+{
+    "router constants": {
+        "scope": "dart",
+        "prefix": "router_constants",
+        "body": [
+            "static const ${1:route} = '${1:route}';",
+            "static const ${1:route}Path = '/${1:route}${2:/:${3:param}}';",
+        ],
+        "description": "router constants"
+    },
+}

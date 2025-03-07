@@ -1,0 +1,10 @@
+{
+    "Future delayed": {
+        "scope": "dart",
+        "prefix": "delay",
+        "body": [
+            "await Future.delayed(Duration(seconds: ${1:1}));",
+        ],
+        "description": "Future delayed"
+    },
+}

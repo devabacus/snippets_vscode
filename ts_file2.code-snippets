@@ -1,0 +1,121 @@
+{
+    "file read async": {
+      "scope": "typescript",
+      "prefix": "flrasync",
+      "body": [
+        "const content = await fs.promises.readFile(${1:\"filepath\"}, { encoding: \"utf-8\" });"
+      ],
+      "description": "file read async (requires: import * as fs from 'fs')"
+    },
+    "file write async": {
+      "scope": "typescript",
+      "prefix": "flwrasync",
+      "body": [
+        "await fs.promises.writeFile(${1:\"filepath\"}, ${2:\"content\"}, { encoding: \"utf-8\" });"
+      ],
+      "description": "file write async (requires: import * as fs from 'fs')"
+    },
+    "read json file": {
+      "scope": "typescript",
+      "prefix": "flrjson",
+      "body": [
+        "const data = JSON.parse(fs.readFileSync(${1:\"filepath\"}, { encoding: \"utf-8\" }));"
+      ],
+      "description": "read and parse JSON file (requires: import * as fs from 'fs')"
+    },
+    "write json file": {
+      "scope": "typescript",
+      "prefix": "flwjson",
+      "body": [
+        "fs.writeFileSync(${1:\"filepath\"}, JSON.stringify(${2:data}, null, 2), { encoding: \"utf-8\" });"
+      ],
+      "description": "write object to JSON file (requires: import * as fs from 'fs')"
+    },
+    "check file access": {
+      "scope": "typescript",
+      "prefix": "flaccess",
+      "body": [
+        "try {",
+        "  fs.accessSync(${1:\"filepath\"}, fs.constants.${2|F_OK,R_OK,W_OK,X_OK|});",
+        "  // File exists and is accessible",
+        "} catch (err) {",
+        "  // File is not accessible",
+        "  console.error(`Access error: ${err}`);",
+        "}"
+      ],
+      "description": "check file access (requires: import * as fs from 'fs')"
+    },
+    "get file stats": {
+      "scope": "typescript",
+      "prefix": "flstats",
+      "body": [
+        "const stats = fs.statSync(${1:\"filepath\"});",
+        "console.log(`Size: ${stats.size} bytes`);",
+        "console.log(`Created: ${stats.birthtime}`);",
+        "console.log(`Modified: ${stats.mtime}`);"
+      ],
+      "description": "get file stats (requires: import * as fs from 'fs')"
+    },
+    "read dir recursive": {
+      "scope": "typescript",
+      "prefix": "flreaddirrecursive",
+      "body": [
+        "function readDirRecursive(dir: string): string[] {",
+        "  let results: string[] = [];",
+        "  const list = fs.readdirSync(dir);",
+        "  ",
+        "  list.forEach(file => {",
+        "    const fullPath = path.join(dir, file);",
+        "    const stat = fs.statSync(fullPath);",
+        "    ",
+        "    if (stat && stat.isDirectory()) {",
+        "      // Recurse into subdirectory",
+        "      results = results.concat(readDirRecursive(fullPath));",
+        "    } else {",
+        "      results.push(fullPath);",
+        "    }",
+        "  });",
+        "  ",
+        "  return results;",
+        "}",
+        "",
+        "const files = readDirRecursive(${1:\"dirpath\"});"
+      ],
+      "description": "recursive directory reading (requires: import * as fs from 'fs', import * as path from 'path')"
+    },
+    "file stream read": {
+      "scope": "typescript",
+      "prefix": "flstream",
+      "body": [
+        "const readStream = fs.createReadStream(${1:\"filepath\"}, { encoding: 'utf8' });",
+        "",
+        "readStream.on('data', (chunk) => {",
+        "  console.log(`Received ${chunk.length} bytes of data.`);",
+        "  // Process chunk here",
+        "});",
+        "",
+        "readStream.on('end', () => {",
+        "  console.log('Finished reading file');",
+        "});",
+        "",
+        "readStream.on('error', (err) => {",
+        "  console.error(`Error reading file: ${err}`);",
+        "});"
+      ],
+      "description": "read file with streams (requires: import * as fs from 'fs')"
+    },
+    "create temp file": {
+      "scope": "typescript", 
+      "prefix": "fltempfile",
+      "body": [
+        "import * as os from 'os';",
+        "",
+        "const tempDir = os.tmpdir();",
+        "const tempFilePath = path.join(tempDir, `temp-${Date.now()}.txt`);",
+        "",
+        "fs.writeFileSync(tempFilePath, ${1:\"content\"});",
+        "console.log(`Temporary file created at: ${tempFilePath}`);"
+      ],
+      "description": "create temporary file (requires: import * as fs from 'fs', import * as path from 'path', import * as os from 'os')"
+    }
+  }

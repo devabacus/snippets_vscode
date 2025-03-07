@@ -1,0 +1,164 @@
+{
+	"array init": {
+		"scope": "php",
+		"prefix": "li",
+		"body": [
+			"$${1:arrName} = array(${2:1,2,3});"
+		],
+		"description": "array init"
+	},
+
+	"array declare": {
+		"scope": "php",
+		"prefix": "ld",
+		"body": [
+		  "$${1:$arrName} = array();"
+		 ],
+		"description": "array declare"
+	},
+
+	"array length": {
+		"scope": "php",
+		"prefix": "ll",
+		"body": [
+			"count($${1:arrName})"
+		],
+		"description": "array length"
+	},
+	"array to string": {
+		"scope": "php",
+		"prefix": "lts",
+		"body": [
+			"implode('${1:,}',$${2:arrName})"
+		],
+		"description": "array to string"
+	},
+	"array slice": {
+		"scope": "php",
+		"prefix": "lsl",
+		"body": [
+			"$${4:newArr} = array_slice($${1:arrName}, ${2:startIdx}, ${3:lengthArr});"
+		],
+		"description": "array slice"
+	},
+	"array last item": {
+		"scope": "php",
+		"prefix": "le",
+		"body": [
+			"end($${1:arrName})"
+		],
+		"description": "array last item"
+	},
+	"array map": {
+		"scope": "php",
+		"prefix": "lm",
+		"body": [
+			"function ${4:arr_mapping}($$i){",
+			"    return ${1:$$i*2};",
+			"}",
+			"$${3:newArr} = array_map('${4:arr_mapping}', $${2:arrName});"
+		],
+		"description": "array map"
+	},
+	"array replace by regex": {
+		"scope": "php",
+		"prefix": "lrrg",
+		"body": [
+			"$${4:newArrName} = preg_replace('/${2:\\d}/', '${3:-}', $${1:arrName});"
+		],
+		"description": "array replace by regex"
+	},
+	"array sort": {
+		"scope": "php",
+		"prefix": "lsrt",
+		"body": [
+			"${1|sort,rsort|}($${2:arrName});"
+		],
+		"description": "array sort"
+	},
+	"array max": {
+		"scope": "php",
+		"prefix": "lmax",
+		"body": [
+			"max($${1:arrName})"
+		],
+		"description": "array max"
+	},
+	"array min": {
+		"scope": "php",
+		"prefix": "lmin",
+		"body": [
+			"min($${1:arrName})"
+		],
+		"description": "array min"
+	},
+	"array extend": {
+		"scope": "php",
+		"prefix": "lext",
+		"body": [
+			"$${1:array_res} = array_merge($${2:arrName}, $${3:arrName1});"
+		],
+		"description": "array extend"
+	},
+
+	"array index of item": {
+		"scope": "php",
+		"prefix": "lidx",
+		"body": [
+		  "array_search(${1:'item'}, $${2:arrName})"
+		 ],
+		"description": "array index of item"
+	},
+	"array append": {
+		"scope": "php",
+		"prefix": "la",
+		"body": [
+		  "array_push($${1:arrName}, '${2:item}')"
+		 ],
+		"description": "array append"
+	},
+
+	"array inser item (by index)": {
+		"scope": "php",
+		"prefix": "lins2",
+		"body": [
+		  "array_splice($${1:arrName}, ${2:idx}, 0, ['${3:item}'])"
+		 ],
+		"description": "array inser item (by index)"
+	},
+
+	"array remove (from end)": {
+		"scope": "php",
+		"prefix": "lrm",
+		"body": [
+		  "array_pop($${1:arrName1})"
+		 ],
+		"description": "array remove (from end)"
+	},
+
+	"array remove (from any pos)": {
+		"scope": "php",
+		"prefix": "lrm2",
+		"body": [
+		  "array_splice($${1:arrName}, ${2:idx}, ${3:length(1)})"
+		 ],
+		"description": "array remove (from any pos)"
+	},
+	"list get item": {
+		"scope": "php",
+		"prefix": "lgi",
+		"body": [
+		  "$${1:arrName}[${2:index}]"
+		 ],
+		"description": "list get item"
+	},
+
+	"array reverse": {
+		"scope": "php",
+		"prefix": "lrv",
+		"body": [
+		  "$${1:newArr} = array_reverse($${2:arrName});"
+		 ],
+		"description": "array reverse"
+	},
+}

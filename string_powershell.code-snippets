@@ -1,0 +1,10 @@
+{
+	"string format to table": {
+        "scope": "powershell",
+        "prefix": "sft",
+        "body": [
+            "@{${1:\"one\" = 1}} + @{${2:\"two\" = 2}}"
+        ],
+        "description": "string format to table. Sorted by alphabet"
+  },
+}

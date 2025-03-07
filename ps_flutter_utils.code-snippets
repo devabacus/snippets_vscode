@@ -1,0 +1,41 @@
+{
+	"flutter plugin install": {
+        "scope": "powershell",
+        "prefix": "flpa",
+        "body": [
+            "flutter pub add ${1:plugin}",
+        ],
+        "description": "flutter plugin install"
+},
+
+"flutter pub get": {
+        "scope": "powershell",
+        "prefix": "flpg",
+        "body": [
+            "flutter pub get"
+        ],
+        "description": "flutter pub get"
+},
+
+"flutter create package": {
+        "scope": "powershell",
+        "prefix": "fpackcr",
+        "body": [
+            "flutter create --template=package packages/${1:my_package}",
+        ],
+        "description": "flutter create package"
+},
+
+"flutter create package separately": {
+        "scope": "powershell",
+        "prefix": "flpack",
+        "body": [
+            "flutter create --template=package ${1:package_name}",
+            "cd ${1:package_name}",
+            "flutter create example",
+            "",
+            
+        ],
+        "description": "flutter create package separately"
+},
+}

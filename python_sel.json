@@ -1,0 +1,12 @@
+{
+	"say hello": {
+		"prefix": "privet",
+		"body": "${2:iftrue} if ${1:ifexp} else ${3:eltrue}"
+	},
+	
+	}
+
+
+
+
+

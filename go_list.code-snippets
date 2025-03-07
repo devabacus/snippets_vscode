@@ -1,0 +1,122 @@
+{
+	"list declare": {
+		"scope": "go",
+		"prefix": "ld",
+		"body": [
+		  "var $listName [$length]$int"
+		 ],
+		"description": "list declare"
+	},
+
+	"list init": {
+		"scope": "go",
+		"prefix": "li",
+		"body": [
+		  "${1:listName} := []int{${3:1,2,3,5,6}}"
+		 ],
+		"description": "list init"
+	},
+	"list slice": {
+		"scope": "go",
+		"prefix": "lsl",
+		"body": [
+		  "${1:listName}[${2:startIndex}:${3:endIndex}]"
+		 ],
+		"description": "list slice"
+	},
+
+	"list length": {
+		"scope": "go",
+		"prefix": "ll",
+		"body": [
+		  "len(${1:listName})"
+		 ],
+		"description": "list length"
+	},
+	"list get item": {
+		"scope": "go",
+		"prefix": "lgi",
+		"body": [
+		  "${1:listName}[${2:index}]"
+		 ],
+		"description": "list get item"
+	},
+	"list to string": {
+		"scope": "go",
+		"prefix": "lts",
+		"body": [
+		  "strings.Join(${1:stringList}, \"${2:-}\")"
+		 ],
+		"description": "list to string"
+	},
+	"list last item": {
+		"scope": "go",
+		"prefix": "le",
+		"body": [
+		  "${1:mlist}[len(${1:mlist})-1]"
+		 ],
+		"description": "list last item"
+	},
+	"list sort": {
+		"scope": "go",
+		"prefix": "lsrt",
+		"body": [
+			"sort.${1|Strings,Ints, |}(${2:mlist})"
+		],
+		"description": "list sort"
+	},
+	"list extend": {
+		"scope": "go",
+		"prefix": "lext",
+		"body": [
+			"${1:mlist} = append(${1:mlist2}, ${2:otherlist})"
+		],
+		"description": "list extend"
+	},
+	"list append item": {
+		"scope": "go",
+		"prefix": "la",
+		"body": [
+		  "append(${1:mlist}, ${2:newitem})"
+		 ],
+		"description": "list append item"
+	},
+
+	"list remove item": {
+		"scope": "go",
+		"prefix": "lrm",
+		"body": [
+		  "${1:newListName} := append(${2:mlist}[:${3:idx}], ${2:mlist}[${3:idx}+1:]...)"
+		 ],
+		"description": "list remove item"
+	},
+
+	"list reverse": {
+		"scope": "go",
+		"prefix": "lrv",
+		"body": [
+		  "for i, j := 0, len(${1:mlist})-1; i < j; i, j = i+1, j-1 {",
+		  "    ${1:mlist}[i], ${1:mlist}[j] = ${1:mlist}[j], ${1:mlist}[i]",
+		  "}"
+		 ],
+		"description": "list reverse"
+	},
+	"map remove": {
+		"scope": "go",
+		"prefix": "mrm",
+		"body": [
+		  "delete($mapName, $key)"
+		 ],
+		"description": "map remove"
+	},
+	"map iterate": {
+		"scope": "go",
+		"prefix": "mit",
+		"body": [
+		  "for key, value := range $mapName {",
+	  	  "    fmt.Println(key,\":\",value)",
+	  	"}",
+		 ],
+		"description": "map iterate"
+	},
+}

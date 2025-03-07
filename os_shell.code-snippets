@@ -1,0 +1,58 @@
+{
+	"create directory": {
+		"scope": "shellscript",
+		"prefix": "omd",
+		"body": [
+			"mkdir ${1:dirname}"
+		],
+		"description": "create directory"
+	},
+	"remove directory": {
+		"scope": "shellscript",
+		"prefix": "ord",
+		"body": [
+			"rmdir ${1:dirname}"
+		],
+		"description": "remove directory"
+	},
+	"remove file": {
+		"scope": "shellscript",
+		"prefix": "orf",
+		"body": [
+			"rm ${1:filename}"
+		],
+		"description": "remove file"
+	},
+	"make file": {
+		"scope": "shellscript",
+		"prefix": "omf",
+		"body": [
+			"touch ${1:filename.txt}"
+		],
+		"description": "make file"
+	},
+	"make file with": {
+		"scope": "shellscript",
+		"prefix": "omfc",
+		"body": [
+			"echo ${2:'this is a atext'} > ${1:data.txt}"
+		],
+		"description": "make file with"
+	},
+	"copy directory": {
+		"scope": "shellscript",
+		"prefix": "ocd",
+		"body": [
+			"cp -r '${1:source_path}' '${2:destination_path}'"
+		],
+		"description": "copy directory"
+	},
+	"copy file": {
+		"scope": "shellscript",
+		"prefix": "ocf",
+		"body": [
+			"cp -r '${1:source_path/file.txt}' '${2:destination_path}'"
+		],
+		"description": "copy file"
+	},
+}

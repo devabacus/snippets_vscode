@@ -1,0 +1,76 @@
+{
+    "file read": {
+      "scope": "typescript",
+      "prefix": "flr",
+      "body": [
+        "const content = fs.readFileSync(${1:\"filepath\"}, { encoding: \"utf-8\" });"
+      ],
+      "description": "file read (requires: import * as fs from 'fs')"
+    },
+    "file write": {
+      "scope": "typescript",
+      "prefix": "flwr",
+      "body": [
+        "fs.writeFileSync(${1:\"filepath\"}, ${2:\"newtext\"}, { encoding: \"utf-8\" });"
+      ],
+      "description": "file write (requires: import * as fs from 'fs')"
+    },
+    "file append": {
+      "scope": "typescript",
+      "prefix": "flwr2",
+      "body": [
+        "fs.appendFileSync(${1:\"filepath\"}, ${2:\"content\"}, { encoding: \"utf-8\" });"
+      ],
+      "description": "append to file (requires: import * as fs from 'fs')"
+    },
+    "file rename": {
+      "scope": "typescript",
+      "prefix": "flrn",
+      "body": [
+        "fs.renameSync(${1:\"oldname\"}, ${2:\"newname\"});"
+      ],
+      "description": "file rename (requires: import * as fs from 'fs')"
+    },
+    "file remove": {
+      "scope": "typescript",
+      "prefix": "flrm",
+      "body": [
+        "fs.unlinkSync(${1:\"filepath\"});"
+      ],
+      "description": "file remove (requires: import * as fs from 'fs')"
+    },
+    "make dir": {
+      "scope": "typescript",
+      "prefix": "flmkdir",
+      "body": [
+        "fs.mkdirSync(${1:\"folderpath\"}, { recursive: true });"
+      ],
+      "description": "make directory with nested folders (requires: import * as fs from 'fs')"
+    },
+    "dir remove": {
+      "scope": "typescript",
+      "prefix": "flrmdir",
+      "body": [
+        "fs.rmdirSync(${1:\"dir_path\"});"
+      ],
+      "description": "dir remove (requires: import * as fs from 'fs')"
+    },
+    "file copy": {
+      "scope": "typescript",
+      "prefix": "flcp",
+      "body": [
+        "fs.copyFileSync(${1:\"source_path\"}, ${2:\"dest_path\"});"
+      ],
+      "description": "file copy (requires: import * as fs from 'fs')"
+    },
+    "file move": {
+      "scope": "typescript",
+      "prefix": "flmv",
+      "body": [
+        "// First copy the file, then delete the original",
+        "fs.copyFileSync(${1:\"source_path\"}, ${2:\"dest_path\"});",
+        "fs.unlinkSync(${1:\"source_path\"});"
+      ],
+      "description": "file move (requires: import * as fs from 'fs')"
+    }
+  }

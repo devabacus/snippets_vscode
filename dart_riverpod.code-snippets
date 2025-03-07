@@ -1,0 +1,30 @@
+{
+    "riverpod import": {
+        "scope": "dart",
+        "prefix": "riverpod_import",
+        "body": [
+            "import 'package:riverpod_annotation/riverpod_annotation.dart';",
+            "import 'package:flutter_riverpod/flutter_riverpod.dart';",
+            "",
+            "part '${TM_FILENAME_BASE}.g.dart';",
+            "",
+        ],
+        "description": "riverpod import"
+    },
+    "ref watch read": {
+        "scope": "dart",
+        "prefix": "rr_refRead",
+        "body": [
+            "${3:final ${4:name} = }ref.read(${1:provider}${2:.notifier})",
+        ],
+        "description": "ref watch read"
+    },
+    "ref watch": {
+        "scope": "dart",
+        "prefix": "rw_refWatch",
+        "body": [
+            "${2:final ${3:name} = }ref.watch(${1:provider});",
+        ],
+        "description": "ref watch"
+    },
+}

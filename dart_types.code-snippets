@@ -1,0 +1,38 @@
+{
+	"string type": {
+		"scope": "dart,java",
+		"prefix": "ts",
+		"body": [
+		  "String"
+		 ],
+		"description": "string type"
+	},
+
+	"string type2": {
+		"scope": "csharp,cpp",
+		"prefix": "ts",
+		"body": [
+		  "string"
+		 ],
+		"description": "string type"
+	},
+
+	"int type": {
+		"scope": "dart,python,java,csharp,cpp",
+		"prefix": "ti",
+		"body": [
+		  "int"
+		 ],
+		"description": "int type"
+	},
+
+	"double type": {
+		"scope": "dart,python",
+		"prefix": "td",
+		"body": [
+		  "double"
+		 ],
+		"description": "double type"
+	},
+	
+}

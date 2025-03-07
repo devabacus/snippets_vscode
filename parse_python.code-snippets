@@ -1,0 +1,10 @@
+{
+	"parse by css selector": {
+		"scope": "python",
+		"prefix": "psl",
+		"body": [
+		  "${1:price} = driver.find_element(By.CSS_SELECTOR, '${2:span}[${3:class}=\"${4:price-current__amount}\"]').text"
+		 ],
+		"description": "parse by css selector"
+	},
+}

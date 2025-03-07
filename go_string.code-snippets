@@ -1,0 +1,209 @@
+{
+	"string declare": {
+		"scope": "go",
+		"prefix": "sd",
+		"body": [
+			"var ${1:myStr} string"
+		],
+		"description": "string declare"
+	},
+	"string init": {
+		"scope": "go",
+		"prefix": "si",
+		"body": [
+			"${1:strName} := \"${2:value}\""
+		],
+		"description": "string init"
+	},
+	"string format": {
+		"scope": "go",
+		"prefix": "sf",
+		"body": [
+			"${1:\"$string\" + $value}"
+		],
+		"description": "string format"
+	},
+	"string length": {
+		"scope": "go",
+		"prefix": "sl",
+		"body": [
+			"len($strName)"
+		],
+		"description": "string length"
+	},
+	"string length rune (russian)": {
+		"scope": "go",
+		"prefix": "sl2",
+		"body": [
+			"len([]rune($strName))"
+		],
+		"description": "string length rune (russian)"
+	},
+	"string empty check": {
+		"scope": "go",
+		"prefix": "se",
+		"body": [
+			"len($strName) != 0"
+		],
+		"description": "string empty check"
+	},
+	"string contains": {
+		"scope": "go",
+		"prefix": "sc",
+		"body": [
+			"strings.Contains($strName, \"$chars\")"
+		],
+		"description": "string contains"
+	},
+	"string contains any": {
+		"scope": "go",
+		"prefix": "sc2",
+		"body": [
+			"strings.ContainsAny($strName, \"$any_from_chars\")"
+		],
+		"description": "string contains any"
+	},
+	"string slice": {
+		"scope": "go",
+		"prefix": "ssl",
+		"body": [
+			"strSliced := $strName[$startIdx:$endIdx]"
+		],
+		"description": "string slice"
+	},
+	"string split": {
+		"scope": "go",
+		"prefix": "ssp",
+		"body": [
+			"$strArr := strings.Split($strName, \"$sep\")"
+		],
+		"description": "string split"
+	},
+	"string split after": {
+		"scope": "go",
+		"prefix": "ssp2",
+		"body": [
+			"$strArr := strings.SplitAfter($strName, \"$sep\")"
+		],
+		"description": "string split include sep"
+	},
+	"string split after with num": {
+		"scope": "go",
+		"prefix": "ssp3",
+		"body": [
+			"$strArr := strings.SplitAfterN($strName, \"$sep\", $count)"
+		],
+		"description": "string split after with num"
+	},
+	"string to upper case": {
+		"scope": "go",
+		"prefix": "sup",
+		"body": [
+			"strings.ToUpper($strName)"
+		],
+		"description": "string to upper case"
+	},
+	"string to lower case": {
+		"scope": "go",
+		"prefix": "slo",
+		"body": [
+			"strings.ToLower($strName)"
+		],
+		"description": "string to lower case"
+	},
+	"string starts with": {
+		"scope": "go",
+		"prefix": "sst",
+		"body": [
+			"strings.HasPrefix($strName, \"$chars\")"
+		],
+		"description": "string starts with"
+	},
+	"string ends with": {
+		"scope": "go",
+		"prefix": "snd",
+		"body": [
+			"strings.HasSuffix($strName, \"$chars\")"
+		],
+		"description": "string ends with"
+	},
+	"string index of item": {
+		"scope": "go",
+		"prefix": "sgidx",
+		"body": [
+			"strings.Index($strName, \"$val\")"
+		],
+		"description": "string index of item"
+	},
+	"string trim": {
+		"scope": "go",
+		"prefix": "st",
+		"body": [
+			"strings.Trim(${1:strName}, \"${2: }\")"
+		],
+		"description": "string trim"
+	},
+	"string replace": {
+		"scope": "go",
+		"prefix": "sr",
+		"body": [
+			"strings.Replace($strName, \"$oldChars\", \"$newChars\", -1)"
+		],
+		"description": "string replace"
+	},
+	"string contains by regex": {
+		"scope": "go",
+		"prefix": "scrg",
+		"body": [
+			"$re := regexp.MustCompile(`${1:\\d}`)",
+			"$result := re.MatchString($strName)"
+		],
+		"description": "string contains by regex"
+	},
+	"string contains by regex 2": {
+		"scope": "go",
+		"prefix": "scrg2",
+		"body": [
+			"${3:matched}, _ := regexp.MatchString(${1:`\\d`}, ${2:strName})"
+		],
+		"description": "string contains by regex 2"
+	},
+	"string split by regex": {
+		"scope": "go",
+		"prefix": "ssprg",
+		"body": [
+			"${3:arr} := regexp.MustCompile(${1:`\\d`}).Split(${2:\"hello3world\"}, -1)"
+		],
+		"description": "string split by regex"
+	},
+	"string replace by regex": {
+		"scope": "go",
+		"prefix": "srrg",
+		"body": [
+			"${4:mstr} := regexp.MustCompile(${1:`\\d`}).ReplaceAllString(${2:\"hello3World\"}, \"${3:newChars}\")"
+		],
+		"description": "string replace by regex"
+	},
+	"string get index by regex": {
+		"scope": "go",
+		"prefix": "sgidxrg",
+		"body": [
+			"re := regexp.MustCompile(${1:`world`})",
+			"${3:result} := re.FindStringIndex(${2:\"hello3world\"})[0]"
+		],
+		"description": "string get index by regex"
+	},
+	"string get item by regex": {
+		"scope": "go",
+		"prefix": "sgirg",
+		"body": [
+			"re := regexp.MustCompile(${1:`world`})",
+			"${3:result} := re.FindString(${2:\"hello3world\"})"
+		],
+		"description": "string get item by regex"
+	},
+	
+	
+
+
+}

@@ -1,0 +1,21 @@
+{
+
+		"Map Length": {
+		  "prefix": "ml23",
+		  "body": {
+			"dart": "myMap.length",
+			"python": "len(my_map)",
+			"javascript": "Object.keys(myMap).length",
+			"typescript": "Object.keys(myMap).length",
+			"java": "myMap.size()",
+			"csharp": "myMap.Count",
+			"cpp": "myMap.size()",
+			"go": "len(myMap)",
+			"php": "count($my_map)",
+			"powershell": "$myMap.Count",
+			"kotlin": "myMap.size",
+			"1c": "КоличествоЭлементов(МойСловарь)"
+		  },
+		  "description": "Get the length of a map"
+		}
+}

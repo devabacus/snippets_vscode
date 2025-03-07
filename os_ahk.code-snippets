@@ -1,0 +1,28 @@
+{
+	"create directory": {
+        "scope": "ahk",
+        "prefix": "omd",
+        "body": [
+            "DirCreate \"${1:C:/Path/to/dir}\"",
+        ],
+        "description": "create directory"
+},
+
+"copy directory": {
+    "scope": "ahk",
+    "prefix": "ocd",
+    "body": [
+        "DirCopy ${1:\"C:/My Folder\"}, ${2:\"C:/Copy of My Folder\"}",
+    ],
+    "description": "copy directory"
+},
+
+"remove directory": {
+    "scope": "ahk",
+    "prefix": "ord",
+    "body": [
+        "DirDelete ${1:\"C:/Download Temp\"}${2:, 1}",
+    ],
+    "description": "remove directory, 1 - remove recurcively"
+},
+}

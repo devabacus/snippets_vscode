@@ -1,0 +1,201 @@
+{
+	"list init": {
+		"scope": "python",
+		"prefix": "li",
+		"body": [
+			"${1:mlist}:list = ${TM_SELECTED_TEXT:[${2}]}",
+		]
+	},
+
+
+	"list contains": {
+        "scope": "python",
+        "prefix": "lc",
+        "body": [
+            "${1:\"item\"} in ${2:mlist}",
+        ],
+        "description": "list contains. Used only in conditions"
+},
+
+	"list set value": {
+        "scope": "python",
+        "prefix": "lsv",
+        "body": [
+            "mlist[${1:index}] = ${2:value}",
+        ],
+        "description": "list set value"
+},
+
+	"list unic init (tuple)": {
+		"scope": "python",
+		"prefix": "lui",
+		"body": [
+			"${1:tupleName} = (${2})",
+		]
+	},
+	"list length": {
+        "scope": "python",
+        "prefix": "ll",
+        "body": [
+            "len(${1:listName})",
+        ],
+        "description": "list length"
+},
+
+	"list get item": {
+		"scope": "python",
+		"prefix": "lgi",
+		"body": [
+		  "${1:mlist}[${2:index}]"
+		 ],
+		"description": "list get item"
+	},
+	
+	"list to string": {
+		"scope": "python",
+		"prefix": "lts",
+		"body": [
+			"'${1:delimeter}'.join(${2:mlist})"
+		],
+		"description": "list to string"
+	},
+	"list to string with cast": {
+		"scope": "python",
+		"prefix": "lts2",
+		"body": [
+			"'${1:delimeter}'.join([str(i) for i in ${2:mlist}])"
+		],
+		"description": "list to string"
+	},
+	"list slice": {
+		"scope": "python",
+		"prefix": "lsl",
+		"body": [
+			"${1:mylist}[${2:1}:${3:-1}]",
+		],
+		"description": "list slice"
+	},
+	"list last item": {
+		"scope": "python",
+		"prefix": "le",
+		"body": [
+			"${1:mylist}[-1]"
+		],
+		"description": "last item of list"
+	},
+	"list map": {
+		"scope": "python",
+		"prefix": "lm",
+		"body": "[${3:i*2} for ${2:i} in ${1:list}]"
+	},
+	
+	"list change by regex search": {
+		"scope": "python",
+		"prefix": "lchrg",
+		"body": [
+			"${1:lst} = [i for i in ${2:oldListName} if re.search(r'${3:.*}',i)]"
+		],
+		"description": "import re"
+	},
+	"list change by regex match": {
+		"scope": "python",
+		"prefix": "lchrgm",
+		"body": [
+			"regex = re.compile(r'${1:exp}')",
+			"${2:lst} = [i for i in ${3:oldListName} if regex.match(i)]"
+		]
+	},
+	"list sort": {
+		"scope": "python",
+		"prefix": "lsrt",
+		"body": [
+			"${1:mylist}.sort()"
+		],
+		"description": "list sort"
+	},
+	"list max": {
+		"scope": "python",
+		"prefix": "lmax",
+		"body": [
+			"max(${1:mylist})"
+		],
+		"description": "list max"
+	},
+	"list min": {
+		"scope": "python",
+		"prefix": "lmin",
+		"body": [
+			"min(${1:mylist})"
+		],
+		"description": "list min"
+	},
+	"list extend": {
+		"scope": "python",
+		"prefix": "lext",
+		"body": [
+			"${1:mylist}.extend(${2:otherList})"
+		],
+		"description": "list extend"
+	},
+	"list index": {
+		"scope": "python",
+		"prefix": "lidx",
+		"body": [
+			"${1:mlist}.index(${2:item})"
+		],
+		"description": "list index"
+	},
+	"list insert": {
+		"scope": "python",
+		"prefix": "lins",
+		"body": [
+			"${1:listName}.insert(${2:idx}, ${3:item})"
+		],
+		"description": "list insert"
+	},
+	"list append": {
+		"scope": "python",
+		"prefix": "la",
+		"body": [
+		  "$mlist.append($item)"
+		 ],
+		"description": "list append"
+	},
+	"list remove by item": {
+		"scope": "python",
+		"prefix": "lrm",
+		"body": [
+			"${1:listName}.remove(${2:item})"
+		],
+		"description": "list remove by item"
+	},
+	"list remove by index": {
+		"scope": "python",
+		"prefix": "lrmidx",
+		"body": [
+			"${1:listName}.pop(${2:idx})"
+		],
+		"description": "list remove item by index"
+	},
+	"list remove by exp": {
+		"scope": "python",
+		"prefix": "lrmf",
+		"body": [
+			"${1:newlist} = [i for i in ${2:listName} if i != 2]"
+		],
+		"description": "list remove by exp"
+	},
+	"list reverse": {
+		"scope": "python",
+		"prefix": "lrev",
+		"body": [
+			"${1:listName}.reverse()"
+		],
+		"description": "list reverse"
+	},
+	"list remove duplicate": {
+		"prefix": "lrmd",
+		"body": "${1:newList} = list(dict.fromkeys(${2:oldList}))",
+		"description": "remove duplicates from the list, save ordering"
+	},
+}

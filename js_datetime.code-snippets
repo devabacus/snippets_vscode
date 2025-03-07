@@ -1,0 +1,43 @@
+{
+	"datetime now": {
+		"scope": "javascript, javascriptreact, typescript",
+		"prefix": "dtn",
+		"body": [
+			"const ${1:mdate} = new Date();"
+		],
+		"description": "datetime now"
+	},
+	"datetime create": {
+		"scope": "javascript, javascriptreact, typescript",
+		"prefix": "dti",
+		"body": [
+			"new Date(${2:2022, 3, 18})"
+		],
+		"description": "datetime create"
+	},
+	"datetime unix time": {
+		"scope": "javascript, javascriptreact, typescript",
+		"prefix": "dtu",
+		"body": [
+			"Date.now()"
+		],
+		"description": "datetime unix time"
+	},
+	"datetime change": {
+		"scope": "javascript, javascriptreact, typescript",
+		"prefix": "dtch",
+		"body": [
+		  "${1:mdate}.${2:setHours}(${1:mdate}.${3:getHours()} + ${4:5});"
+		],
+		"description": "datetime change"
+	  },
+	  "datetime get val": {
+		"scope": "javascript, javascriptreact, typescript",
+		"prefix": "dtgv",
+		"body": [
+			"${1:mdate}.${2:getDate()}"
+		],
+		"description": "datetime get val"
+	},
+
+}

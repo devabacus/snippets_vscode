@@ -1,0 +1,54 @@
+{
+	"datetime now": {
+		"scope": "java",
+		"prefix": "dtn",
+		"body": [
+		  "${1|LocalDateTime.now(),new Date()|}"
+		 ],
+		"description": "datetime now"
+	},
+	"datetime format": {
+		"scope": "java",
+		"prefix": "dtf",
+		"body": [
+		  "var dtf = new SimpleDateFormat(\"${1:dd/MM/yyyy hh:mm}\");",
+		  "var ${2:curDateTime} = dtf.format(new Date());"
+		 ],
+		"description": "datetime format"
+	},
+	"datetime unix": {
+		"scope": "java",
+		"prefix": "dtu",
+		"body": [
+		  "new Date().getTime()"
+		 ],
+		"description": "datetime unix"
+	},
+	"datetime value": {
+		"scope": "java",
+		"prefix": "dtgv",
+		"body": [
+		  "Calendar ${1:cal} = Calendar.getInstance();",
+		  "${1:cal}.setTime(${2:new Date()});",
+		  "int ${3:mval} = ${1:cal}.get(Calendar.${4:DAY_OF_MONTH});"
+		 ],
+		"description": "datetime value"
+	},
+	"datetime create": {
+		"scope": "java",
+		"prefix": "dti",
+		"body": [
+		  "var $mdate = LocalDate.of($year, $month, $dayOfMonth);"
+		 ],
+		"description": "datetime create"
+	},
+	"datetime change": {
+		"scope": "java",
+		"prefix": "dtch",
+		"body": [
+		  "var ${1:mdatetime} = ${3:${2:LocalDateTime}.now()};",
+		  "var newdt = ${1:mdatetime}.${4|plusDays,minusDays|}(5);"
+		 ],
+		"description": "datetime change"
+	},
+}

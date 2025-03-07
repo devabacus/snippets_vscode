@@ -1,0 +1,12 @@
+{
+	"types bool": {
+		"scope": "java",
+		"prefix": "tb",
+		"body": [
+		  "Boolean"
+		 ],
+		"description": "types bool"
+	},
+
+	
+}

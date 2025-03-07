@@ -1,0 +1,121 @@
+{
+	"new class": {
+		"scope": "python",
+		"prefix": "cl",
+		"body": [
+			"class ${1:ClsName}:",
+			"",
+			"    def __init__ (self${3:,param}):",
+			"        pass",
+			"    $0",
+		],
+		"description": "new class"
+	},
+
+	"data class create": {
+        "scope": "python",
+        "prefix": "cldc",
+        "body": [
+            "from dataclasses import dataclass",
+            "",
+            "@dataclass",
+            "class ${1:Person}:",
+            "\t${2:name:str}",
+            "\t${3:age:int}",
+            
+        ],
+        "description": "data class create"
+},
+
+	"var class": {
+		"scope": "python",
+		"prefix": "clv",
+		"body": [
+			"self.${1:field}",
+		],
+		"description": "var class"
+	},
+	"var class init": {
+		"scope": "python",
+		"prefix": "clvi",
+		"body": [
+			"self.${1:field} = ${2:value}",
+		],
+		"description": "var class init"
+	},
+	"new class inheitance": {
+		"prefix": "clp",
+		"body": [
+			"class ${1:ClsName}(${2:parentClass}):",
+			"",
+			"    def __init__ (self${3}):",
+			"        pass",
+			"    $0",
+		],
+		"description": "new class"
+	},
+	
+
+	"class method create": {
+		"scope": "python",
+		"prefix": "clfi",
+		"body": [
+			"def ${1:methodName}(self${2:,args})->${3:None}:",
+			"\t${4:pass}",
+		],
+		"description": "class method create"
+	},
+
+
+	"class method call": {
+		"scope": "python",
+		"prefix": "clfc",
+		"body": [
+			"self.${1:methodName}(${2:args})",
+		],
+		"description": "class method call"
+	},
+
+
+	"__str__": {
+		"prefix": "clfstr",
+		"body": [
+			"def __str__(self):",
+			"    return ${1:self.title}"
+		],
+		"description": "__str__"
+	},
+	"__init__": {
+		"prefix": "clfinit",
+		"body": [
+			"def __init__ (self):",
+			"    ${2:pass}"
+		]
+	},
+
+	"class instance create": {
+        "scope": "python",
+        "prefix": "clin",
+        "body": [
+            "${1:instance} = ${2:MyClass}(${3:fields})",
+        ],
+        "description": "class instance create"
+},
+
+"class instance get field": {
+	"scope": "python",
+	"prefix": "clingp",
+	"body": [
+		"${1:inst}.${2:filed}"
+	],
+	"description": "class instance get field"
+},
+"method call": {
+	"scope": "python",
+	"prefix": "clinfc",
+	"body": [
+		"${1:instance}.${2:method_name}()"
+	],
+	"description": "method call"
+},
+}	

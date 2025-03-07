@@ -1,0 +1,60 @@
+{
+	"datetime now": {
+		"scope": "python",
+		"prefix": "dtn",
+		"body": [
+			"datetime.datetime.now()"
+		],
+		"description": "import datetime"
+	},
+	"datetime format": {
+		"scope": "python",
+		"prefix": "dtf",
+		"body": [
+			"${1:mdate}.strftime('%d-%m-%Y %H:%M')"
+		],
+		"description": "import datetime"
+	},
+	"datetime create": {
+		"scope": "python",
+		"prefix": "dti",
+		"body": [
+			"${1:mdate} = datetime.datetime(${2:2022, 3, 18})"
+		],
+		"description": "import datetime"
+	},
+	"datetime change": {
+		"scope": "python",
+		"prefix": "dtch",
+		"body": [
+			"${1:result_date} = ${2:mdate} - datetime.timedelta(${3:days=2})"
+		],
+		"description": "import datetime"
+	},
+	"datetime get val": {
+		"scope": "python",
+		"prefix": "dgv",
+		"body": [
+		  "${1:mdate}.${2:day}"
+		],
+		"description": "import datetime"
+	  },
+	  "datetime unix time": {
+		"scope": "python",
+		"prefix": "dtu",
+		"body": [
+		  "time.time()"
+		],
+		"description": "import time"
+	  },
+
+	  "time sleep": {
+		"scope": "python",
+		"prefix": "dts",
+		"body": [
+		  "time.sleep($val)"
+		 ],
+		"description": "time sleep"
+	},
+
+}

@@ -1,0 +1,20 @@
+{
+	"string type": {
+		"scope": "python",
+		"prefix": "ts",
+		"body": [
+		  "str"
+		 ],
+		"description": "string type"
+	},
+	
+	"string type": {
+		"scope": "python",
+		"prefix": "tm",
+		"body": [
+		  "dict"
+		 ],
+		"description": "map(dict) type"
+	},
+
+}

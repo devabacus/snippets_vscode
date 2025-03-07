@@ -1,0 +1,86 @@
+{
+	"snippet create": {
+		"prefix": "snm",
+		"body": [
+			
+			"\"${1:snippet name}\": {",
+			"\t\t\"scope\": \"${TM_FILENAME/.+\\.((py)|(php)|(go)|(js)|(dart)|(cs)|(cpp)|(java)|(ts)|(ps1)|(sh)|(ahk))$/${2:+python}${3:+php}${4:+go}${5:+javascript,javascriptreact}${6:+dart}${7:+csharp}${8:+cpp}${9:+java}${10:+typescript}${11:+powershell}${12:+shellscript}${13:+ahk}/}\",",
+			"\t\t\"prefix\": \"${2}\",",
+			"\t\t\"body\": [",
+			"\t\t\t${3:${TM_SELECTED_TEXT}}",
+			// "\t\t\t${3:${TM_SELECTED_TEXT/\"/\\\"/g}}",
+			"\t\t],",
+			"\t\t\"description\": \"${4:${1}}\"",
+			"},",
+			"",
+		],
+		"description": "snippet create"
+	},
+
+	
+	
+	"surround line with quotes": {
+		"prefix": "t",
+		"body": [
+		  "${TM_SELECTED_TEXT/(.*)$/\"$1\",/}"
+		 ],
+		"description": "surround line with quotes"
+	},
+
+	
+	"escape special symbols": {
+		"prefix": "ess",
+		"body": [
+		  "${TM_SELECTED_TEXT/(\\\\)/\\\\$1/g}"
+		 ],
+		"description": "escape special symbols"
+	},
+
+	"escape special symbols2": {
+		"prefix": "ess",
+		"body": [
+		  "${TM_SELECTED_TEXT/($)/\\$1/g}"
+		 ],
+		"description": "escape special symbols2"
+	},
+
+	"snippet placeholder": {
+		"prefix": "snp",
+		"body": [
+			"\\${${1:1}:${2:$TM_SELECTED_TEXT}}"
+		],
+		"description": "snippet placeholder"
+	},
+
+	"snippet options": {
+		"prefix": "sno",
+		"body": [
+			"\\${${1:1}|${2:${TM_SELECTED_TEXT:one,two,three}}|}",
+		],
+		"description": "snippet options"
+	},
+
+	"snippet selected text": {
+		"prefix": "sns",
+		"body": [
+			"\\${TM_SELECTED_TEXT:${TM_SELECTED_TEXT:$$1}}",
+		],
+		"description": "snippet selected text"
+	},
+
+	"comma one quotes": {
+		"prefix": "cq",
+		"body": [
+		  ",'${1}'"
+		 ],
+		"description": "comma one quotes"
+	},
+	"comma double quotes": {
+		"prefix": "cq2",
+		"body": [
+		  ",\"${1}\""
+		 ],
+		"description": "comma double quotes"
+	},
+
+}

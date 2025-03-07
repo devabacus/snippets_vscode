@@ -1,0 +1,44 @@
+{
+    "flutter new route": {
+        "scope": "dart",
+        "prefix": "roinit",
+        "body": [
+            "GoRoute(path: '/${1:screenName}', builder: (context,state) => ${2:ScreenName}())",
+        ],
+        "description": "flutter new route"
+    },
+    "router": {
+        "scope": "dart",
+        "prefix": "rorouter",
+        "body": [
+            "final ${1:_router} = GoRouter(",
+            "\t  routes: [",
+            "\t\t    GoRoute(path: '/', builder: (context, state) => ${2:HomeScreen}()),",
+            "\t\t    // GoRoute(path: '/Screen', builder: (context, state) => NewScreen()),",
+            "\t  ],",
+            ");",
+            "",
+        ],
+        "description": "router"
+    },
+    "router go to": {
+        "scope": "dart",
+        "prefix": "rogo",
+        "body": [
+            "() => context.go(${1:AppRoute.secondScreen.path})",
+        ],
+        "description": "router go to"
+    },
+    "router Navigation": {
+        "scope": "dart",
+        "prefix": "ronav",
+        "body": [
+            "() {",
+            "Navigator.of(",
+            "\t  context,",
+            ").push(MaterialPageRoute(builder: (context) => ${1:HomeScreen}()));",
+            "},",
+        ],
+        "description": "router Navigation"
+    },
+}

@@ -1,0 +1,49 @@
+{
+	"if empty": {
+		"scope": "java",
+		"prefix": "ife",
+		"body": [
+		  "if ($mvar.isEmpty()) {",
+		  "  $expr",
+		  "}"
+		 ],
+		"description": "if empty"
+	},
+
+	"for with index": {
+		"scope": "java",
+		"prefix": "for",
+		"body": [
+		  "for (int ${1:i} = 0; ${1:i} < ${2:args.length}; ${1:i}++) {",
+		  "    ${3}",
+		  "}"
+		 ],
+		"description": "for with index"
+	},
+
+	"for in": {
+		"scope": "java",
+		"prefix": "forin",
+		"body": [
+		  "for (var $item : $mlist) {",
+
+		  "    $expr",
+		  "}"
+		 ],
+		"description": "for in"
+	},
+	"if else": {
+		"scope": "java, csharp",
+		"prefix": "ifel",
+		"body": [
+		  "if (${1:condition}) {",
+		  "  ${2}",
+		  "} else {",
+		  "  ${3}",
+		  "}"
+		 ],
+		"description": "if else"
+	},
+
+
+}

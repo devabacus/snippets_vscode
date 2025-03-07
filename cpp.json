@@ -1,0 +1,26 @@
+{
+	  "print": {
+        "prefix": "p",
+        "body": [
+          "cout << ${1:\"String contains\"};"
+         ],
+        "description": "print"
+    },
+
+	"print var": {
+        "prefix": "pv",
+        "body": [
+          "cout << \"${1:message}: \" << ${1:message};"
+         ],
+        "description": "print var"
+    },
+
+    
+
+	
+
+	  
+
+
+
+}

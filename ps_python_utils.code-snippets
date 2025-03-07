@@ -1,0 +1,59 @@
+{
+	"pip update": {
+		"scope": "powershell",
+		"prefix": "pypipu",
+		"body": [
+			"python.exe -m pip install --upgrade pip",
+		],
+		"description": "pip update"
+	},
+	"create virtual env": {
+		"scope": "powershell",
+		"prefix": "pyenv",
+		"body": [
+			"python -m venv ${1:env}"
+		],
+		"description": "create virtual env"
+	},
+	"env activate": {
+		"scope": "powershell",
+		"prefix": "pyenva",
+		"body": [
+			".\\\\${1:env}\\Scripts\\Activate.ps1"
+		],
+		"description": "env activate"
+	},
+	"env deactivate": {
+		"scope": "powershell",
+		"prefix": "pyenvd",
+		"body": [
+			"deactivate"
+		],
+		"description": "env deactivate"
+	},
+	"pip freeze install": {
+		"scope": "powershell",
+		"prefix": "pyfri",
+		"body": [
+			"pip install -r requirements.txt"
+		],
+		"description": "pip freeze install"
+	},
+	"python freeze create": {
+		"scope": "powershell",
+		"prefix": "pyfrc",
+		"body": [
+			"python -m pip freeze > requirements.txt"
+		],
+		"description": "python freeze create"
+	},
+
+	"pip install package": {
+        "scope": "powershell",
+        "prefix": "ppi",
+        "body": [
+            "pip install ${1:package}"
+        ],
+        "description": "pip install package"
+},
+}

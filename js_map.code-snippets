@@ -1,0 +1,75 @@
+{
+	"map init": {
+        "scope": "javascript, javascriptreact, typescript",
+		"prefix": "mi",
+		"body": [
+		  "let ${1:mapName} = new Map();"
+		],
+		"description": "map init"
+	  },
+	  "map get item": {
+		"scope": "javascript, javascriptreact, typescript",
+		"prefix": "mgi",
+		"body": [
+		  "${1:mapName}.get(${2:key})"
+		],
+		"description": "map get item"
+	  },
+	  "map lenght": {
+		"scope": "javascript,javascriptreact,typescript",
+		"prefix": "ml",
+		"body": [
+		  "$mapName.size"
+		 ],
+		"description": "map lenght"
+	},
+	  "map add": {
+		"scope": "javascript, javascriptreact, typescript",
+		"prefix": "ma",
+		"body": [
+		  "${1:mapName}.set(${2:key},${3:value});"
+		],
+		"description": "map add"
+	  },
+	  "map remove": {
+		"scope": "javascript, javascriptreact, typescript",
+		"prefix": "mrm",
+		"body": [
+		  "${1:mapName}.delete(${2:key});"
+		],
+		"description": "map remove"
+	  },
+	  "map length": {
+		"scope": "javascript, javascriptreact, typescript",
+		"prefix": "lnm",
+		"body": [
+		  "${1:mapName}.size"
+		],
+		"description": "map length"
+	  },
+	  "map empty check": {
+		"scope": "javascript, javascriptreact, typescript",
+		"prefix": "empm",
+		"body": [
+		  "${1:mymap}.size == 0"
+		],
+		"description": "map empty check"
+	  },
+	  "map clear": {
+		"scope": "javascript, javascriptreact, typescript",
+		"prefix": "mclr",
+		"body": [
+		  "${1:mapName}.clear();"
+		],
+		"description": "map clear"
+	  },
+	  "map iterate": {
+		"scope": "javascript, javascriptreact, typescript",
+		"prefix": "mit",
+		"body": [
+		  "${1:mapName}.forEach((k, v) => {${2}});"
+		],
+		"description": "map iterate"
+	  },
+
+}

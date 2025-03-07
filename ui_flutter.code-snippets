@@ -1,0 +1,64 @@
+{
+	"start app": {
+		"scope": "dart",
+		"prefix": "app",
+		"body": [
+			"import 'package:flutter/material.dart';",
+			"",
+			"void main() {",
+			"\trunApp(const MyApp());",
+			"}",
+			"",
+			"class MyApp extends StatelessWidget {",
+			"\tconst MyApp({super.key});",
+			"",
+			"\t@override",
+			"\tWidget build(BuildContext context) {",
+			"\t\treturn MaterialApp(home: Home());",
+			"\t}",
+			"}",
+			"",
+			"class Home extends StatelessWidget {",
+			"\tconst Home({super.key});",
+			"",
+			"\t@override",
+			"\tWidget build(BuildContext context) {",
+			"\t\treturn Scaffold(body: Center(child: Text(\"My App\")));",
+			"\t}",
+			"}",
+			"",
+			"",
+		],
+		"description": "start app"
+	},
+	"ListView": {
+		"scope": "dart",
+		"prefix": "wl",
+		"body": [
+			"ListView.builder(",
+			"\titemCount: ${1:},",
+			"\titemBuilder: (context, index) {",
+			"\t",
+			"\treturn ListTile(",
+			"\ttitle: ${2:Text(\"название элемента\")},",
+			"\tonTap: () {",
+			"\t${3:print(\"tap on the item\");}",
+			"\t},",
+			"\t);",
+			"\t},",
+			"\t)",
+		],
+		"description": "ListView"
+	},
+	"widget text": {
+		"scope": "dart",
+		"prefix": "wt",
+		"body": [
+			"Text(${2:\"mytext\", style: TextStyle(fontSize: 20)})${1:,}"
+		],
+		"description": "widget text"
+	},
+
+	
+	
+}
