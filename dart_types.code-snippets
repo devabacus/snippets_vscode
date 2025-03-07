@@ -7,7 +7,6 @@
 		],
 		"description": "string type"
 	},
-	
 	"int type": {
 		"scope": "dart",
 		"prefix": "ti",
@@ -22,14 +21,126 @@
 		"body": [
 			"double"
 		],
-		"description": "double type"
+		"description": "floating-point number type"
 	},
-	"Future type": {
+	"bool type": {
 		"scope": "dart",
-		"prefix": "fut",
+		"prefix": "tb",
 		"body": [
-			"Future<${1:}>",
+			"bool"
 		],
-		"description": "snippet name"
+		"description": "boolean type"
 	},
+	"dynamic type": {
+		"scope": "dart",
+		"prefix": "tany",
+		"body": [
+			"dynamic"
+		],
+		"description": "dynamic type (no type checking)"
+	},
+	"void type": {
+		"scope": "dart",
+		"prefix": "tvoid",
+		"body": [
+			"void"
+		],
+		"description": "void return type"
+	},
+	"list type": {
+		"scope": "dart",
+		"prefix": "tlist",
+		"body": [
+			"List<${1:Type}>"
+		],
+		"description": "List generic type\nExample: List<String>"
+	},
+	"map type": {
+		"scope": "dart",
+		"prefix": "tmap",
+		"body": [
+			"Map<${1:KeyType}, ${2:ValueType}>"
+		],
+		"description": "Map generic type\nExample: Map<String, int>"
+	},
+	"set type": {
+		"scope": "dart",
+		"prefix": "tset",
+		"body": [
+			"Set<${1:Type}>"
+		],
+		"description": "Set generic type\nExample: Set<String>"
+	},
+	"future type": {
+		"scope": "dart",
+		"prefix": "tfuture",
+		"body": [
+			"Future<${1:Type}>"
+		],
+		"description": "Future type for async operations"
+	},
+	"nullable type": {
+		"scope": "dart",
+		"prefix": "tnull",
+		"body": [
+			"${1:Type}?"
+		],
+		"description": "Nullable type\nExample: String?"
+	},
+	"object type": {
+		"scope": "dart",
+		"prefix": "tobj",
+		"body": [
+			"Object"
+		],
+		"description": "Object type (base class for all objects)"
+	},
+	"stream type": {
+		"scope": "dart",
+		"prefix": "tstream",
+		"body": [
+			"Stream<${1:Type}>"
+		],
+		"description": "Stream generic type for asynchronous data"
+	},
+	"iterable type": {
+		"scope": "dart",
+		"prefix": "titer",
+		"body": [
+			"Iterable<${1:Type}>"
+		],
+		"description": "Iterable generic type"
+	},
+	"var keyword": {
+		"scope": "dart",
+		"prefix": "tvar",
+		"body": [
+			"var"
+		],
+		"description": "var keyword for type inference"
+	},
+	"function type": {
+		"scope": "dart",
+		"prefix": "tfunc",
+		"body": [
+			"${1:ReturnType} Function(${2:Parameters})"
+		],
+		"description": "Function type\nExample: void Function(String, int)"
+	},
+	"record type": {
+		"scope": "dart",
+		"prefix": "trecord",
+		"body": [
+			"(${1:Type1}, ${2:Type2})"
+		],
+		"description": "Record type (Dart 3.0+)\nExample: (String, int)"
+	},
+	"named record type": {
+		"scope": "dart",
+		"prefix": "tnrecord",
+		"body": [
+			"({${1:Type1} ${2:name1}, ${3:Type2} ${4:name2}})"
+		],
+		"description": "Named record type (Dart 3.0+)\nExample: ({String name, int age})"
+	}
 }

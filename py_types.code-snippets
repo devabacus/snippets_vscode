@@ -3,18 +3,178 @@
 		"scope": "python",
 		"prefix": "ts",
 		"body": [
-		  "str"
-		 ],
-		"description": "string type"
+			"str"
+		],
+		"description": "string type annotation"
 	},
-	
-	"string type": {
+	"int type": {
 		"scope": "python",
-		"prefix": "tm",
+		"prefix": "ti",
 		"body": [
-		  "dict"
-		 ],
-		"description": "map(dict) type"
+			"int"
+		],
+		"description": "integer type annotation"
 	},
-
+	"float type": {
+		"scope": "python",
+		"prefix": "td",
+		"body": [
+			"float"
+		],
+		"description": "floating-point number type annotation"
+	},
+	"bool type": {
+		"scope": "python",
+		"prefix": "tb",
+		"body": [
+			"bool"
+		],
+		"description": "boolean type annotation"
+	},
+	"any type": {
+		"scope": "python",
+		"prefix": "tany",
+		"body": [
+			"Any"
+		],
+		"description": "Any type (requires: from typing import Any)"
+	},
+	"none type": {
+		"scope": "python",
+		"prefix": "tvoid",
+		"body": [
+			"None"
+		],
+		"description": "None return type annotation"
+	},
+	"list type": {
+		"scope": "python",
+		"prefix": "tlist",
+		"body": [
+			"list[${1:Type}]"
+		],
+		"description": "List type annotation (Python 3.9+)\nExample: list[str]"
+	},
+	"dict type": {
+		"scope": "python",
+		"prefix": "tmap",
+		"body": [
+			"dict[${1:KeyType}, ${2:ValueType}]"
+		],
+		"description": "Dict type annotation (Python 3.9+)\nExample: dict[str, int]"
+	},
+	"set type": {
+		"scope": "python",
+		"prefix": "tset",
+		"body": [
+			"set[${1:Type}]"
+		],
+		"description": "Set type annotation (Python 3.9+)\nExample: set[str]"
+	},
+	"coroutine type": {
+		"scope": "python",
+		"prefix": "tfuture",
+		"body": [
+			"Coroutine[${1:YieldType}, ${2:SendType}, ${3:ReturnType}]"
+		],
+		"description": "Coroutine type (requires: from typing import Coroutine)"
+	},
+	"optional type": {
+		"scope": "python",
+		"prefix": "tnull",
+		"body": [
+			"Optional[${1:Type}]"
+		],
+		"description": "Optional type (requires: from typing import Optional)"
+	},
+	"object type": {
+		"scope": "python",
+		"prefix": "tobj",
+		"body": [
+			"object"
+		],
+		"description": "base object type"
+	},
+	"type var": {
+		"scope": "python",
+		"prefix": "ttvar",
+		"body": [
+			"TypeVar('${1:T}')"
+		],
+		"description": "TypeVar (requires: from typing import TypeVar)"
+	},
+	"generator type": {
+		"scope": "python",
+		"prefix": "tstream",
+		"body": [
+			"Generator[${1:YieldType}, ${2:SendType}, ${3:ReturnType}]"
+		],
+		"description": "Generator type (requires: from typing import Generator)"
+	},
+	"iterable type": {
+		"scope": "python",
+		"prefix": "titer",
+		"body": [
+			"Iterable[${1:Type}]"
+		],
+		"description": "Iterable type (requires: from typing import Iterable)"
+	},
+	"awaitable type": {
+		"scope": "python",
+		"prefix": "tawait",
+		"body": [
+			"Awaitable[${1:ReturnType}]"
+		],
+		"description": "Awaitable type (requires: from typing import Awaitable)"
+	},
+	"union type": {
+		"scope": "python",
+		"prefix": "tunion",
+		"body": [
+			"${1:Type1} | ${2:Type2}"
+		],
+		"description": "Union type with pipe syntax (Python 3.10+)\nExample: str | None"
+	},
+	"tuple type": {
+		"scope": "python",
+		"prefix": "ttuple",
+		"body": [
+			"tuple[${1:Type}, ...]"
+		],
+		"description": "Tuple type annotation (Python 3.9+)"
+	},
+	"callable type": {
+		"scope": "python",
+		"prefix": "tfunc",
+		"body": [
+			"Callable[[${1:ArgTypes}], ${2:ReturnType}]"
+		],
+		"description": "Callable type (requires: from typing import Callable)"
+	},
+	"type alias": {
+		"scope": "python",
+		"prefix": "talias",
+		"body": [
+			"${1:TypeName} = ${2:Type}"
+		],
+		"description": "Type alias (Python 3.10+)"
+	},
+	"typed dict": {
+		"scope": "python",
+		"prefix": "tdict",
+		"body": [
+			"class ${1:DictName}(TypedDict):",
+			"\t${2:field}: ${3:Type}"
+		],
+		"description": "TypedDict class (requires: from typing import TypedDict)"
+	},
+	"protocol": {
+		"scope": "python",
+		"prefix": "tproto",
+		"body": [
+			"class ${1:ProtocolName}(Protocol):",
+			"\t${2:def ${3:method_name}(self${4:, ${5:param}: ${6:Type}}) -> ${7:ReturnType}: ...}"
+		],
+		"description": "Protocol class (requires: from typing import Protocol)"
+	}
 }

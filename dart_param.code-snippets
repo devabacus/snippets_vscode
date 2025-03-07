@@ -1,0 +1,83 @@
+{
+	
+	"param positional": {
+		"scope": "dart",
+		"prefix": "pp",
+		"body": [
+			"${1:int} ${2:param}"
+		],
+		"description": "param positional"
+	},
+	"param positional string": {
+		"scope": "dart",
+		"prefix": "pps",
+		"body": [
+			"String ${1:param}",
+		],
+		"description": "param positional string"
+	},
+	"param positional 2": {
+		"scope": "dart",
+		"prefix": "pp2",
+		"body": [
+			"${1:, int} ${2:param}"
+		],
+		"description": "param positional"
+	},
+	"param named": {
+		"scope": "dart",
+		"prefix": "pn",
+		"body": [
+			"{${2|int?,required int|} arg}"
+		],
+		"description": "param named"
+	},
+	"param default": {
+		"scope": "dart",
+		"prefix": "pd",
+		"body": [
+			"{${2:String} ${3:arg} = ${4:\"value\"}\\}"
+		],
+		"description": "param default"
+	},
+	"param default 2": {
+		"scope": "dart",
+		"prefix": "pd2",
+		"body": [
+			"${2:String} ${3:arg} = ${4:\"value\"}"
+		],
+		"description": "param default"
+	},
+	"param optional": {
+		"scope": "dart",
+		"prefix": "po",
+		"body": [
+			"[${1:String}? ${2:arg}]"
+		],
+		"description": "param optional"
+	},
+	"param optional 2": {
+		"scope": "dart",
+		"prefix": "po2",
+		"body": [
+			"${1:String}? ${2:arg}"
+		],
+		"description": "param optional"
+	},
+	"param named call": {
+		"scope": "dart",
+		"prefix": "pcn",
+		"body": [
+			"${1:param}: ${2:\"value\"}"
+		],
+		"description": "param named call"
+	},
+	"param list": {
+		"scope": "dart",
+		"prefix": "pl",
+		"body": [
+			"List<${1:dynamic}>? ${2:args}"
+		],
+		"description": "param list"
+	},
+}

@@ -3,18 +3,186 @@
 		"scope": "typescript",
 		"prefix": "ts",
 		"body": [
-		  "string"
-		 ],
+			"string"
+		],
 		"description": "string type"
 	},
-
-	"int type": {
+	"int/number type": {
 		"scope": "typescript",
 		"prefix": "ti",
 		"body": [
-		  "number"
-		 ],
-		"description": "int type"
+			"number"
+		],
+		"description": "number type (represents integers)"
 	},
-	
+	"float/number type": {
+		"scope": "typescript",
+		"prefix": "td",
+		"body": [
+			"number"
+		],
+		"description": "number type (for floating point values)"
+	},
+	"bool type": {
+		"scope": "typescript",
+		"prefix": "tb",
+		"body": [
+			"boolean"
+		],
+		"description": "boolean type"
+	},
+	"any type": {
+		"scope": "typescript",
+		"prefix": "tany",
+		"body": [
+			"any"
+		],
+		"description": "any type (disables type checking)"
+	},
+	"void type": {
+		"scope": "typescript",
+		"prefix": "tvoid",
+		"body": [
+			"void"
+		],
+		"description": "void return type"
+	},
+	"array type": {
+		"scope": "typescript",
+		"prefix": "tlist",
+		"body": [
+			"${1:Type}[]"
+		],
+		"description": "Array notation\nExample: string[]"
+	},
+	"map/record type": {
+		"scope": "typescript",
+		"prefix": "tmap",
+		"body": [
+			"Record<${1:KeyType}, ${2:ValueType}>"
+		],
+		"description": "Record type for key-value objects\nExample: Record<string, number>"
+	},
+	"set type": {
+		"scope": "typescript",
+		"prefix": "tset",
+		"body": [
+			"Set<${1:Type}>"
+		],
+		"description": "Set generic type\nExample: Set<string>"
+	},
+	"promise type": {
+		"scope": "typescript",
+		"prefix": "tfuture",
+		"body": [
+			"Promise<${1:Type}>"
+		],
+		"description": "Promise type for async operations"
+	},
+	"null type": {
+		"scope": "typescript",
+		"prefix": "tnull",
+		"body": [
+			"null"
+		],
+		"description": "null type"
+	},
+	"object type": {
+		"scope": "typescript",
+		"prefix": "tobj",
+		"body": [
+			"object"
+		],
+		"description": "object type (any non-primitive type)"
+	},
+	"unknown type": {
+		"scope": "typescript",
+		"prefix": "tunk",
+		"body": [
+			"unknown"
+		],
+		"description": "unknown type (type-safe alternative to any)"
+	},
+	"array type (generic)": {
+		"scope": "typescript",
+		"prefix": "tarray",
+		"body": [
+			"Array<${1:Type}>"
+		],
+		"description": "Array generic type\nExample: Array<string>"
+	},
+	"undefined type": {
+		"scope": "typescript",
+		"prefix": "tundef",
+		"body": [
+			"undefined"
+		],
+		"description": "undefined type"
+	},
+	"nullable type": {
+		"scope": "typescript",
+		"prefix": "tnullab",
+		"body": [
+			"${1:Type} | null | undefined"
+		],
+		"description": "Union with null and undefined\nExample: string | null | undefined"
+	},
+	"optional property": {
+		"scope": "typescript",
+		"prefix": "topt",
+		"body": [
+			"${1:property}?: ${2:Type}"
+		],
+		"description": "Optional property in interface/type\nExample: name?: string"
+	},
+	"type alias": {
+		"scope": "typescript",
+		"prefix": "talias",
+		"body": [
+			"type ${1:TypeName} = ${2:Type}"
+		],
+		"description": "Type alias declaration\nExample: type UserID = string"
+	},
+	"interface": {
+		"scope": "typescript",
+		"prefix": "tinterface",
+		"body": [
+			"interface ${1:InterfaceName} {",
+			"\t${2:property}: ${3:Type}",
+			"}"
+		],
+		"description": "Interface declaration"
+	},
+	"function type": {
+		"scope": "typescript",
+		"prefix": "tfunc",
+		"body": [
+			"(${1:params}: ${2:ParamType}) => ${3:ReturnType}"
+		],
+		"description": "Function type\nExample: (name: string) => void"
+	},
+	"union type": {
+		"scope": "typescript",
+		"prefix": "tunion",
+		"body": [
+			"${1:Type1} | ${2:Type2}"
+		],
+		"description": "Union type\nExample: string | number"
+	},
+	"intersection type": {
+		"scope": "typescript",
+		"prefix": "tintersect",
+		"body": [
+			"${1:Type1} & ${2:Type2}"
+		],
+		"description": "Intersection type\nExample: Person & Employee"
+	},
+	"tuple type": {
+		"scope": "typescript",
+		"prefix": "ttuple",
+		"body": [
+			"[${1:Type1}, ${2:Type2}]"
+		],
+		"description": "Tuple type\nExample: [string, number]"
+	}
 }
