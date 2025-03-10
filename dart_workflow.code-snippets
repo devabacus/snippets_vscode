@@ -1,7 +1,30 @@
 {
+
+"if false": {
+  "scope": "dart",
+  "prefix": "iffalse",
+  "body": [
+"if(${1:value} == false){",
+"\t\t\t\t${2:}",
+"}",
+  ],
+  "description": "if false"
+},
+
+"if null": {
+  "scope": "dart",
+  "prefix": "ifnull",
+  "body": [
+"if(${1:value} == null){",
+"\t\t\t\t${2:}",
+"}",
+  ],
+  "description": "if null"
+},
+
     "if not empty": {
         "scope": "dart",
-        "prefix": "ifne",
+        "prefix": "ifen",
         "body": [
             "if (${1:mvar}.isNotEmpty) {",
             "  ${2}",
@@ -58,11 +81,10 @@
             "try {",
             "\t$1",
             "} catch (e) {",
-            "\tprint('Error: \\${e.toString()}');",
             "\t$2",
             "} ${3:finally {",
             "\t$4",
-            "}}"
+            "\\}}"
         ],
         "description": "Flutter try-catch-finally block.\nExample usage:\ntry {\n  // Your code here\n} catch (e) {\n  print('Error: \\${e.toString()}');\n  // Handle error\n} finally {\n  // Clean up resources\n}"
     }

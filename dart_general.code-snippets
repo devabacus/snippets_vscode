@@ -1,37 +1,5 @@
 {
-	"var": {
-		"scope": "dart",
-		"prefix": "v",
-		"body": "${1|final,const|} ${2:mvar} = ${3:${TM_SELECTED_TEXT:value}};"
-	},
-	"var declare": {
-		"scope": "dart",
-		"prefix": "vd",
-		"body": "${1|final,const|} ${2|String,int,bool:String|} ${3:mvar};"
-	},
-	"bool": {
-		"scope": "dart",
-		"prefix": "bl",
-		"body": [
-			"bool${1:}",
-		],
-		"description": "bool"
-	},
-	"print": {
-		"scope": "dart",
-		"prefix": "p",
-		"body": "print('${1:text}');"
-	},
-	"print2": {
-		"scope": "dart",
-		"prefix": "p2",
-		"body": "print(${1:${TM_SELECTED_TEXT:\"hello\" + name}})"
-	},
-	"print format": {
-		"scope": "dart",
-		"prefix": "pv",
-		"body": "print('${${1:varname}}${2:}');"
-	},
+	
 	"length": {
 		"scope": "dart",
 		"prefix": "ln",

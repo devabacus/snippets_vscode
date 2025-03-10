@@ -1,0 +1,167 @@
+{
+	"Mermaid Flowchart": {
+		"prefix": "mmd-flowchart",
+		"scope": "markdown",
+		"body": [
+			"```mermaid",
+			"flowchart ${1|TB,TD,BT,RL,LR|}",
+			"    ${2:A}[\"${3:Начало}\"] --> ${4:B}[\"${5:Конец}\"]",
+			"    ${6:C}[\"${7:Шаг}\"] --> ${4:B}",
+			"    ${2:A} --> ${6:C}",
+			"```"
+		],
+		"description": "Создает блок диаграммы flowchart Mermaid.\nПример: TB - сверху вниз, LR - слева направо."
+	},
+	"Mermaid Sequence Diagram": {
+		"prefix": "mmd-sequence",
+		"scope": "markdown",
+		"body": [
+			"```mermaid",
+			"sequenceDiagram",
+			"    participant ${1:A} as ${2:Клиент}",
+			"    participant ${3:B} as ${4:Сервер}",
+			"    ${1:A}->>+${3:B}: ${5:Запрос данных}",
+			"    ${3:B}-->>-${1:A}: ${6:Ответ с данными}",
+			"```"
+		],
+		"description": "Создает блок диаграммы последовательности Mermaid.\nПример: Участники взаимодействуют через сообщения."
+	},
+	"Mermaid Class Diagram": {
+		"prefix": "mmd-class",
+		"scope": "markdown",
+		"body": [
+			"```mermaid",
+			"classDiagram",
+			"    class ${1:ИмяКласса} {",
+			"        +${2:поле1}: ${3:тип}",
+			"        -${4:приватноеПоле}: ${5:тип}",
+			"        +${6:метод}(${7:параметр}) ${8:возвращаемыйТип}",
+			"    }",
+			"    class ${9:ДругойКласс}",
+			"    ${1:ИмяКласса} <|-- ${9:ДругойКласс}: ${10:наследует}",
+			"```"
+		],
+		"description": "Создает блок диаграммы классов Mermaid.\nПример: С полями, методами и связями."
+	},
+	"Mermaid Gantt Chart": {
+		"prefix": "mmd-gantt",
+		"scope": "markdown",
+		"body": [
+			"```mermaid",
+			"gantt",
+			"    title ${1:Название проекта}",
+			"    dateFormat YYYY-MM-DD",
+			"    section ${2:Секция1}",
+			"    ${3:Задача1} :a1, ${4:2023-01-01}, ${5:7d}",
+			"    ${6:Задача2} :after a1, ${7:5d}",
+			"    section ${8:Секция2}",
+			"    ${9:Задача3} :${10:2023-01-10}, ${11:6d}",
+			"```"
+		],
+		"description": "Создает блок диаграммы Ганта Mermaid.\nПример: Временная шкала с задачами и зависимостями."
+	},
+	"Mermaid State Diagram": {
+		"prefix": "mmd-state",
+		"scope": "markdown",
+		"body": [
+			"```mermaid",
+			"stateDiagram-v2",
+			"    [*] --> ${1:НачальноеСостояние}",
+			"    ${1:НачальноеСостояние} --> ${2:Состояние2}: ${3:Действие}",
+			"    ${2:Состояние2} --> ${4:Состояние3}: ${5:Событие}",
+			"    ${4:Состояние3} --> [*]: ${6:Завершение}",
+			"```"
+		],
+		"description": "Создает блок диаграммы состояний Mermaid.\nПример: Показывает переходы между состояниями системы."
+	},
+	"Mermaid Entity Relationship": {
+		"prefix": "mmd-er",
+		"scope": "markdown",
+		"body": [
+			"```mermaid",
+			"erDiagram",
+			"    ${1:СУЩНОСТЬ1} ||--o{ ${2:СУЩНОСТЬ2} : ${3:имеет}",
+			"    ${1:СУЩНОСТЬ1} {",
+			"        ${4:тип} ${5:id} PK",
+			"        ${6:тип} ${7:атрибут}",
+			"    }",
+			"    ${2:СУЩНОСТЬ2} {",
+			"        ${8:тип} ${9:id} PK",
+			"        ${10:тип} ${11:внешнийКлюч} FK",
+			"    }",
+			"```"
+		],
+		"description": "Создает блок ER-диаграммы Mermaid.\nПример: Отображение связей между сущностями в базе данных."
+	},
+	"Mermaid Pie Chart": {
+		"prefix": "mmd-pie",
+		"scope": "markdown",
+		"body": [
+			"```mermaid",
+			"pie",
+			"    title ${1:Распределение}",
+			"    \"${2:Сегмент1}\" : ${3:45}",
+			"    \"${4:Сегмент2}\" : ${5:30}",
+			"    \"${6:Сегмент3}\" : ${7:25}",
+			"```"
+		],
+		"description": "Создает блок круговой диаграммы Mermaid.\nПример: Визуализация процентного распределения."
+	},
+	"Mermaid User Journey": {
+		"prefix": "mmd-journey",
+		"scope": "markdown",
+		"body": [
+			"```mermaid",
+			"journey",
+			"    title ${1:Путь пользователя}",
+			"    section ${2:Регистрация}",
+			"      ${3:Заполнить форму}: ${4:3}: ${5:пользователь}",
+			"      ${6:Подтвердить email}: ${7:5}: ${5:пользователь}, ${8:система}",
+			"    section ${9:Использование}",
+			"      ${10:Войти в систему}: ${11:2}: ${5:пользователь}",
+			"      ${12:Создать проект}: ${13:4}: ${5:пользователь}",
+			"```"
+		],
+		"description": "Создает блок диаграммы пути пользователя Mermaid.\nПример: Оценка удовлетворенности на каждом этапе (1-5)."
+	},
+	"Mermaid Git Graph": {
+		"prefix": "mmd-git",
+		"scope": "markdown",
+		"body": [
+			"```mermaid",
+			"gitGraph",
+			"    commit id: \"${1:init}\"",
+			"    branch ${2:develop}",
+			"    checkout ${2:develop}",
+			"    commit id: \"${3:feature1}\"",
+			"    commit id: \"${4:feature2}\"",
+			"    checkout main",
+			"    merge ${2:develop} tag: \"${5:v1.0.0}\"",
+			"    commit id: \"${6:hotfix}\"",
+			"```"
+		],
+		"description": "Создает блок диаграммы Git Mermaid.\nПример: Визуализация веток и коммитов."
+	},
+	"Mermaid Basic Block": {
+		"prefix": "mmd",
+		"scope": "markdown",
+		"body": [
+			"```mermaid",
+			"${1:// Вставьте код Mermaid здесь}",
+			"```"
+		],
+		"description": "Создает базовый блок Mermaid.\nИспользуйте для произвольных диаграмм Mermaid."
+	},
+
+
+	"subgraph base": {
+		"scope": "markdown",
+		"prefix": "msubgraph",
+		"body": [
+			"subgraph",
+			"\t${1:}",
+			"end",
+		],
+		"description": "subgraph base"
+	},
+}

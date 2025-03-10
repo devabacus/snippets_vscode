@@ -19,6 +19,16 @@
 		],
 		"description": "class abstract declare"
 	},
+	"class declare implements": {
+		"scope": "dart",
+		"prefix": "cldi",
+		"body": [
+			"class ${1:Name} implements ${2:interface} {",
+			"\t$0",
+			"}"
+		],
+		"description": "class declare"
+	},
 	"class inheretence": {
 		"scope": "dart",
 		"prefix": "cin",
@@ -55,5 +65,13 @@
 			"}"
 		],
 		"description": "class declare full"
+	},
+	"getter": {
+		"scope": "dart",
+		"prefix": "clgetter",
+		"body": [
+			"${1:type} get ${2:name} => ${3:value};",
+		],
+		"description": "getter"
 	},
 }

@@ -34,9 +34,12 @@
 		"scope": "dart",
 		"prefix": "lgi",
 		"body": [
-		  "${1:mlist}${2|[index],.elementAt(index)|}"
-		 ],
-		"description": ["list get item\n", "for iterable use elementAt"]
+			"${1:mlist}${2|[index],.elementAt(index)|}"
+		],
+		"description": [
+			"list get item\n",
+			"for iterable use elementAt"
+		]
 	},
 	"list slice": {
 		"scope": "dart",
@@ -157,5 +160,29 @@
 		"prefix": "lrmd",
 		"body": "${1:newList} = ${2:oldList}.toSet().toList();",
 		"description": "remove duplicates from the list, save ordering"
-	},	
+	},
+	"list first": {
+		"scope": "dart",
+		"prefix": "lifirst",
+		"body": [
+			"${1:list}.first",
+		],
+		"description": "list first"
+	},
+	"list last": {
+		"scope": "dart",
+		"prefix": "li_last",
+		"body": [
+			"${1:list}.last",
+		],
+		"description": "list last"
+	},
+	"list contains": {
+		"scope": "dart",
+		"prefix": "lc",
+		"body": [
+			"${1:mlist}.contains(${2:element})",
+		],
+		"description": "list contains"
+	},
 }

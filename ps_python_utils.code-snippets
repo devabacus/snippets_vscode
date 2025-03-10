@@ -50,7 +50,7 @@
 
 	"pip install package": {
         "scope": "powershell",
-        "prefix": "ppi",
+        "prefix": "pipy",
         "body": [
             "pip install ${1:package}"
         ],

@@ -4,7 +4,7 @@
 		"body": [
 			
 			"\"${1:snippet name}\": {",
-			"\t\t\"scope\": \"${TM_FILENAME/.+\\.((py)|(php)|(go)|(js)|(dart)|(cs)|(cpp)|(java)|(ts)|(ps1)|(sh)|(ahk))$/${2:+python}${3:+php}${4:+go}${5:+javascript,javascriptreact}${6:+dart}${7:+csharp}${8:+cpp}${9:+java}${10:+typescript}${11:+powershell}${12:+shellscript}${13:+ahk}/}\",",
+			"\t\t\"scope\": \"${TM_FILENAME/.+\\.((py)|(php)|(go)|(js)|(dart)|(cs)|(cpp)|(java)|(ts)|(ps1)|(sh)|(ahk)|(md))$/${2:+python}${3:+php}${4:+go}${5:+javascript,javascriptreact}${6:+dart}${7:+csharp}${8:+cpp}${9:+java}${10:+typescript}${11:+powershell}${12:+shellscript}${13:+ahk}${14:+markdown}/}\",",
 			"\t\t\"prefix\": \"${2}\",",
 			"\t\t\"body\": [",
 			"\t\t\t${3:${TM_SELECTED_TEXT}}",

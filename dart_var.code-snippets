@@ -1,0 +1,50 @@
+{
+	"var": {
+		"scope": "dart",
+		"prefix": "v",
+		"body": "${1|final,const,var|} ${2:mvar} = ${3:${TM_SELECTED_TEXT:value}};"
+	},
+	"var declare": {
+		"scope": "dart",
+		"prefix": "vd",
+		"body": "${1|final,const,var|} ${2|String,int,bool:String|} ${3:mvar};"
+	},
+	
+	"var declare int": {
+		"scope": "dart",
+		"prefix": "vdi",
+		"body": "${1:${2|final,const,var|} }int ${3:mvar};"
+	},
+
+	"var declare bool": {
+		"scope": "dart",
+		"prefix": "vdb",
+		"body": "${1:${2|final,const,var|} }bool ${3:mvar};"
+	},
+
+	"var declare string": {
+		"scope": "dart",
+		"prefix": "vds",
+		"body": "${1:${2|final,const,var|} }String ${3:mvar};"
+	},
+
+	"var init int": {
+		"scope": "dart",
+		"prefix": "vii",
+		"body": "int ${1:mvar} = ${2:0};"
+	},
+
+	"var init string": {
+		"scope": "dart",
+		"prefix": "vis",
+		"body": "String ${1:mvar} = ${3:\"${2:}\"};"
+	},
+
+	
+	"var init bool": {
+		"scope": "dart",
+		"prefix": "vib",
+		"body": "bool ${1:mvar} = ${2:false};"
+	},
+	
+}

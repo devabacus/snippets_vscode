@@ -35,7 +35,7 @@
 		"scope": "dart",
 		"prefix": "sts",
 		"body": [
-			"${1:name}.toString()"
+			"${1:${TM_SELECTED_TEXT:name}}.toString()"
 		],
 		"description": "cast to String"
 	},

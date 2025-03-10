@@ -1,7 +1,7 @@
 {
 	"flutter plugin install": {
         "scope": "powershell",
-        "prefix": "flpa",
+        "prefix": "pifl",
         "body": [
             "flutter pub add ${1:plugin}",
         ],
@@ -10,7 +10,7 @@
 
 "flutter pub get": {
         "scope": "powershell",
-        "prefix": "flpg",
+        "prefix": "pufl",
         "body": [
             "flutter pub get"
         ],

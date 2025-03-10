@@ -75,7 +75,7 @@
 		"scope": "dart",
 		"prefix": "tfuture",
 		"body": [
-			"Future<${1:Type}>"
+			"Future<${1:${TM_SELECTED_TEXT:Type}}>"
 		],
 		"description": "Future type for async operations"
 	},
