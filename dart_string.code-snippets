@@ -15,11 +15,20 @@
 		],
 		"description": "string length"
 	},
+
+	"string format ": {
+		"scope": "dart",
+		"prefix": "sf",
+		"body": [
+			"$${2:varname}"
+		],
+		"description": "string format"
+	},
 	"string format second": {
 		"scope": "dart",
 		"prefix": "sfs",
 		"body": [
-			"'$${2:text} ${1:varname} '"
+			"$${2:text} ${1:varname}"
 		],
 		"description": "string format"
 	},
@@ -27,7 +36,7 @@
 		"scope": "dart",
 		"prefix": "sff",
 		"body": [
-			"'$${1:varname} ${2:text}'"
+			"$${1:varname} ${2:text}"
 		],
 		"description": "string format"
 	},

@@ -1,0 +1,73 @@
+{
+    "riverpod import": {
+        "scope": "dart",
+        "prefix": "riverpod_add",
+        "body": [
+            "import 'package:riverpod_annotation/riverpod_annotation.dart';",
+            "import 'package:flutter_riverpod/flutter_riverpod.dart';",
+            "",
+            "part '${TM_FILENAME_BASE}.g.dart';",
+            "",
+        ],
+        "description": "riverpod import"
+    },
+    "riverpod short create": {
+        "scope": "dart",
+        "prefix": "riverpodShortCreate",
+        "body": [
+            "@riverpod",
+            "${1|String,int,bool|} ${2:name}(Ref ref) => ${3:returnValue};",
+            "",
+        ],
+        "description": "riverpod short create"
+    },
+    "riverpod stream": {
+        "scope": "dart",
+        "prefix": "riverpodStream_",
+        "body": [
+            "@riverpod",
+            "Stream<${2:}> ${1:name}(Ref ref) {",
+            "\treturn ${3:};",
+            "}",
+        ],
+        "description": "riverpod stream"
+    },
+    "riverpod feature": {
+        "scope": "dart",
+        "prefix": "riverpodFeature_",
+        "body": [
+            "@riverpod",
+            "FutureOr<${2:}> ${1:name}(Ref ref) {",
+            "\treturn ${3:};",
+            "}",
+        ],
+        "description": "riverpod feature"
+    },
+    "riverpod": {
+        "scope": "dart",
+        "prefix": "riverpod_",
+        "body": [
+            "@riverpod",
+            "${1:type} ${2:name}(Ref ref) {",
+            "\treturn ${3:};",
+            "}",
+        ],
+        "description": "riverpod"
+    },
+    "riverpod class": {
+        "scope": "dart",
+        "prefix": "riverpodClass_",
+        "body": [
+            "@riverpod",
+            "class ${1:ProviderName} extends _$${1:ProviderName} {",
+            "\t@override",
+            "\t${2:<type>} build() {",
+            "\t\t\t${3:}",
+            "\t\treturn ;",
+            "\t}",
+            "}",
+            "",
+        ],
+        "description": "riverpod class"
+    },
+}

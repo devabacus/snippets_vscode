@@ -1,0 +1,23 @@
+{
+
+  
+  "stream subscription": {
+    "scope": "dart",
+    "prefix": "stream_subscribe",
+    "body": [
+      "${1:stream}.listen((${2:val})${3|{},=>|});",
+    ],
+    "description": "stream subscription"
+  },
+  "var stream subscription declare": {
+    "scope": "dart",
+    "prefix": "stream_subscription_declare",
+    "body": [
+      "${1:final }StreamSubscription<${2:streamtype}>${3:?} ${4:subscription};",
+    ],
+    "description": "var stream subscription declare"
+  },
+
+
+  
+}

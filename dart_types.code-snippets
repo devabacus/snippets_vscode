@@ -41,7 +41,7 @@
 	},
 	"void type": {
 		"scope": "dart",
-		"prefix": "tvoid",
+		"prefix": "tv",
 		"body": [
 			"void"
 		],

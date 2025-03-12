@@ -3,7 +3,7 @@
     "scope": "dart",
     "prefix": "stream_subscribe",
     "body": [
-      "${1:stream}.listen((${2:val})${3|{},=>|});",
+      "${1:stream}.listen((${2:val}){${3:}});",
     ],
     "description": "stream subscription"
   },

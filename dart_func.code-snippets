@@ -17,7 +17,6 @@
 		],
 		"description": "func"
 	},
-
 	"function async init": {
 		"scope": "dart",
 		"prefix": "fia",
@@ -52,5 +51,15 @@
 		],
 		"description": "func lambda short"
 	},
-	
+	"func test": {
+		"scope": "dart",
+		"prefix": "fi_test",
+		"body": [
+			"String ${1:fName}(){",
+			"\t\t${2:}",
+			"}",
+		],
+		"description": "snippet name"
+	},
+
 }

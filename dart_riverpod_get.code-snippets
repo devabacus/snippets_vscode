@@ -1,0 +1,39 @@
+{
+   "ref read": {
+        "scope": "dart",
+        "prefix": "rr_refRead",
+        "body": [
+            "${3:final ${4:name} = }ref.read(${1:provider}${2:.notifier})",
+        ],
+        "description": "ref read"
+    },
+    "ref read async": {
+        "scope": "dart",
+        "prefix": "rra_refReadAsync",
+        "body": [
+            "${3:final ${4:name} = }await ref.read(${1:provider}${2:.future})",
+        ],
+        "description": "ref read"
+    },
+    "ref watch": {
+        "scope": "dart",
+        "prefix": "rw_refWatch",
+        "body": [
+            "${2:final ${3:name} = }ref.watch(${1:provider});",
+        ],
+        "description": "ref watch"
+    },
+
+    "riverpod async get": {
+        "scope": "dart",
+        "prefix": "riverpod_when",
+        "body": [
+            "${1:provider}.when(",
+            "\t\tdata: (${2:val}) => ${3:Text(${4:val})},",
+            "\t\terror: (_, __) => Text(\"Error\"),",
+            "\t\tloading: () => CircularProgressIndicator(),",
+            ");"
+        ],
+        "description": "riverpod async get (from stream of feature)"
+    },
+}

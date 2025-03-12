@@ -33,7 +33,7 @@
 	},
 	"ListView": {
 		"scope": "dart",
-		"prefix": "wl",
+		"prefix": "wlistViewBuilder",
 		"body": [
 			"ListView.builder(",
 			"\titemCount: ${1:},",

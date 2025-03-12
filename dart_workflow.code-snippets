@@ -16,7 +16,7 @@
   "prefix": "ifnull",
   "body": [
 "if(${1:value} == null){",
-"\t\t\t\t${2:}",
+"\t\t${2:}",
 "}",
   ],
   "description": "if null"
@@ -62,30 +62,19 @@
         ],
         "description": "for in"
     },
-    "try catch": {
+
+  
+    "try catch finally": {
         "scope": "dart",
         "prefix": "try",
         "body": [
             "try {",
-            "\t\t${2:${TM_SELECTED_TEXT:$}}",
+            "\t\t${1:${TM_SELECTED_TEXT:}}",
             "} catch (e) {",
-            "\t\t\t\tprint(${1:'got error: $e'});",
+            "\t\t${2:}",
             "}",
         ],
         "description": "try catch"
     },
-    "Flutter Try-Catch Block": {
-        "prefix": "try",
-        "scope": "dart",
-        "body": [
-            "try {",
-            "\t$1",
-            "} catch (e) {",
-            "\t$2",
-            "} ${3:finally {",
-            "\t$4",
-            "\\}}"
-        ],
-        "description": "Flutter try-catch-finally block.\nExample usage:\ntry {\n  // Your code here\n} catch (e) {\n  print('Error: \\${e.toString()}');\n  // Handle error\n} finally {\n  // Clean up resources\n}"
+  
     }
-}
