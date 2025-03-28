@@ -1,10 +1,208 @@
 {
-    // "list init": {
-    //     "scope": "typescript",
-    //     "prefix": "li",
-    //     "body": [
-    //         "${1|const,let|} ${2:mylist} = [${3:}];",
-    //     ],
-    //     "description": "list init"
-    // },
+	"list init": {
+		"scope": "typescript",
+		"prefix": "li",
+		"body": [
+			"const ${1:mlist}${2: :${3:any}[]} = [${4}];"
+		],
+		"description": "list init"
+	},
+	"list unic init (set)": {
+		"scope": "typescript",
+		"prefix": "lui",
+		"body": [
+			"const ${1:setName} = new Set<${2:any}>([${3}]);",
+		]
+	},
+	"list length": {
+		"scope": "typescript",
+		"prefix": "ll",
+		"body": [
+			"${1:mlist}.length"
+		],
+		"description": "list length"
+	},
+	"list init with constructor": {
+		"scope": "typescript",
+		"prefix": "li2",
+		"body": [
+			"Array."
+		],
+		"description": "list init constructors"
+	},
+	"list get item": {
+		"scope": "typescript",
+		"prefix": "lgi",
+		"body": [
+			"${1:mlist}[${2:index}]"
+		],
+		"description": "list get item"
+	},
+	"list slice": {
+		"scope": "typescript",
+		"prefix": "lsl",
+		"body": [
+			"${1:mylist}.slice(${2:1}, ${3:3})"
+		],
+		"description": "list slice"
+	},
+	"last item of list": {
+		"scope": "typescript",
+		"prefix": "le",
+		"body": [
+			"${1:mylist}[${1:mylist}.length - 1]"
+		],
+		"description": "last item of list"
+	},
+	"map list": {
+		"scope": "typescript",
+		"prefix": "lm",
+		"body": [
+			"${1:mylist}.map((${2:item}) => ${3:item * 2});"
+		],
+		"description": "map list"
+	},
+	"list append": {
+		"scope": "typescript",
+		"prefix": "la",
+		"body": [
+			"${1:mylist}.push(${2:item})"
+		],
+		"description": "list append"
+	},
+	"list sort": {
+		"scope": "typescript",
+		"prefix": "lsrt",
+		"body": [
+			"${1:mylist}.sort()",
+		],
+		"description": "list sort"
+	},
+	"list max": {
+		"scope": "typescript",
+		"prefix": "lmax",
+		"body": [
+			"Math.max(...${1:mylist})"
+		],
+		"description": "list max"
+	},
+	"list min": {
+		"scope": "typescript",
+		"prefix": "lmin",
+		"body": [
+			"Math.min(...${1:mylist})"
+		],
+		"description": "list min"
+	},
+	"list extend": {
+		"scope": "typescript",
+		"prefix": "lext",
+		"body": [
+			"${1:mylist}.push(...${2:otherList})"
+		],
+		"description": "list extend"
+	},
+	"list index": {
+		"scope": "typescript",
+		"prefix": "lgidx",
+		"body": [
+			"${1:mlist}.indexOf(${2:item})"
+		],
+		"description": "list index"
+	},
+	"list iterate": {
+		"scope": "typescript",
+		"prefix": "lit",
+		"body": [
+			"${1:listName}.forEach((item) => {${2}});"
+		],
+		"description": "list iterate"
+	},
+	"list remove": {
+		"scope": "typescript",
+		"prefix": "lrm",
+		"body": [
+			"${1:listName} = ${1:listName}.filter(item => ${2:condition});"
+		],
+		"description": "list remove"
+	},
+	"list insert": {
+		"scope": "typescript",
+		"prefix": "lins",
+		"body": [
+			"${1:listName}.splice(${2:idx}, 0, ${3:item})"
+		],
+		"description": "list insert"
+	},
+	"list pop": {
+		"scope": "typescript",
+		"prefix": "lpop",
+		"body": [
+			"${1:listName}.splice(${2:idx}, 1)[0]"
+		],
+		"description": "list pop"
+	},
+	"list reverse": {
+		"scope": "typescript",
+		"prefix": "lrev",
+		"body": [
+			"[...${1:listName}].reverse()"
+		],
+		"description": "list reverse"
+	},
+	"list remove duplicate": {
+		"scope": "typescript",
+		"prefix": "lrmd",
+		"body": "${1:newList} = [...new Set(${2:oldList})];",
+		"description": "remove duplicates from the list, save ordering"
+	},
+	"list first": {
+		"scope": "typescript",
+		"prefix": "lifirst",
+		"body": [
+			"${1:list}[0]",
+		],
+		"description": "list first"
+	},
+	"list last": {
+		"scope": "typescript",
+		"prefix": "li_last",
+		"body": [
+			"${1:list}[${1:list}.length - 1]",
+		],
+		"description": "list last"
+	},
+	"list contains": {
+		"scope": "typescript",
+		"prefix": "lc",
+		"body": [
+			"${1:mlist}.includes(${2:element})",
+		],
+		"description": "list contains"
+	},
+    "list not contains": {
+		"scope": "typescript",
+		"prefix": "lcn",
+		"body": [
+			"!${1:mlist}.includes(${2:element})",
+		],
+		"description": "list not contains"
+	},
+	"list filter": {
+		"scope": "typescript",
+		"prefix": "lf",
+		"body": [
+			"${1:mlist}.filter((${2:item}) => ${3:item > 0})"
+		],
+		"description": "filter list by condition"
+	},
+
+    "list replace by condition": {
+		"scope": "typescript",
+		"prefix": "lr",
+		"body": [
+			"const ${1:newlist} = ${2:oldlist}.map(${3:item} => ${4:item3 > 10} ? ${5:newValue} : ${3:item});"
+		],
+		"description": "replace elements that match condition with new value"
+	}
 }

@@ -4,30 +4,6 @@
 	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
 	// same ids are connected.
 	// Example:
-	"var init": {
-		"scope": "typescript",
-		"prefix": "v",
-		"body": [
-			"${1|const,let|} ${2:name} = ${TM_SELECTED_TEXT:${3:value}}",
-		],
-		"description": "var init"
-	},
-	"var declare": {
-		"scope": "typescript",
-		"prefix": "vd",
-		"body": [
-			"let ${1:varName};",
-		],
-		"description": "var declare"
-	},
-	"var init2": {
-		"scope": "typescript",
-		"prefix": "vi",
-		"body": [
-			"${1|const,let|} ${2:myvar} = ${3:};"
-		],
-		"description": "var init"
-	},
 	"type define": {
 		"scope": "typescript",
 		"prefix": "td",
@@ -77,8 +53,33 @@
 		"scope": "typescript",
 		"prefix": "rt",
 		"body": [
-			"return",
+			"return ${TM_SELECTED_TEXT:${1:}}",
 		],
 		"description": "return"
 	},
+	"type alias": {
+		"scope": "typescript",
+		"prefix": "typedef",
+		"body": [
+			"type ${1:TypeName} = ${2:OriginalType};",
+		],
+		"description": "type alias"
+	},
+	"import package": {
+		"scope": "typescript",
+		"prefix": "im",
+		"body": [
+			"import * as ${1:fs} from '${1:fs}';",
+		],
+		"description": "import package"
+	},
+
+	"import from package": {
+		"scope": "typescript",
+		"prefix": "imf",
+		"body": [
+			"import {${2:}} from '${1:fs}';",
+		],
+		"description": "import from package"
+	}
 }

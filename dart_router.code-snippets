@@ -8,4 +8,25 @@
         ],
         "description": "router constants"
     },
+    "go route": {
+        "scope": "dart",
+        "prefix": "ro_GoRoute",
+        "body": [
+            "GoRoute(",
+            "\tname: ${1:AppRoutes.home},",
+            "\tpath: ${1:AppRoutes.home}Path,",
+            "\tbuilder: (BuildContext context, state) => ${2:Home}(),",
+            "),",
+            "",
+        ],
+        "description": "go route"
+    },
+    "router go to": {
+        "scope": "dart",
+        "prefix": "rogo",
+        "body": [
+            "context.goNamed(${1:AppRoutes...})",
+        ],
+        "description": "router go to"
+    },
 }

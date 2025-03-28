@@ -44,6 +44,7 @@
 		"description": "var class init"
 	},
 	"new class inheitance": {
+		"scope": "python",
 		"prefix": "clp",
 		"body": [
 			"class ${1:ClsName}(${2:parentClass}):",

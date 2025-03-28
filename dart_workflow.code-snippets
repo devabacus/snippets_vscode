@@ -13,13 +13,21 @@
 
 "if null": {
   "scope": "dart",
-  "prefix": "ifnull",
+  "prefix": "if_null",
   "body": [
 "if(${1:value} == null){",
 "\t\t${2:}",
 "}",
   ],
   "description": "if null"
+},
+"if null short": {
+  "scope": "dart",
+  "prefix": "if_null_short",
+  "body": [
+"if (${1:value} == null) return null;",
+  ],
+  "description": "if null short"
 },
 
     "if not empty": {

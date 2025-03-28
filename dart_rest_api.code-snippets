@@ -1,0 +1,31 @@
+{
+    "rest get all": {
+        "scope": "dart",
+        "prefix": "rest_get_all",
+        "body": [
+            "\t@GET(path: '${1:/posts}')",
+            "\tFuture<Response> ${2:getPosts}();",
+        ],
+        "description": "rest get all"
+    },
+    "rest post": {
+        "scope": "dart",
+        "prefix": "rest_post",
+        "body": [
+            "@POST(path: \"/${1:messages}\")",
+            "\tFuture<Response> ${2:methodName}({",
+            "\t\t@Body()  required Map<String, dynamic> body,",
+            "\t});",
+        ],
+        "description": "rest post"
+    },
+    // "get item by id": {
+    //     "scope": "dart",
+    //     "prefix": "rest_get_item_by_id",
+    //     "body": [
+    //         "@GET(path: \"/{id}\")",
+    //         "Future<Response> get${1:Item}ById(@Path() String id);",
+    //     ],
+    //     "description": "get item by id"
+    // },
+}

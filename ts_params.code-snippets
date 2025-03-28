@@ -1,0 +1,29 @@
+{
+    "param positional string": {
+        "scope": "typescript",
+        "prefix": "pps",
+        "body": [
+            "${1:val}: string",
+        ],
+        "description": "param positional string"
+    },
+    "param positional list": {
+        "scope": "typescript",
+        "prefix": "ppl",
+        "body": [
+            "${1:val}: ${2:Type}[]",
+        ],
+        "description": "param positional list"
+    },
+    "param positional list string": {
+        "scope": "typescript",
+        "prefix": "ppls",
+        "body": [
+            "${1:val}: string[]",
+        ],
+        "description": "param positional list string"
+    },
+
+    
+
+}

@@ -3,8 +3,19 @@
 		"scope": "typescript",
 		"prefix": "fi",
 		"body": [
-			"export function ${1:fname}(${2:x: number})${3::string} {",
-			"\t${4:${TM_SELECTED_TEXT:}}",
+			"${1:export }function ${2:fname}(${3:x: number})${4::string} {",
+			"\t${5:${TM_SELECTED_TEXT:}}",
+			"}",
+			"",
+		],
+		"description": "function init"
+	},
+	"function async init": {
+		"scope": "typescript",
+		"prefix": "fia",
+		"body": [
+			"${1:export }async function ${2:fname}(${3:x: number}): Promise<${4:string | undefined}> {",
+			"\t${5:${TM_SELECTED_TEXT:await}}",
 			"}",
 			"",
 		],
@@ -41,6 +52,35 @@
 		],
 		"description": "function init"
 	},
+
+	"function init var const string": {
+		"scope": "typescript",
+		"prefix": "vfircs",
+		"body": [
+			"export const ${1:varname} = (${2:val}: string) => {",
+			"\tconst ${3:pName} = ${4:};",
+			"\t",
+			"return `",
+			"${5:}",
+			"`;};",
+		],
+		"description": "function init var const string"
+	},
+
+	"function init var const string return": {
+		"scope": "typescript",
+		"prefix": "vfics",
+		"body": [
+			"export const ${1:varname} = (${2:val}: string) => {",
+			"`",
+			"${3:}",
+			"`;};",
+		],
+		"description": "function init var const string return"
+	},
+
+
+
 	"function init export": {
 		"scope": "typescript",
 		"prefix": "fie",
@@ -54,11 +94,19 @@
 	},
 	"func short": {
 		"scope": "typescript",
-		"prefix": "fs",
+		"prefix": "fis",
 		"body": [
-			"let ${1:sum} = (${2:x}: ${3:number}): ${4:number} => ${5:x*2};"
+			"(${1:}) => ${2:{${3:}\\}}"
 		],
 		"description": "func short"
+	},
+	"func const short": {
+		"scope": "typescript",
+		"prefix": "vfi",
+		"body": [
+			"${1:export }const ${2:funcName} = (${3:}) => ${4:};"
+		],
+		"description": "func const short"
 	},
 	"param positional": {
 		"scope": "typescript",

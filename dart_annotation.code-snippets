@@ -1,5 +1,5 @@
 {
-    "Freezed Class": {
+    "Freezed Class with import": {
       "scope": "dart",
       "prefix": "freezed",
       "body": [
@@ -20,6 +20,8 @@
       ],
       "description": "Create a Freezed class with fromJson factory"
     },
+
+
     "Freezed Union Class": {
       "scope": "dart",
       "prefix": "freezed-union",

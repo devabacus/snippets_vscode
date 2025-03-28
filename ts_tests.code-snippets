@@ -1,0 +1,34 @@
+{
+    "test group create": {
+        "scope": "typescript",
+        "prefix": "ttgt_test_group_test",
+        "body": [
+            "suite('${1:group name}', () => {",
+            "\ttest('${2:test name}', () => {",
+            "\t\t${3:}",
+            "\t});",
+            "});",
+            "",
+        ],
+        "description": "test group create"
+    },
+    "test init": {
+        "scope": "typescript",
+        "prefix": "ttt",
+        "body": [
+            "test('${1:test name}', () => {",
+            "\t${2:}",
+            "});",
+        ],
+        "description": "test init"
+    },
+    "test expect": {
+        "scope": "typescript",
+        "prefix": "tte_test_expect",
+        "body": [
+            "assert.strictEqual(${1:actual}, ${2:expected})",
+        ],
+        "description": "test expect"
+    },
+ 
+}

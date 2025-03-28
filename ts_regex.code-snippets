@@ -1,0 +1,21 @@
+{
+    "var regex": {
+        "scope": "typescript",
+        "prefix": "vregex",
+        "body": [
+            "const ${1:fieldRegex} = /${2:.*}/;",
+        ],
+        "description": "var regex"
+    },
+
+    "string filter regex": {
+        "scope": "typescript",
+        "prefix": "sfr",
+        "body": [
+            "${1:str}.match(/${2:pattern}/)",
+        ],
+        "description": "string filter by regex"
+    },
+
+
+}

@@ -1,0 +1,54 @@
+{
+    "for in": {
+        "scope": "typescript",
+        "prefix": "forin",
+        "body": [
+            "for (const ${1:item} of ${2:item}) {",
+            "  $3",
+            "}"
+        ],
+        "description": "for in"
+    },
+    "if empty": {
+        "scope": "typescript",
+        "prefix": "ife",
+        "body": [
+            "if (${1:str} === '') {${2:}}",
+        ],
+        "description": "if empty"
+    },
+    "if contains": {
+        "scope": "typescript",
+        "prefix": "ifc",
+        "body": [
+            "if (${1:var}.includes(${2:'pattern'})) {",
+            "\t${3:}",
+            "}",
+        ],
+        "description": "if contains"
+    },
+    "if not empty": {
+        "scope": "typescript",
+        "prefix": "ifen",
+        "body": [
+            "if (${1:str} !== '') {${2:}}",
+        ],
+        "description": "if not empty"
+    },
+    "if null": {
+        "scope": "typescript",
+        "prefix": "ifn",
+        "body": [
+            "if (${1:var} === 'undefined') {${2:}}",
+        ],
+        "description": "if null"
+    },
+    "if list not empty": {
+        "scope": "typescript",
+        "prefix": "iflen",
+        "body": [
+            "if (${1:array}.length > 0) {${2:}}",
+        ],
+        "description": "if list not empty"
+    }
+}

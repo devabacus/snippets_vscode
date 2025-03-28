@@ -1,0 +1,10 @@
+{
+    "logic and": {
+        "scope": "typescript",
+        "prefix": "and",
+        "body": [
+            "${1:${TM_SELECTED_TEXT:$}} && ${2:}",
+        ],
+        "description": "logic and"
+    },
+}

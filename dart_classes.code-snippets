@@ -1,11 +1,27 @@
 {
+	"class field declare": {
+		"scope": "dart",
+		"prefix": "clfd",
+		"body": "${1|final,const,var|} ${2|String,int,bool:String|}${3:?} ${4:mvar};"
+	},
 	"class declare": {
 		"scope": "dart",
-		"prefix": "cld",
+		"prefix": "cld2",
 		"body": [
 			"class ${1:Name} {",
 			"\t$0",
 			"}"
+		],
+		"description": "class declare"
+	},
+	"class declare base": {
+		"scope": "dart",
+		"prefix": "cld",
+		"body": [
+			"class ${1:Name}${2: extends ${3:ParentClass}} {",
+			"\t\tfinal ${4:String?} ${5:mvar};",
+			"\t\t${6:}",
+			"}",
 		],
 		"description": "class declare"
 	},
@@ -31,7 +47,7 @@
 	},
 	"class inheretence": {
 		"scope": "dart",
-		"prefix": "cin",
+		"prefix": "clin",
 		"body": [
 			"extends $ParentName"
 		],
@@ -39,7 +55,7 @@
 	},
 	"new class inheritence": {
 		"scope": "dart",
-		"prefix": "cldin ",
+		"prefix": "clparent ",
 		"body": [
 			"class ${1:Name} extends ${2:ParentName}{",
 			"  $0",
@@ -51,7 +67,7 @@
 		"scope": "dart",
 		"prefix": "clc",
 		"body": [
-			"${1:MyClass}(${2:this.${3:a}});"
+			"${1:ClassName}(${2:this.${3:a}});"
 		],
 		"description": "class constructor"
 	},
@@ -66,12 +82,49 @@
 		],
 		"description": "class declare full"
 	},
+	"getter arrow": {
+		"scope": "dart",
+		"prefix": "clgs_getter_short",
+		"body": [
+			"${1:type} get ${2:name} => ${3:field};",
+		],
+		"description": "getter arrow"
+	},
 	"getter": {
 		"scope": "dart",
-		"prefix": "clgetter",
+		"prefix": "clgi_getter_full",
 		"body": [
-			"${1:type} get ${2:name} => ${3:value};",
+			"${1:type} get ${2:name} {",
+			"\treturn ${3:};",
+			"}",
 		],
 		"description": "getter"
+	},
+	"setter": {
+		"scope": "dart",
+		"prefix": "cls_setter",
+		"body": [
+			"set ${1:field}(${2:type} ${3:val}){",
+			"\t\t_${1:field} = ${3:val};",
+			"\t}",
+		],
+		"description": "setter"
+	},
+	"equal": {
+		"scope": "typescript",
+		"prefix": "eq",
+		"body": [
+			"${1:} === ${2:}",
+		],
+		"description": "equal"
+	},
+
+	"not equal": {
+		"scope": "typescript",
+		"prefix": "eqn",
+		"body": [
+			"${1:} !== ${2:}",
+		],
+		"description": "not equal"
 	},
 }

@@ -1,0 +1,12 @@
+{
+    "record init": {
+        "scope": "typescript",
+        "prefix": "ri_mi_record_init",
+        "body": [
+            "${1:export }const ${2:names}: Record<string,${3:string}> = {",
+            "\t${4:'${5:}':''}",
+            "};",
+        ],
+        "description": "record init"
+    },
+}

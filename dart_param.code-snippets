@@ -1,26 +1,51 @@
 {
-	
 	"param positional": {
 		"scope": "dart",
 		"prefix": "pp",
 		"body": [
-			"${1:int} ${2:param}"
+			"${1|String,int,bool|} ${2:val}"
 		],
 		"description": "param positional"
 	},
+	
+
+"required": {
+	"scope": "dart",
+	"prefix": "rq_required",
+	"body": [
+	"required ${1:${TM_SELECTED_TEXT:}}",
+	],
+	"description": "required"
+},
 	"param positional string": {
 		"scope": "dart",
 		"prefix": "pps",
 		"body": [
-			"String ${1:param}",
+			"String ${1:val}",
 		],
 		"description": "param positional string"
+	},
+	"param positional int": {
+		"scope": "dart",
+		"prefix": "ppi",
+		"body": [
+			"int ${1:val}",
+		],
+		"description": "param positional int"
+	},
+	"param positional bool": {
+		"scope": "dart",
+		"prefix": "ppb",
+		"body": [
+			"bool ${1:val}",
+		],
+		"description": "param positional bool"
 	},
 	"param positional 2": {
 		"scope": "dart",
 		"prefix": "pp2",
 		"body": [
-			"${1:, int} ${2:param}"
+			"${1:, int} ${2:val}"
 		],
 		"description": "param positional"
 	},

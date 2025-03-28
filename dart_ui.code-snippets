@@ -1,4 +1,14 @@
 {
+    "widget method": {
+        "scope": "dart",
+        "prefix": "fiw",
+        "body": [
+            "Widget ${1:widgetName}(){",
+            "\treturn ${2:}",
+            "}",
+        ],
+        "description": "widget method"
+    },
     "screen": {
         "scope": "dart",
         "prefix": "wScreen",
@@ -35,17 +45,15 @@
         ],
         "description": "screen with appbar"
     },
-
-"floating action button": {
-    "scope": "dart",
-    "prefix": "wflbtn",
-    "body": [
-      "floatingActionButton: FloatingActionButton(",
-      "\tonPressed: ${2:},",
-      "\tchild: Icon(Icons.${1:add}),",
-      "\t),",
-    ],
-    "description": "floating action button"
-},
-
+    "floating action button": {
+        "scope": "dart",
+        "prefix": "wflbtn",
+        "body": [
+            "floatingActionButton: FloatingActionButton(",
+            "\tonPressed: ${2:},",
+            "\tchild: Icon(Icons.${1:add}),",
+            "\t),",
+        ],
+        "description": "floating action button"
+    },
 }

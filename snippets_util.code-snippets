@@ -2,7 +2,6 @@
 	"snippet create": {
 		"prefix": "snm",
 		"body": [
-			
 			"\"${1:snippet name}\": {",
 			"\t\t\"scope\": \"${TM_FILENAME/.+\\.((py)|(php)|(go)|(js)|(dart)|(cs)|(cpp)|(java)|(ts)|(ps1)|(sh)|(ahk)|(md))$/${2:+python}${3:+php}${4:+go}${5:+javascript,javascriptreact}${6:+dart}${7:+csharp}${8:+cpp}${9:+java}${10:+typescript}${11:+powershell}${12:+shellscript}${13:+ahk}${14:+markdown}/}\",",
 			"\t\t\"prefix\": \"${2}\",",
@@ -16,34 +15,55 @@
 		],
 		"description": "snippet create"
 	},
+	"replace regex": {
+		"prefix": "snrrg",
+		"body": [
+			"\\${${1:1}/${2:pattern}/${3:replace}/}",
+		],
+		"description": "replace regex"
+	},
 
-	
-	
+	"replace downcase": {
+		"prefix": "snrregister",
+		"body": [
+			"\\${${1:1}/(.*)/\\${${1:1}:/${2|downcase,capitalize,upcase|}}/}",
+		],
+		"description": "replace regex"
+	},
+
+	"test snippet replace": {
+        "scope": "dart",
+        "prefix": "ssss",
+        "body": [
+            "${1:hello} downcase:  ${1/(.*)/${1:/downcase}/}",
+            "${1:hello}  upcase     ${1/(.*)/${1:/upcase}/}",
+            "${1:hello}  capitalize ${1/(.*)/${1:/capitalize}/}",
+        ],
+        "description": "test snippet replace"
+    },
+
+
 	"surround line with quotes": {
 		"prefix": "t",
 		"body": [
-		  "${TM_SELECTED_TEXT/(.*)$/\"$1\",/}"
-		 ],
+			"${TM_SELECTED_TEXT/(.*)$/\"$1\",/}"
+		],
 		"description": "surround line with quotes"
 	},
-
-	
 	"escape special symbols": {
 		"prefix": "ess",
 		"body": [
-		  "${TM_SELECTED_TEXT/(\\\\)/\\\\$1/g}"
-		 ],
+			"${TM_SELECTED_TEXT/(\\\\)/\\\\$1/g}"
+		],
 		"description": "escape special symbols"
 	},
-
 	"escape special symbols2": {
 		"prefix": "ess",
 		"body": [
-		  "${TM_SELECTED_TEXT/($)/\\$1/g}"
-		 ],
+			"${TM_SELECTED_TEXT/($)/\\$1/g}"
+		],
 		"description": "escape special symbols2"
 	},
-
 	"snippet placeholder": {
 		"prefix": "snp",
 		"body": [
@@ -51,7 +71,6 @@
 		],
 		"description": "snippet placeholder"
 	},
-
 	"snippet options": {
 		"prefix": "sno",
 		"body": [
@@ -59,7 +78,6 @@
 		],
 		"description": "snippet options"
 	},
-
 	"snippet selected text": {
 		"prefix": "sns",
 		"body": [
@@ -67,20 +85,18 @@
 		],
 		"description": "snippet selected text"
 	},
-
 	"comma one quotes": {
 		"prefix": "cq",
 		"body": [
-		  ",'${1}'"
-		 ],
+			",'${1}'"
+		],
 		"description": "comma one quotes"
 	},
 	"comma double quotes": {
 		"prefix": "cq2",
 		"body": [
-		  ",\"${1}\""
-		 ],
+			",\"${1}\""
+		],
 		"description": "comma double quotes"
 	},
-
 }

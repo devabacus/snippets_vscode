@@ -16,7 +16,7 @@
       },
 	
 	"string format": {
-		"scope": "javascript, javascriptreact, typescript",
+		"scope": "javascript, javascriptreact",
 		"prefix": "sf",
 		"body": [
 			"${1:varname} + 'blabla'"
@@ -40,6 +40,14 @@
 		],
 		"description": "string contains, can use startindex"
 	},
+	"string not contains": {
+		"scope": "javascript, javascriptreact, typescript",
+		"prefix": "scn",
+		"body": [
+			"!${1:strvar}.includes('${2:pattern}')"
+		],
+		"description": "string not contains, can use startindex"
+	},
 	"string contains by regex": {
 		"scope": "javascript, javascriptreact, typescript",
 		"prefix": "scrg",
@@ -57,7 +65,7 @@
 		"description": "slice string, can be negative both"
 	},
 	"string cast": {
-		"scope": "javascript, javascriptreact, typescript",
+		"scope": "javascript, javascriptreact",
 		"prefix": "sts",
 		"body": [
 			"${1:name}.toString()"

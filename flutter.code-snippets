@@ -21,14 +21,7 @@
         ],
         "description": "router"
     },
-    "router go to": {
-        "scope": "dart",
-        "prefix": "rogo",
-        "body": [
-            "() => context.go(${1:AppRoute.secondScreen.path})",
-        ],
-        "description": "router go to"
-    },
+ 
     "router Navigation": {
         "scope": "dart",
         "prefix": "ronav",

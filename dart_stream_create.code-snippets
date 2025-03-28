@@ -1,7 +1,7 @@
 {
   "stream create periodi": {
     "scope": "dart",
-    "prefix": "stream_create_periodic",
+    "prefix": "smp",
     "body": [
       "Stream.periodic(Duration(seconds: ${1:1}), (${2:val}) => ${3:val}).take(${4:5});",
     ],

@@ -1,6 +1,6 @@
 {
 	"map init": {
-        "scope": "javascript, javascriptreact, typescript",
+        "scope": "javascript, javascriptreact",
 		"prefix": "mi",
 		"body": [
 		  "let ${1:mapName} = new Map();"

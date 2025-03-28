@@ -6,7 +6,6 @@
 			"var ${1:str} = '${3}';",
 		]
 	},
-	
 	"string length": {
 		"scope": "dart",
 		"prefix": "sl",
@@ -15,12 +14,19 @@
 		],
 		"description": "string length"
 	},
-
 	"string format ": {
 		"scope": "dart",
 		"prefix": "sf",
 		"body": [
-			"$${2:varname}"
+			"${${2:${TM_SELECTED_TEXT:varname}}}"
+		],
+		"description": "string format"
+	},
+	"string format2 ": {
+		"scope": "dart",
+		"prefix": "sfexpression",
+		"body": [
+			"${${2:varname}}"
 		],
 		"description": "string format"
 	},
@@ -28,7 +34,7 @@
 		"scope": "dart",
 		"prefix": "sfs",
 		"body": [
-			"$${2:text} ${1:varname}"
+			"${2:text} $${1:varname}"
 		],
 		"description": "string format"
 	},
@@ -99,7 +105,7 @@
 		"scope": "dart",
 		"prefix": "spadl",
 		"body": [
-			"${1:strvar}.padLeft(${2:10}${3:, '-'})"
+			"${1:${TM_SELECTED_TEXT:strvar}}.padLeft(${2:10}${3:, '${4:-}'})"
 		],
 		"description": "pad the sting on the left"
 	},
@@ -107,7 +113,7 @@
 		"scope": "dart",
 		"prefix": "spadr",
 		"body": [
-			"${1:strvar}.padRight(${2:10}${3:, '-'})"
+			"${1:${TM_SELECTED_TEXT:strvar}}.padRight(${2:10}${3:, '${4:-}'})"
 		],
 		"description": "pad the sting on the right"
 	},
@@ -135,7 +141,6 @@
 		],
 		"description": "string replace all"
 	},
-
 	"string get item by regex": {
 		"scope": "dart",
 		"prefix": "sgirg",

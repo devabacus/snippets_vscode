@@ -1,0 +1,68 @@
+{
+    "string cast": {
+        "scope": "typescript",
+        "prefix": "sts",
+        "body": [
+            "String(${1:${TM_SELECTED_TEXT:name}})"
+        ],
+        "description": "cast to String"
+    },
+
+    
+"string format": {
+    "scope": "typescript",
+    "prefix": "sf",
+    "body": [
+        "${${1:${TM_SELECTED_TEXT:varname}}}"
+    ],
+    "description": "string format"
+},
+
+
+"string format quotes": {
+    "scope": "typescript",
+    "prefix": "sfquotes",
+    "body": [
+        "`${${1:${TM_SELECTED_TEXT:varname}}}`"
+    ],
+    "description": "string format"
+},
+
+"string format second": {
+    "scope": "typescript",
+    "prefix": "sfs",
+    "body": [
+        "${${1:varname}} ${2:text}"
+    ],
+    "description": "string format"
+},
+
+"string format first": {
+    "scope": "typescript",
+    "prefix": "sff",
+    "body": [
+        "${${1:varname}} ${2:text}"
+    ],
+    "description": "string format"
+}, 
+
+"string join": {
+    "scope": "typescript",
+    "prefix": "sj",
+    "body": [
+      "`${${1:str1}}${${2:str2}}`",
+    ],
+    "description": "string join"
+},
+
+"capitalize": {
+  "scope": "typescript",
+  "prefix": "scap",
+  "body": [
+"capitalize(${1:${TM_SELECTED_TEXT:strName}})",
+  ],
+  "description": "capitalize"
+},
+
+
+}

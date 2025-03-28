@@ -3,8 +3,14 @@
 	"print": {
 		"scope": "dart",
 		"prefix": "p",
-		"body": "print(${1:${TM_SELECTED_TEXT:'${2:text}'}})"
+		"body": "print(${1:${TM_SELECTED_TEXT:}})"
 	},
+"print log": {
+		"scope": "dart",
+		"prefix": "log",
+		"body": "log.debug(${1:${TM_SELECTED_TEXT:'${2:text}'}})"
+	},
+
 	"print2": {
 		"scope": "dart",
 		"prefix": "p2",

@@ -1,6 +1,6 @@
 {
   "list init": {
-    "scope": "javascript, javascriptreact, typescript",
+    "scope": "javascript, javascriptreact",
     "prefix": "li",
     "body": [
       "${1|const,let|} ${2:mylist} = [];"
@@ -8,22 +8,22 @@
     "description": "list declare"
   },
   "list unic init (set)": {
-    "scope": "javascript, javascriptreact, typescript",
+    "scope": "javascript, javascriptreact",
     "prefix": "lui",
     "body": [
       "let ${1:name} = new Set([${2:1,2,3}]);",
     ]
   },
   "list to string": {
-    "scope": "javascript, javascriptreact, typescript, dart",
+    "scope": "javascript, javascriptreact, typescript",
     "prefix": "lts",
     "body": [
-      "${1:mlist}.join(${2:'delimeter'})"
+      "${1:${TM_SELECTED_TEXT:mlist}}.join(${2:'delimeter'})"
     ],
     "description": "list to string"
   },
   "list get item": {
-		"scope": "javascript, javascriptreact, typescript",
+		"scope": "javascript, javascriptreact",
 		"prefix": "lgi",
 		"body": [
 		  "${1:mlist}[${2:index}]"
@@ -32,7 +32,7 @@
 	},
 
   "list slice": {
-    "scope": "javascript, javascriptreact, typescript",
+    "scope": "javascript, javascriptreact",
     "prefix": "lsl",
     "body": [
       "${1:mylist}.slice(${2:1},${3:-1})",
@@ -40,7 +40,7 @@
     "description": "list slice"
   },
   "last item of list": {
-    "scope": "javascript, javascriptreact, typescript",
+    "scope": "javascript, javascriptreact",
     "prefix": "le",
     "body": [
       "${1:mylist}[${1:mylist}.length - 1]"
@@ -48,7 +48,7 @@
     "description": "last item of list"
   },
   "map list": {
-    "scope": "javascript, javascriptreact, typescript",
+    "scope": "javascript, javascriptreact",
     "prefix": "lm",
     "body": [
       "let ${1:newList} = ${2:oldList}.map(function(${3:item}){",
@@ -59,7 +59,7 @@
   },
 
   "list map foreach": {
-    "scope": "javascript, javascriptreact,typescript",
+    "scope": "javascript, javascriptreact",
     "prefix": "lmf",
     "body": [
         "${1:names}.forEach((${2:item})=>{",
@@ -70,7 +70,7 @@
     "description": "list map foreach"
 },
   "list append": {
-    "scope": "javascript, javascriptreact, typescript",
+    "scope": "javascript, javascriptreact",
     "prefix": "la",
     "body": [
       "${1:mylist}.push(${2:item1,item2})",
@@ -79,7 +79,7 @@
     "description": "return length of list"
   },
   "list sort": {
-    "scope": "javascript, javascriptreact, typescript",
+    "scope": "javascript, javascriptreact",
     "prefix": "lsrt",
     "body": [
       "${1:mylist}.sort(${2|(a\\,b)=>a-b, |})"
@@ -87,7 +87,7 @@
     "description": "list sort"
   },
   "list max": {
-    "scope": "javascript, javascriptreact, typescript",
+    "scope": "javascript, javascriptreact",
     "prefix": "lmax",
     "body": [
       "Math.max(...${1:mylist})"
@@ -95,7 +95,7 @@
     "description": "list max"
   },
   "list min": {
-    "scope": "javascript, javascriptreact, typescript",
+    "scope": "javascript, javascriptreact",
     "prefix": "lmin",
     "body": [
       "Math.min(...${1:mylist})"
@@ -103,7 +103,7 @@
     "description": "list min"
   },
   "list extend": {
-    "scope": "javascript, javascriptreact, typescript",
+    "scope": "javascript, javascriptreact",
     "prefix": "lext",
     "body": [
       "Array.prototype.push.apply(${1:mylist}, ${2:mylist2});"
@@ -111,7 +111,7 @@
     "description": "list extend"
   },
   "list index": {
-    "scope": "javascript, javascriptreact, typescript",
+    "scope": "javascript, javascriptreact",
     "prefix": "lidx",
     "body": [
       "${1:mlist}.indexOf(${2:item})"
@@ -119,7 +119,7 @@
     "description": "list index"
   },
   "list insert": {
-    "scope": "javascript, javascriptreact, typescript",
+    "scope": "javascript, javascriptreact",
     "prefix": "lins",
     "body": [
       "${1:listName}.insert(${2:idx}, ${3:item})"
@@ -127,7 +127,7 @@
     "description": "list insert"
   },
   "list reverse": {
-    "scope": "javascript, javascriptreact, typescript",
+    "scope": "javascript, javascriptreact",
     "prefix": "lrev",
     "body": [
       "${1:listName}.reverse()"
@@ -135,7 +135,7 @@
     "description": "list reverse"
   },
   "list iterate": {
-    "scope": "javascript, javascriptreact, typescript",
+    "scope": "javascript, javascriptreact",
 		"prefix": "lit",
 		"body": [
 			"${1:listName}.forEach((${2|val,val\\, i|}) => {${3}});"
@@ -143,7 +143,7 @@
 		"description": "list iterate"
 	},
   "list remove": {
-    "scope": "javascript, javascriptreact, typescript",
+    "scope": "javascript, javascriptreact",
 		"prefix": "lrm",
 		"body": [
 			"${2:listName} = ${2:listName}.${1|pop(),shift(),filter((val\\,idx) => idx != 2)|}"

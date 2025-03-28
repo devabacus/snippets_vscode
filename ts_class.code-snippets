@@ -1,0 +1,48 @@
+{
+    "class field declare": {
+        "scope": "typescript",
+        "prefix": "cfd",
+        "body": [
+            "${1|private,protected,public|} ${2:fieldName}: ${3:type}",
+        ],
+        "description": "class field declare"
+    },
+    "class declare base": {
+        "scope": "typescript",
+        "prefix": "cld",
+        "body": [
+            "class ${1:Name} {",
+            "\t${2:constructor(${3|private,protected,public|} ${4:name}: ${5:string}) {",
+            "\t\t${6:}",
+            "\t\\}}",
+            "}",
+        ],
+        "description": "class declare base"
+    },
+    "class init": {
+        "scope": "typescript",
+        "prefix": "cli",
+        "body": [
+            "const ${1:name}  = new ${2:ClName}(${5:});",
+        ],
+        "description": "class init"
+    },
+    "class method init": {
+        "scope": "typescript",
+        "prefix": "clmi_class_method_init",
+        "body": [
+            "${1:method}(${2:})${3::${4:string}} {${5:}}",
+        ],
+        "description": "class method init"
+    },
+    "getter": {
+        "scope": "typescript",
+        "prefix": "get",
+        "body": [
+            "get ${1:value}() : ${2:string} {",
+            "\t${3:return ${4:}}",
+            "}",
+        ],
+        "description": "getter"
+    },
+}

@@ -1,0 +1,50 @@
+{
+	"var init": {
+		"scope": "typescript",
+		"prefix": "v",
+		"body": [
+			"const ${2:name} = ${TM_SELECTED_TEXT:${3:value}}",
+		],
+		"description": "var init"
+	},
+	"var init type": {
+		"scope": "typescript",
+		"prefix": "vt",
+		"body": [
+			"const ${1:name}: ${2:string} = ${TM_SELECTED_TEXT:${3:value}}",
+		],
+		"description": "var init type"
+	},
+	"var declare": {
+		"scope": "typescript",
+		"prefix": "vd",
+		"body": [
+			"let ${1:varName};",
+		],
+		"description": "var declare"
+	},
+	"var init2": {
+		"scope": "typescript",
+		"prefix": "vi",
+		"body": [
+			"${1|const,let|} ${2:myvar} = ${3:};"
+		],
+		"description": "var init"
+	},
+	"var const export string init": {
+		"scope": "typescript",
+		"prefix": "vces_var_constant_export_string",
+		"body": [
+			"export const ${1:varname} = `${2:}`;"
+		],
+		"description": "var const export  string init"
+	},
+	"var let init": {
+		"scope": "typescript",
+		"prefix": "vv",
+		"body": [
+			"let ${1:name} = ${2:value}",
+		],
+		"description": "var let init"
+	},
+}

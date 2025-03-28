@@ -32,16 +32,18 @@
         ],
         "description": "riverpod stream"
     },
-    "riverpod feature": {
+
+
+    "riverpod future": {
         "scope": "dart",
-        "prefix": "riverpodFeature_",
+        "prefix": "riverpodFuture_",
         "body": [
             "@riverpod",
             "FutureOr<${2:}> ${1:name}(Ref ref) {",
             "\treturn ${3:};",
             "}",
         ],
-        "description": "riverpod feature"
+        "description": "riverpod future"
     },
     "riverpod": {
         "scope": "dart",

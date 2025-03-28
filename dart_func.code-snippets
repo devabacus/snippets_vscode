@@ -11,11 +11,51 @@
 		"scope": "dart",
 		"prefix": "fi",
 		"body": [
-			"${1:String} ${2:fName}(${3}){",
-			"    ${4://expr}",
+			"${1:void} ${2:fName}(${3}){",
+			"    ${4:}",
 			"}"
 		],
 		"description": "func"
+	},
+	"func void": {
+		"scope": "dart",
+		"prefix": "fiv",
+		"body": [
+			"void ${1:fName}(${2}){",
+			"    ${3:}",
+			"}"
+		],
+		"description": "func void"
+	},
+	"func String": {
+		"scope": "dart",
+		"prefix": "fis",
+		"body": [
+			"String ${1:fName}(${2}){",
+			"    ${3:}",
+			"}"
+		],
+		"description": "func String"
+	},
+	"func int": {
+		"scope": "dart",
+		"prefix": "fii",
+		"body": [
+			"int ${1:fName}(${2}){",
+			"    ${3:}",
+			"}"
+		],
+		"description": "func int"
+	},
+	"func bool": {
+		"scope": "dart",
+		"prefix": "fib",
+		"body": [
+			"bool ${1:fName}(${2}){",
+			"    ${3:}",
+			"}"
+		],
+		"description": "func bool"
 	},
 	"function async init": {
 		"scope": "dart",
@@ -43,13 +83,13 @@
 		],
 		"description": "func lambda"
 	},
-	"func lambda short": {
+	"func lambda short async": {
 		"scope": "dart",
-		"prefix": "fils",
+		"prefix": "filsa",
 		"body": [
-			"(${1}) => ${2}"
+			"(${1:_}) async => ${2}"
 		],
-		"description": "func lambda short"
+		"description": "func lambda short async"
 	},
 	"func test": {
 		"scope": "dart",
@@ -61,5 +101,4 @@
 		],
 		"description": "snippet name"
 	},
-
 }

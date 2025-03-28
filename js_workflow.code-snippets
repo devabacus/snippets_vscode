@@ -1,11 +1,11 @@
 {
 	"if else short": {
-		"scope": "javascript,typescript,javascriptreact,dart,java,csharp,cpp",
+		"scope": "javascript",
 		"prefix": "ifs",
 		"body": "${1:ifexp} ? ${2:iftrue} : ${3:eltrue};"
 	},
 	"if else if else": {
-        "scope": "javascript,typescript,javascriptreact,dart,java,csharp",
+        "scope": "javascript,javascriptreact,dart,java,csharp",
         "prefix": "ififel",
         "body": [
           "if (${1:conditional}) {",
@@ -20,7 +20,7 @@
     },
 	
 	"is digit": {
-		"scope": "javascript, javascriptreact, typescript, tsx",
+		"scope": "javascript, javascriptreact, tsx",
 		"prefix": "isd",
 		"body": [
 			"!isNan(${1:n umber})",
@@ -29,7 +29,7 @@
 	},
 
 	"if empty": {
-		"scope": "javascript, javascriptreact, typescript, tsx",
+		"scope": "javascript, javascriptreact, tsx",
 		"prefix": "ife",
 		"body": [
 			"if(${1:myvar}.length == 0){",
@@ -41,7 +41,7 @@
 	},
 
 	"for in": {
-		"scope": "javascript, javascriptreact, typescript",
+		"scope": "javascript, javascriptreact",
 		"prefix": "forin",
 		"body": [
 		  "for (var ${1:item} in ${2:mylist}) {",

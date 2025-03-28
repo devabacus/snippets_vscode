@@ -1,0 +1,148 @@
+{
+    "db table create": {
+        "scope": "dart",
+        "prefix": "dbtc",
+        "body": [
+            "import 'package:drift/drift.dart';",
+            "",
+            "class ${1:Tasks}Table extends Table {",
+            "",
+            "\t${2:IntColumn get ${3:id} => integer().autoIncrement()();}",
+            "\t${4:}",
+            "}",
+            "",
+        ],
+        "description": "db table create"
+    },
+    "db integer column": {
+        "scope": "dart",
+        "prefix": "dbi",
+        "body": [
+            "IntColumn get ${1:age} => integer()();",
+        ],
+        "description": "db integer column"
+    },
+    "db text column": {
+        "scope": "dart",
+        "prefix": "dbt",
+        "body": [
+            "TextColumn get ${1:title} => text()();",
+        ],
+        "description": "db text column"
+    },
+    "db text with length column": {
+        "scope": "dart",
+        "prefix": "dbl",
+        "body": [
+            "TextColumn get ${1:title} => text().withLength(min: ${2:6}, max: ${3:32})();",
+        ],
+        "description": "db text with length column"
+    },
+    "db date": {
+        "scope": "dart",
+        "prefix": "dbd",
+        "body": [
+            "DateTimeColumn get ${1:createdAt} => dateTime()();",
+        ],
+        "description": "db date"
+    },
+    "db reference field": {
+        "scope": "dart",
+        "prefix": "dbr",
+        "body": [
+            "IntColumn get ${1:category}Id => integer().references(${2:Category}Table, #id)();",
+        ],
+        "description": "db reference field"
+    },
+    "db table create many to many": {
+        "scope": "dart",
+        "prefix": "dbtcmtm",
+        "body": [
+            "class ${1:Tasks}${2:Tags}Table extends Table {",
+            "\t",
+            "\tIntColumn get ${3:task}Id => integer().references(${1:Tasks}Table, #id)();",
+            "\tIntColumn get ${4:tag}Id => integer().references(${2:Tags}Table, #id)();",
+            "\t",
+            "\t@override",
+            "\tSet<Column> get primaryKey => {${3:task}Id, ${4:tag}Id};",
+            "}",
+            "",
+        ],
+        "description": "db table create many to many"
+    },
+    "entity": {
+        "scope": "dart",
+        "prefix": "dbent",
+        "body": [
+            "import 'package:equatable/equatable.dart';",
+            "",
+            "class ${1:Category}Entity extends Equatable {",
+            "\t${3:final int id;}",
+            "\t${4:final String ${5:title};}",
+            "",
+            "",
+            "",
+            "\t@override",
+            "\tList<Object?> get props => [];",
+            "}",
+            "",
+        ],
+        "description": "entity"
+    },
+    "My Snippet": {
+        "prefix": "mysnippet",
+        "body": [
+            "${1:текст}",
+            "${1/(.*)/${1:/downcase}/}",
+            "${2:другой текст}",
+            "${2/(.*)/${2:/lowercase}/}"
+        ],
+        "description": "Преобразует введенный текст в нижний регистр"
+    },
+    "snippet dao": {
+        "scope": "dart",
+        "prefix": "dbdao",
+        "body": [
+            "import 'package:drift/drift.dart';",
+            "import '../../../../../../../core/database/local/database.dart';",
+            "import '../tables/${1/(.*)/${1:/downcase}/}_table.dart';",
+            "",
+            "part '${1/(.*)/${1:/downcase}/}_dao.g.dart';",
+            "",
+            "@DriftAccessor(tables: [${1:Category}Table])",
+            "class ${1:Category}Dao extends DatabaseAccessor<AppDatabase> with _$${1:Category}DaoMixin {",
+            "\t${1:Category}Dao(super.db);",
+            "",
+            "\tFuture<List<${1:Category}TableData>> get${1/(.*)(y)$/$1ies/}() => select(${1/(.*)/${1:/downcase}/}Table).get();",
+            "\t",
+            "\tFuture<${1:Category}TableData> get${1:Category}ById(int id) =>",
+            "\t\t\t(select(${1/(.*)/${1:/downcase}/}Table)..where((t) => t.id.equals(id)))",
+            "\t\t\t.getSingle();",
+            "\t",
+            "\tFuture<int> create${1:Category}(${1:Category}TableCompanion ${1/(.*)/${1:/downcase}/}) =>",
+            "\t\t\tinto(${1/(.*)/${1:/downcase}/}Table).insert(${1/(.*)/${1:/downcase}/});",
+            "\t",
+            "\tFuture<void> update${1:Category}(${1:Category}TableCompanion ${1/(.*)/${1:/downcase}/}) =>",
+            "\t\t\tupdate(${1/(.*)/${1:/downcase}/}Table).replace(${1/(.*)/${1:/downcase}/});",
+            "\t",
+            "\tFuture<void> delete${1:Category}(int id) =>",
+            "\t\t\t(delete(${1/(.*)/${1:/downcase}/}Table)..where((t) => t.id.equals(id))).go();",
+            "}",
+        ],
+        "description": "snippet dao"
+    },
+    "domain repository": {
+        "scope": "dart",
+        "prefix": "dbdmrp",
+        "body": [
+            "abstract class ${1:Category}Repository {",
+            "\tFuture<List<${1:Category}Entity>> get${1/(.*)(y)$/$1ies/}();",
+            "\tFuture<${1:Category}Entity> get${1:Category}ById();",
+            "\tFuture<int> create${1:Category}(${1:Category}Entity ${1/(.*)/${1:/downcase}/});",
+            "\tFuture<void> update${1:Category}(${1:Category}Entity ${1/(.*)/${1:/downcase}/});",
+            "\tFuture<void> delete${1:Category}(int id);",
+            "}",
+        ],
+        "description": "domain repository"
+    },
+}

@@ -31,14 +31,6 @@
 		],
 		"description": "boolean type"
 	},
-	"any type": {
-		"scope": "typescript",
-		"prefix": "tany",
-		"body": [
-			"any"
-		],
-		"description": "any type (disables type checking)"
-	},
 	"void type": {
 		"scope": "typescript",
 		"prefix": "tvoid",
@@ -52,6 +44,14 @@
 		"prefix": "tlist",
 		"body": [
 			"${1:Type}[]"
+		],
+		"description": "Array notation\nExample: string[]"
+	},
+	"array type string": {
+		"scope": "typescript",
+		"prefix": "tls",
+		"body": [
+			"${1:string}[]"
 		],
 		"description": "Array notation\nExample: string[]"
 	},
@@ -148,10 +148,21 @@
 		"prefix": "tinterface",
 		"body": [
 			"interface ${1:InterfaceName} {",
-			"\t${2:property}: ${3:Type}",
+			"\t${2:property}: ${3:Type};",
 			"}"
 		],
 		"description": "Interface declaration"
+	},
+	"interface init": {
+		"scope": "typescript",
+		"prefix": "interinit",
+		"body": [
+			"${1|const,let|} ${2:instName}: ${3:interName} = {",
+			"\t${4:${5:name}: ${6:value}},",
+			"\t${7:}",
+			"}",
+		],
+		"description": "interface init"
 	},
 	"function type": {
 		"scope": "typescript",
@@ -184,5 +195,13 @@
 			"[${1:Type1}, ${2:Type2}]"
 		],
 		"description": "Tuple type\nExample: [string, number]"
-	}
+	},
+	"string type undefined": {
+		"scope": "typescript",
+		"prefix": "tsu",
+		"body": [
+			"string|undefined"
+		],
+		"description": "string type"
+	},
 }

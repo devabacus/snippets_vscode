@@ -1,5 +1,4 @@
 {
-	
 	"length": {
 		"scope": "dart",
 		"prefix": "ln",
@@ -34,4 +33,48 @@
 		"prefix": "isinst",
 		"body": "${1:myvar} is ${2:int}"
 	},
+	"enum create": {
+		"scope": "dart",
+		"prefix": "enum_",
+		"body": [
+			"enum ${1:enumName} {",
+			"\t${2:value1},",
+			"\t",
+			"}",
+		],
+		"description": "enum create"
+	},
+	"type alias": {
+        "scope": "typescript",
+        "prefix": "typedef",
+        "body": [
+            "typedef ${1:TypeName} = ${2:OriginalType};",
+        ],
+        "description": "type alias"
+},
+
+"enum class": {
+    "scope": "dart",
+    "prefix": "enum_class",
+    "body": [
+      "enum ${1:EnumName} {",
+      "\t${2:guest1(\"Иван\", 30),",
+      "\tguest2(\"Стас\", 39);",
+      "",
+      "\tfinal String field1;",
+      "\tfinal int field2;",
+      "",
+      "\tconst ${1:EnumName}(this.field1, this.field2);",
+      "",
+      "\tint get untilPensia => 65 - age;",
+      "",
+      "\tString attending() => \"Уважаемый $name приходите\";",
+      "}",
+      "}",
+      "",
+    ],
+    "description": "enum class"
+},
+
+
 }
